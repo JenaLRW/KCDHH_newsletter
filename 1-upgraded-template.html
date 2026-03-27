@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <title>KCDHH Communicator — March 2026</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- UserWay Accessibility Widget -->
+  <script>
+    (function(d){
+      var s = d.createElement("script");
+      s.setAttribute("data-account", "I5bjzqxqg1");
+      s.setAttribute("src", "https://cdn.userway.org/widget.js");
+      (d.body || d.head).appendChild(s);
+    })(document)
+  </script>
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES — Edit brand colors here
+    ============================================================ */
+    :root {
+      --navy:        #0b2545;
+      --navy-mid:    #163a6b;
+      --teal:        #0e9e78;
+      --teal-light:  #e4f7f1;
+      --teal-dark:   #0a7a5c;
+      --amber:       #e08c14;
+      --amber-light: #fef4e0;
+      --red-light:   #fdedef;
+      --red:         #c0283a;
+      --bg:          #f5f3ef;
+      --surface:     #ffffff;
+      --border:      #e2ddd5;
+      --text-main:   #1a1814;
+      --text-muted:  #5c574f;
+      --text-light:  #8a847a;
+      --link:        #0b5c9e;
+      --radius-sm:   6px;
+      --radius-md:   10px;
+      --radius-lg:   14px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Source Sans 3', Georgia, sans-serif;
+      font-size: 16px;
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--link); }
+    a:hover { text-decoration: underline; }
+    a:focus { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
+
+    h1, h2, h3 { font-family: 'Lora', Georgia, serif; line-height: 1.2; }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ============================================================
+       SKIP TO CONTENT (Accessibility)
+    ============================================================ */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 0 0 var(--radius-sm) 0;
+      z-index: 1000;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ============================================================
+       PAGE WRAPPER
+    ============================================================ */
+    #page {
+      max-width: 680px;
+      margin: 24px auto;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    .nl-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 32px 36px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative circles */
+    .nl-header::before {
+      content: '';
+      position: absolute;
+      top: -50px; right: -30px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .nl-header::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: 80px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(14,158,120,0.12);
+    }
+
+    .nl-agency-line {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7ab8e8;
+      font-weight: 600;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .nl-masthead {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      margin-bottom: 2px;
+    }
+
+    .nl-masthead-accent {
+      color: var(--teal);
+    }
+
+    .nl-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .nl-header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      position: relative;
+    }
+
+    .nl-header-meta a {
+      color: #7ab8e8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       UTILITY BAR (Translate + Social)
+    ============================================================ */
+    .nl-utility-bar {
+      background: #f0ede6;
+      border-bottom: 1px solid var(--border);
+      padding: 9px 36px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nl-utility-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    #google_translate_element {
+      font-size: 12px;
+    }
+
+    .nl-social-links {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .nl-social-links a {
+      background: var(--navy);
+      color: #fff;
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+    }
+
+    .nl-social-links a:hover { background: var(--navy-mid); }
+
+    /* ============================================================
+       BODY / CONTENT AREA
+    ============================================================ */
+    .nl-body {
+      padding: 20px 28px 36px;
+      background: var(--bg);
+    }
+
+    /* ============================================================
+       SECTION LABELS
+    ============================================================ */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin: 28px 0 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-icon {
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal-light);
+      border-radius: 50%;
+      font-size: 10px;
+    }
+
+    /* ============================================================
+       ALERT CARD (Action Needed)
+    ============================================================ */
+    .nl-alert {
+      background: var(--amber-light);
+      border: 1px solid #f0d080;
+      border-left: 5px solid var(--amber);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .nl-alert-badge {
+      background: var(--amber);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .nl-alert-content h2 {
+      font-size: 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 700;
+      color: #7a5000;
+      margin-bottom: 4px;
+    }
+
+    .nl-alert-content p {
+      font-size: 13.5px;
+      color: #5a3c00;
+      line-height: 1.6;
+    }
+
+    .nl-alert-content a {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       CARDS
+    ============================================================ */
+    .nl-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 12px;
+    }
+
+    .nl-card h2 {
+      font-size: 17px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .nl-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Tag pill */
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 20px;
+      margin-bottom: 9px;
+    }
+
+    .tag-federal  { background: #e8eef8; color: #1a3b7a; }
+    .tag-event    { background: #fdeef0; color: var(--red); }
+    .tag-resource { background: var(--teal-light); color: var(--teal-dark); }
+    .tag-urgent   { background: var(--amber); color: #fff; }
+    .tag-community{ background: #f0edf8; color: #4a2a8c; }
+    .tag-camp     { background: #eaf5e2; color: #2e6e18; }
+
+    /* Read more link */
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .card-link::after { content: ' →'; }
+    .card-link:hover { color: var(--navy); }
+
+    /* Two-column card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-grid .nl-card { margin-bottom: 0; }
+
+    /* ============================================================
+       EVENT LIST CARD
+    ============================================================ */
+    .event-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .event-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 11px 0;
+      border-bottom: 1px solid #f0ede6;
+    }
+
+    .event-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .event-item:first-child { padding-top: 0; }
+
+    .event-date {
+      background: var(--navy);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 5px 8px;
+      text-align: center;
+      min-width: 46px;
+      flex-shrink: 0;
+    }
+
+    .event-date .month {
+      display: block;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #7ab8e8;
+      font-weight: 700;
+    }
+
+    .event-date .day {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .event-info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .event-info span {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .event-info a {
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       FLYER BUTTON & MODAL
+    ============================================================ */
+    .flyer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 6px;
+      padding: 3px 9px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      background: transparent;
+      border: 1.5px solid var(--teal-dark);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .flyer-btn:hover { background: var(--teal-dark); color: #fff; }
+    .flyer-btn:focus-visible { outline: 2px solid var(--teal-dark); outline-offset: 2px; }
+
+    /* Overlay */
+    #flyer-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #flyer-modal.is-open { display: flex; }
+
+    /* Dialog box */
+    #flyer-modal-dialog {
+      background: #fff;
+      border-radius: var(--radius);
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    #flyer-modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 40px 12px 0;
+    }
+
+    #flyer-modal img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    #flyer-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    #flyer-modal-close:focus-visible { outline: 2px solid var(--teal-dark); outline-offset: 2px; }
+
+    /* ============================================================
+       RESOURCES BAR
+    ============================================================ */
+    .nl-resources {
+      background: var(--navy);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 12px;
+    }
+
+    .nl-resources h2 {
+      font-size: 15px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .resource-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .resource-link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    .resource-link-item:hover {
+      background: rgba(255,255,255,0.13);
+      text-decoration: none;
+    }
+
+    .resource-link-item:focus {
+      outline: 2px solid var(--teal);
+      outline-offset: 2px;
+    }
+
+    .resource-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .nl-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      padding: 28px 36px;
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 1.8;
+    }
+
+    .nl-footer strong {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-family: 'Lora', serif;
+    }
+
+    .nl-footer a {
+      color: #7ab8e8;
+      text-decoration: none;
+    }
+
+    .nl-footer a:hover { text-decoration: underline; }
+
+    .nl-footer-social {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .nl-footer-social a {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .nl-footer-social a:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .nl-footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 16px 0;
+    }
+
+    /* ============================================================
+       CALENDAR CTA
+    ============================================================ */
+    .nl-cta {
+      background: var(--teal-light);
+      border: 1px solid #9adcc8;
+      border-radius: var(--radius-md);
+      padding: 16px 22px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nl-cta p {
+      font-size: 13.5px;
+      color: var(--teal-dark);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .nl-cta a {
+      background: var(--navy);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nl-cta a:hover { background: var(--navy-mid); }
+
+    /* ============================================================
+       RESPONSIVE — Mobile
+    ============================================================ */
+    @media (max-width: 580px) {
+      #page { margin: 0; border-radius: 0; border: none; }
+
+      .nl-header { padding: 24px 20px 18px; }
+      .nl-masthead { font-size: 28px; }
+
+      .nl-utility-bar { padding: 9px 20px; }
+      .nl-social-links { margin-left: 0; }
+
+      .nl-body { padding: 16px 16px 28px; }
+
+      .card-grid { grid-template-columns: 1fr; }
+
+      .nl-cta { flex-direction: column; align-items: flex-start; }
+      .nl-cta a { width: 100%; text-align: center; }
+
+      .nl-footer { padding: 22px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip to main content (screen readers & keyboard users) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div id="page">
+
+    <!-- ============================================================
+         HEADER
+    ============================================================ -->
+    <header class="nl-header" role="banner">
+      <div class="nl-agency-line">Kentucky Commission on the Deaf and Hard of Hearing</div>
+      <div class="nl-masthead" aria-label="KCDHH Communicator">
+        KCDHH <span class="nl-masthead-accent">Communicator</span>
+      </div>
+      <div class="nl-tagline">Connecting you to current news</div>
+      <div class="nl-header-meta">
+        <!-- ✏️ EDIT: Update volume/issue and date each month -->
+        <span>Volume 44, No. 3 &nbsp;·&nbsp; March 2026</span>
+        <a href="https://www.kcdhh.ky.gov" target="_blank" rel="noopener">kcdhh.ky.gov</a>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         UTILITY BAR
+    ============================================================ -->
+    <nav class="nl-utility-bar" aria-label="Social links">
+      
+      <div class="nl-social-links">
+        <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener" aria-label="Find us on Facebook (opens in new tab)"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow us on Instagram (opens in new tab)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         MAIN CONTENT
+    ============================================================ -->
+    <main id="main-content" class="nl-body">
+
+      <!-- ══════════════════════════════════════════
+           ACTION ALERT — Edit or remove as needed
+      ══════════════════════════════════════════ -->
+      <!-- ✏️ EDIT: Update or remove this section when there is no active action item -->
+      <div class="nl-alert" role="alert" aria-live="polite" aria-label="Action needed">
+        <div class="nl-alert-badge" aria-hidden="true">Action needed</div>
+        <div class="nl-alert-content">
+          <h2>House Bill 164 — Vote YES!</h2>
+          <p>
+            HB 164, which increases coverage amounts for pediatric hearing aids, has passed the Senate Banking &amp; Insurance Committee.
+            Contact your Senator now and ask them to vote YES on the Senate floor.
+            <br>
+            <a href="https://apps.legislature.ky.gov/record/26rs/hb164.html" target="_blank" rel="noopener">View &amp; track HB 164</a>
+            &nbsp;·&nbsp;
+            <a href="https://apps.legislature.ky.gov/findyourlegislator/findyourlegislator.html" target="_blank" rel="noopener">Find your legislator</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           NEWS & POLICY
+      ══════════════════════════════════════════ -->
+      <div class="section-label" aria-label="Section: News and Policy">
+        <span class="section-icon" aria-hidden="true">📋</span>
+        News &amp; Policy
+      </div>
+
+      <!-- ✏️ EDIT: Replace or add news cards as needed -->
+      <article class="nl-card" aria-labelledby="fcc-heading">
+        <span class="card-tag tag-federal">Federal</span>
+        <h2 id="fcc-heading">New FCC video conferencing rules</h2>
+        <p>
+          The FCC adopted new rules requiring all video conferencing platforms to support accurate captioning,
+          sign language interpreter display, and compatibility with assistive technology — ensuring virtual meetings
+          are accessible for everyone, including people who are deaf or hard of hearing.
+        </p>
+        <a class="card-link" href="https://homeof.deafingov.org/fccvideoconfrules/" target="_blank" rel="noopener" aria-label="Read breakdown of new FCC rules on Deaf In Government's website">Read the full breakdown</a>
+      </article>
+
+
+      <!-- ══════════════════════════════════════════
+           UPCOMING EVENTS
+      ══════════════════════════════════════════ -->
+      <div class="section-label" aria-label="Section: Upcoming Events">
+        <span class="section-icon" aria-hidden="true">📅</span>
+        Upcoming Events
+      </div>
+
+      <!-- ✏️ EDIT: Update event list items each month -->
+      <article class="nl-card" aria-label="Upcoming events list">
+        <ul class="event-list" aria-label="Events by date">
+
+          <li class="event-item">
+            <div class="event-date" aria-label="April 11">
+              <span class="month">APR</span>
+              <span class="day">11</span>
+            </div>
+            <div class="event-info">
+              <strong>OINK Deaf Artisan Market</strong>
+              <span>Cincinnati, Ohio</span>
+              <button class="flyer-btn" data-flyer="flyers/OINKDeafArtisanMarket.jpg" data-title="OINK Deaf Artisan Market — Apr 11" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="April 13">
+              <span class="month">APR</span>
+              <span class="day">13</span>
+            </div>
+            <div class="event-info">
+              <strong>Dinner Table Project — Bowling Green, KY</strong>
+              <span>RSVP by March 27 &nbsp;·&nbsp; <a href="mailto:CCABRERA@lifeskills.com">CCABRERA@lifeskills.com</a></span>
+              <button class="flyer-btn" data-flyer="flyers/dinner-table-bowling-green.jpg" data-title="Dinner Table Project — Bowling Green, KY — Apr 13" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="April 14">
+              <span class="month">APR</span>
+              <span class="day">14</span>
+            </div>
+            <div class="event-info">
+              <strong>Dinner Table Project — Hopkinsville, KY</strong>
+              <span>RSVP by March 27 &nbsp;·&nbsp; <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__q2y-aJUNENPMDhISlcyTTBSUTlZTENLOVRLOElWVS4u&route=shorturl" target="_blank" rel="noopener">Register online</a></span>
+              <button class="flyer-btn" data-flyer="flyers/dinner-table-hopkinsville.jpg" data-title="Dinner Table Project — Hopkinsville, KY — Apr 14" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="April 14 through 16">
+              <span class="month">APR</span>
+              <span class="day" style="font-size:14px;">14–16</span>
+            </div>
+            <div class="event-info">
+              <strong>Language First Conference</strong>
+              <span>Knoxville, TN &nbsp;·&nbsp; Crowne Plaza Downtown</span>
+              <a class="flyer-btn" href="https://language1st.org/webinars/p/2026-conference" target="_blank" rel="noopener" aria-label="Visit Language First Conference website (opens in new tab)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Website</a>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="April 17">
+              <span class="month">APR</span>
+              <span class="day">17</span>
+            </div>
+            <div class="event-info">
+              <strong>Registration deadline — Peer Support &amp; Recovery Coaching</strong>
+              <span>Sessions: April 23–24 &nbsp;·&nbsp; Free &nbsp;·&nbsp; <a href="mailto:Michelle.Niehaus@ky.gov">Email to register</a></span>
+              <a class="flyer-btn" href="https://youtu.be/Isct9cFJ9-4?si=T-cooaRo7WQNfcPJ" target="_blank" rel="noopener" aria-label="Watch Peer Support &amp; Recovery Coaching video on YouTube (opens in new tab)"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Watch Video</a>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="May 16">
+              <span class="month">MAY</span>
+              <span class="day">16</span>
+            </div>
+            <div class="event-info">
+              <strong>Kentucky Hands &amp; Voices SuperHEARo 5K</strong>
+              <span>White Hall State Historic Site &nbsp;·&nbsp; 9:00 AM &nbsp;·&nbsp; <a href="https://kyhandsandvoices.org/superhearo-5k/" target="_blank" rel="noopener">Register</a></span>
+              <a class="flyer-btn" href="https://kyhandsandvoices.org/superhearo-5k/" target="_blank" rel="noopener" aria-label="Visit SuperHEARo 5K website (opens in new tab)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Website</a>
+            </div>
+          </li>
+
+          <li class="event-item">
+            <div class="event-date" aria-label="Recurring — Thursdays">
+              <span class="month">THU</span>
+              <span class="day" style="font-size:12px;">Weekly</span>
+            </div>
+            <div class="event-info">
+              <strong>Berrytown Deaf Socials — Louisville</strong>
+              <span>Thursdays, 5:30–7:30 PM &nbsp;·&nbsp; Berrytown Recreation Center</span>
+              <button class="flyer-btn" data-flyer="flyers/berrytown-deaf-social.jpg" data-title="Berrytown Deaf Socials — Louisville" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+            </div>
+          </li>
+
+        </ul>
+      </article>
+
+      <!-- ══════════════════════════════════════════
+           RESOURCES & OPPORTUNITIES
+      ══════════════════════════════════════════ -->
+      <div class="section-label" aria-label="Section: Resources and Opportunities">
+        <span class="section-icon" aria-hidden="true">🔗</span>
+        Resources &amp; Opportunities
+      </div>
+
+      <!-- ✏️ EDIT: Swap card content as relevant stories change -->
+      <div class="card-grid">
+
+        <article class="nl-card" aria-labelledby="msn-heading">
+          <span class="card-tag tag-resource">Program</span>
+          <h2 id="msn-heading">Moore Safe Nights — Still Accepting Applications</h2>
+          <p>Free weather radios for deaf and hard of hearing Kentuckians. Partnership with Kentucky Emergency Management.</p>
+          <a class="card-link" href="https://www.kcdhh.ky.gov/msn/" target="_blank" rel="noopener" aria-label="Apply for a free Moore Safe Nights weather radio">Apply now</a>
+        </article>
+
+        <article class="nl-card" aria-labelledby="hlaa-heading">
+          <span class="card-tag tag-event">Convention</span>
+          <h2 id="hlaa-heading">HLAA Convention 2026 — Coming to Louisville!</h2>
+          <p>Scholarships worth ~$1,200 available for first-time attendees. Especially encouraged: adults 18–30 and parents of children with hearing loss.</p>
+          <a class="card-link" href="https://www.hearingloss.org/get-involved/hlaa-convention/" target="_blank" rel="noopener" aria-label="Learn more about HLAA Convention 2026 in Louisville">Learn more</a>
+        </article>
+
+      </div>
+
+      <article class="nl-card" aria-labelledby="camps-heading">
+        <span class="card-tag tag-camp">Summer</span>
+        <h2 id="camps-heading">Summer Camps for Deaf and Hard of Hearing Children</h2>
+        <p>
+          Explore day programs, overnight camps, and CODA-inclusive programs. Two curated lists available:
+        </p>
+        <p style="margin-top:8px;">
+          <a href="https://clerccenter.gallaudet.edu/earlyintervention/beyondclassroomwalls/deafcamps/" target="_blank" rel="noopener" aria-label="View Gallaudet CLERC Center's list of summer camps">Gallaudet CLERC Center's Camp List</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.aslup.org/summer-camps" target="_blank" rel="noopener" aria-label="View ASLup's list of summer camps">ASLup's Camp List</a>
+        </p>
+      </article>
+
+      <article class="nl-card" aria-labelledby="peersupport-heading">
+        <span class="card-tag tag-community">Community</span>
+        <h2 id="peersupport-heading">Peer Support Specialist &amp; Recovery Coach Sessions</h2>
+        <p>
+          DBHDID's Deaf and Hard of Hearing Services program is partnering with Karran Larson to introduce
+          Deaf signing individuals to peer support and recovery coaching. Sessions are free. Register by April 17.
+        </p>
+        <p style="margin-top:8px;font-size:13px;color:var(--text-muted);">
+          Email <a href="mailto:Michelle.Niehaus@ky.gov">Michelle.Niehaus@ky.gov</a> or <a href="mailto:aadkins@ky.gov">aadkins@ky.gov</a>
+          &nbsp;·&nbsp; VP: (502) 385-0460
+        </p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=Isct9cFJ9-4" target="_blank" rel="noopener" aria-label="Watch ASL and captioned video about peer support sessions on YouTube">Watch ASL/captioned video</a>
+      </article>
+
+      <!-- ══════════════════════════════════════════
+           KCDHH RESOURCES
+      ══════════════════════════════════════════ -->
+      <div class="section-label" aria-label="Section: KCDHH Resources">
+        <span class="section-icon" aria-hidden="true">🏛</span>
+        KCDHH Resources
+      </div>
+
+      <!-- ✏️ EDIT: Links here are relatively stable and rarely need monthly updates -->
+      <nav class="nl-resources" aria-label="KCDHH resource links">
+        <h2>Quick links</h2>
+        <div class="resource-links">
+          <a class="resource-link-item" href="https://www.kcdhh.ky.gov/" target="_blank" rel="noopener" aria-label="Visit the KCDHH website">
+            <span class="resource-dot" aria-hidden="true"></span>
+            KCDHH Website
+          </a>
+          <a class="resource-link-item" href="https://www.kcdhh.ky.gov/oea/howapply.html" target="_blank" rel="noopener" aria-label="Learn about KCDHH Telecommunications Access Program">
+            <span class="resource-dot" aria-hidden="true"></span>
+            Telecommunications Access Program (TAP) — Equipment for KY residents
+          </a>
+          <a class="resource-link-item" href="https://www.kcdhh.ky.gov/bulletin/events.html" target="_blank" rel="noopener" aria-label="View the KCDHH calendar of events">
+            <span class="resource-dot" aria-hidden="true"></span>
+            Full Calendar of Events
+          </a>
+          <a class="resource-link-item" href="https://www.kcdhh.ky.gov/oas/commissioners.html" target="_blank" rel="noopener" aria-label="Meet the KCDHH Commissioners">
+            <span class="resource-dot" aria-hidden="true"></span>
+            KCDHH Commissioners
+          </a>
+          <a class="resource-link-item" href="https://www.kcdhh.ky.gov/oas/staff.html" target="_blank" rel="noopener" aria-label="Meet the KCDHH Staff">
+            <span class="resource-dot" aria-hidden="true"></span>
+            KCDHH Staff
+          </a>
+        </div>
+      </nav>
+
+      <!-- Calendar event submission CTA -->
+      <div class="nl-cta" role="complementary" aria-label="Submit a calendar event">
+        <p>Have an event for the Deaf and Hard of Hearing community? Submit it to our calendar.</p>
+        <a href="mailto:kcdhh@ky.gov?subject=Calendar%20Event" aria-label="Email KCDHH to submit a calendar event">Submit an event</a>
+      </div>
+
+    </main><!-- /main -->
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="nl-footer" role="contentinfo">
+      <strong>Kentucky Commission on the Deaf and Hard of Hearing</strong>
+      632 Versailles Road, Frankfort, KY 40601
+      <br>
+      Voice: <a href="tel:5025732604">502-573-2604</a>
+      &nbsp;·&nbsp; Videophone: <a href="tel:5024160607">502-416-0607</a>
+      &nbsp;·&nbsp; Toll Free: <a href="tel:8003722907">800-372-2907</a>
+      <br>
+      <a href="https://www.kcdhh.ky.gov" target="_blank" rel="noopener">kcdhh.ky.gov</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:kcdhh@ky.gov">kcdhh@ky.gov</a>
+
+      <hr class="nl-footer-divider" />
+
+      <div class="nl-footer-social" role="navigation" aria-label="KCDHH social media">
+        <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener" aria-label="Find KCDHH on Facebook">Facebook</a>
+        <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow KCDHH on Instagram">Instagram</a>
+      </div>
+    </footer>
+
+  </div><!-- /#page -->
+
+  <!-- Prevent simultaneous video playback -->
+  <script>
+    var videos = document.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      videos[i].addEventListener('play', function(){ pauseAll(this); }, true);
+    }
+    function pauseAll(elem) {
+      for (var i = 0; i < videos.length; i++) {
+        if (videos[i] === elem) continue;
+        if (videos[i].played.length > 0 && !videos[i].paused) videos[i].pause();
+      }
+    }
+  </script>
+
+  <!-- ============================================================
+       FLYER MODAL
+  ============================================================ -->
+  <div id="flyer-modal" role="dialog" aria-modal="true" aria-labelledby="flyer-modal-title" aria-hidden="true">
+    <div id="flyer-modal-dialog">
+      <button id="flyer-modal-close" aria-label="Close flyer">&times;</button>
+      <h2 id="flyer-modal-title"></h2>
+      <img id="flyer-modal-img" src="" alt="" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal     = document.getElementById('flyer-modal');
+      var dialog    = document.getElementById('flyer-modal-dialog');
+      var closeBtn  = document.getElementById('flyer-modal-close');
+      var titleEl   = document.getElementById('flyer-modal-title');
+      var imgEl     = document.getElementById('flyer-modal-img');
+      var lastFocus = null;
+
+      function openModal(btn) {
+        lastFocus = btn;
+        titleEl.textContent = btn.getAttribute('data-title') || 'Event Flyer';
+        imgEl.src = btn.getAttribute('data-flyer');
+        imgEl.alt = titleEl.textContent;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+        document.addEventListener('keydown', onKeyDown);
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        imgEl.src = '';
+        document.removeEventListener('keydown', onKeyDown);
+        if (lastFocus) lastFocus.focus();
+      }
+
+      function onKeyDown(e) {
+        if (e.key === 'Escape') { closeModal(); return; }
+        // Focus trap
+        if (e.key === 'Tab') {
+          var focusable = dialog.querySelectorAll('button, [href], img[tabindex]');
+          var first = focusable[0];
+          var last  = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault(); last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); first.focus();
+          }
+        }
+      }
+
+      // Open on any flyer button click
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('.flyer-btn');
+        if (btn) openModal(btn);
+      });
+
+      // Close on X button or backdrop click
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+    })();
+  </script>
+
+  <noscript>
+    <p>Please enable JavaScript for accessibility features via <a href="https://userway.org">UserWay</a>.</p>
+  </noscript>
+
+</body>
+</html>
