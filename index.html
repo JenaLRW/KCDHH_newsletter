@@ -412,7 +412,7 @@
 
     .event-date .month {
       display: block;
-      font-size: 9px;
+      font-size: 16px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #7ab8e8;
@@ -421,14 +421,14 @@
 
     .event-date .day {
       display: block;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.1;
     }
 
     .event-info strong {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--text-main);
       line-height: 1.3;
@@ -436,7 +436,7 @@
     }
 
     .event-info span {
-      font-size: 12.5px;
+      font-size: 16px;
       color: var(--text-muted);
     }
 
@@ -454,7 +454,9 @@
       gap: 5px;
       margin-top: 6px;
       padding: 3px 9px;
-      font-size: 11px;
+      line-height: 1.5;
+      font-family: inherit;
+      font-size: 16px;
       font-weight: 600;
       color: var(--teal-dark);
       background: transparent;
@@ -462,6 +464,8 @@
       border-radius: var(--radius-sm);
       cursor: pointer;
       text-decoration: none;
+      -webkit-appearance: none;
+      appearance: none;
     }
     .flyer-btn:hover { background: var(--teal-dark); color: #fff; }
     .flyer-btn:focus-visible { outline: 2px solid var(--teal-dark); outline-offset: 2px; }
@@ -798,11 +802,20 @@
             </div>
             <div class="event-info">
               <strong>Registration deadline — Peer Support &amp; Recovery Coaching</strong>
-              <span>Sessions: April 23–24 &nbsp;·&nbsp; Free &nbsp;·&nbsp; <a href="mailto:Michelle.Niehaus@ky.gov">Email to register</a></span>
+              <span>Sessions: April 23–24 &nbsp;·&nbsp; Free &nbsp;·&nbsp; <a href="mailto:Michelle.Niehaus@ky.gov">Email to register</a></span>&nbsp;&nbsp;
               <a class="flyer-btn" href="https://youtu.be/Isct9cFJ9-4?si=T-cooaRo7WQNfcPJ" target="_blank" rel="noopener" aria-label="Watch Peer Support &amp; Recovery Coaching video on YouTube (opens in new tab)"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Watch Video</a>
             </div>
           </li>
-
+<li class="event-item">
+            <div class="event-date" aria-label="April 28">
+              <span class="month">APR</span>
+              <span class="day">28</span>
+            </div>
+            <div class="event-info">
+              <strong>Support, Resources, and Grief After Loss</strong>
+              <span>6:00pm - 8:30PM EST &nbsp;·&nbsp; Free &nbsp;·&nbsp; <a href="https://tinyurl.com/KY42826/" target="_blank" rel="noopener">Join the meeting</a></span> &nbsp;&nbsp;<button class="flyer-btn" data-flyer="flyers/DeafLEAD.jpg" data-title="DeafLEAD" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+            </div>
+          </li>
           <li class="event-item">
             <div class="event-date" aria-label="May 16">
               <span class="month">MAY</span>
@@ -810,7 +823,7 @@
             </div>
             <div class="event-info">
               <strong>Kentucky Hands &amp; Voices SuperHEARo 5K</strong>
-              <span>White Hall State Historic Site &nbsp;·&nbsp; 9:00 AM &nbsp;·&nbsp; <a href="https://kyhandsandvoices.org/superhearo-5k/" target="_blank" rel="noopener">Register</a></span>
+              <span>White Hall State Historic Site &nbsp;·&nbsp; 9:00 AM &nbsp;·&nbsp; <a href="https://kyhandsandvoices.org/superhearo-5k/" target="_blank" rel="noopener">Register</a></span>&nbsp;&nbsp;
               <a class="flyer-btn" href="https://kyhandsandvoices.org/superhearo-5k/" target="_blank" rel="noopener" aria-label="Visit SuperHEARo 5K website (opens in new tab)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Website</a>
             </div>
           </li>
@@ -818,11 +831,11 @@
           <li class="event-item">
             <div class="event-date" aria-label="Recurring — Thursdays">
               <span class="month">THU</span>
-              <span class="day" style="font-size:12px;">Weekly</span>
+              <span class="day" style="font-size:20px;">Weekly</span>
             </div>
             <div class="event-info">
               <strong>Berrytown Deaf Socials — Louisville</strong>
-              <span>Thursdays, 5:30–7:30 PM &nbsp;·&nbsp; Berrytown Recreation Center</span>
+              <span>Thursdays, 5:30–7:30 PM &nbsp;·&nbsp; Berrytown Recreation Center</span>&nbsp;&nbsp;
               <button class="flyer-btn" data-flyer="flyers/berrytown-deaf-social.jpg" data-title="Berrytown Deaf Socials — Louisville" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
             </div>
           </li>
