@@ -94,7 +94,7 @@
        PAGE WRAPPER
     ============================================================ */
     #page {
-      max-width: 680px;
+      max-width: 900px;
       margin: 24px auto;
       background: var(--surface);
       border-radius: var(--radius-lg);
@@ -132,7 +132,7 @@
     }
 
     .nl-agency-line {
-      font-size: 10px;
+      font-size: 18px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #7ab8e8;
@@ -151,7 +151,7 @@
     }
 
     .nl-masthead-accent {
-      color: var(--teal);
+      color: #12CA99;
     }
 
     .nl-tagline {
@@ -235,7 +235,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 10px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
@@ -481,7 +481,7 @@
     #flyer-modal-dialog {
       background: #fff;
       border-radius: var(--radius);
-      max-width: 680px;
+      max-width: 900px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
@@ -606,6 +606,8 @@
     }
 
     .nl-footer a:hover { text-decoration: underline; }
+
+    .nl-footer .nl-social-links a { color: #fff; }
 
     .nl-footer-social {
       display: flex;
@@ -738,17 +740,18 @@
            ACTION ALERT — Edit or remove as needed
       ══════════════════════════════════════════ -->
       <!-- ✏️ EDIT: Update or remove this section when there is no active action item -->
-      <div class="nl-alert" role="alert" aria-live="polite" aria-label="Action needed">
-        <div class="nl-alert-badge" aria-hidden="true">Action needed</div>
+      <div class="nl-alert" role="alert" aria-live="polite" aria-label="Attention needed">
+        <div class="nl-alert-badge" aria-hidden="true">Attention</div>
         <div class="nl-alert-content">
-          <h2>House Bill 164 — Vote YES!</h2>
+          <h2>Kentucky Tonight on KET</h2>
           <p>
-            HB 164, which increases coverage amounts for pediatric hearing aids, has passed the Senate Banking &amp; Insurance Committee.
-            Contact your Senator now and ask them to vote YES on the Senate floor.
+            Kentucky Tonight will be aired on KET Monday nights.
             <br>
-            <a href="https://apps.legislature.ky.gov/record/26rs/hb164.html" target="_blank" rel="noopener">View &amp; track HB 164</a>
+            KET’s Kentucky Tonight, hosted by Renee Shaw, brings together an expert panel for in-depth analysis of major issues facing the Commonwealth. This weekly program features comprehensive discussions with lawmakers, stakeholders and policy leaders that are moderated by award-winning journalist Renee Shaw.
+            <br>
+            <a href="https://ket.org/program/kentucky-tonight/#scheduled" target="_blank" rel="noopener">TV Schedules</a>
             &nbsp;·&nbsp;
-            <a href="https://apps.legislature.ky.gov/findyourlegislator/findyourlegislator.html" target="_blank" rel="noopener">Find your legislator</a>
+            <a href="https://apps.legislature.ky.gov/findyourlegislator/findyourlegislator.html" target="_blank" rel="noopener">KET Kentucky Tonight</a>
           </p>
         </div>
       </div>
@@ -987,10 +990,13 @@
 
       <hr class="nl-footer-divider" />
 
-      <div class="nl-footer-social" role="navigation" aria-label="KCDHH social media">
-        <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener" aria-label="Find KCDHH on Facebook">Facebook</a>
-        <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow KCDHH on Instagram">Instagram</a>
+       
+      
+      <div class="nl-social-links">
+        <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener" aria-label="Find us on Facebook (opens in new tab)"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow us on Instagram (opens in new tab)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
       </div>
+    </nav>
     </footer>
 
   </div><!-- /#page -->
