@@ -183,7 +183,17 @@
       text-decoration: none;
       font-weight: 600;
     }
-
+    .heading1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap; 
+      border: 0;
+    }
     /* ============================================================
        UTILITY BAR
     ============================================================ */
@@ -1016,7 +1026,7 @@
   <div id="flyer-modal" role="dialog" aria-modal="true" aria-labelledby="flyer-modal-title" aria-hidden="true">
     <div id="flyer-modal-dialog">
       <button id="flyer-modal-close" aria-label="Close flyer">&times;</button>
-      <h2 id="flyer-modal-title"></h2>
+      <h2 id="flyer-modal-title">&nbsp;</h2>
       <img id="flyer-modal-img" src="" alt="" />
     </div>
   </div>
