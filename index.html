@@ -32,14 +32,14 @@
       --elcblue:     #004e8a;
       --teamkynavy:  #003764;
       --teamkylightblue: #5eb3e4;
-      --navy:        #0b2545;
-      --navy-mid:    #163a6b;
-      --teal-light:  #A4F9E2;
-      --teal-dark:   #0a7a5c;
+      --navy1:       #172b3b;
+      --navy2:       #00233d;
+      --navy3:       #003357;
+      --lightblue1:  #81baea;
       --amber:       #e08c14;
       --amber-light: #fef4e0;
-      --red-light:   #fdedef;
-      --red:         #c0283a;
+      --lightblue2:  #52b4ff;
+      --lightblue3:  #85caff;
       --bg:          #f5f3ef;
       --surface:     #ffffff;
       --border:      #e2ddd5;
@@ -241,7 +241,7 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--teal-dark);
+      color: var(--navy1);
       margin: 28px 0 12px;
     }
 
@@ -258,7 +258,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--teal-light);
+      background: var(--lightblue1);
       border-radius: 50%;
       font-size: 20px;
     }
@@ -306,7 +306,7 @@
     }
 
     .nl-alert-content a {
-      color: var(--navy);
+      color: var(--navy2);
       font-weight: 600;
     }
 
@@ -325,7 +325,7 @@
       font-size: 20px;
       font-family: 'Source Sans 3', sans-serif;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--navy1);
       margin-bottom: 6px;
     }
 
@@ -347,12 +347,12 @@
       margin-bottom: 9px;
     }
 
-    .tag-federal  { background: #e8eef8; color: #1a3b7a; }
+    .tag-federal  { background: #e8eef8; color: var(--navy1); }
     .tag-event    { background: #fdeef0; color: var(--red); }
-    .tag-resource { background: var(--teal-light); color: var(--teal-dark); }
+    .tag-resource { background: var(--lightblue1); color: var(--navy2); }
     .tag-urgent   { background: var(--amber); color: #fff; }
-    .tag-community{ background: #f0edf8; color: #4a2a8c; }
-    .tag-camp     { background: #eaf5e2; color: #2e6e18; }
+    .tag-community{ background: #f0edf8; color: var(--navy3); }
+    .tag-camp     { background: #eaf5e2; color: var(--navy2); }
 
     /* Read more link */
     .card-link {
@@ -361,13 +361,13 @@
       gap: 4px;
       font-size: 16px;
       font-weight: 600;
-      color: var(--teal-dark);
+      color: var(--navy1);
       text-decoration: none;
       margin-top: 10px;
     }
 
     .card-link::after { content: ' →'; }
-    .card-link:hover { color: var(--navy); }
+    .card-link:hover { color: var(--navy2); }
 
     /* Two-column card grid */
     .card-grid {
@@ -400,7 +400,7 @@
     .event-item:first-child { padding-top: 0; }
 
     .event-date {
-      background: var(--navy);
+      background: var(--navy1);
       color: #fff;
       border-radius: var(--radius-sm);
       padding: 5px 8px;
@@ -513,7 +513,7 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      background: var(--navy);
+      background: var(--navy1);
       color: #fff;
       border: none;
       border-radius: 50%;
@@ -532,7 +532,7 @@
        RESOURCES BAR
     ============================================================ */
     .nl-resources {
-      background: var(--navy);
+      background: var(--navy1);
       border-radius: var(--radius-md);
       padding: 18px 22px;
       margin-bottom: 12px;
@@ -572,7 +572,7 @@
     }
 
     .resource-link-item:focus {
-      outline: 2px solid var(--teal);
+      outline: 2px solid var(--elcblue);
       outline-offset: 2px;
     }
 
@@ -580,7 +580,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--teal);
+      background: var(--elcblue);
       flex-shrink: 0;
     }
 
@@ -588,7 +588,7 @@
        FOOTER
     ============================================================ */
     .nl-footer {
-      background: var(--navy);
+      background: var(--navy1);
       color: rgba(255,255,255,0.65);
       padding: 28px 36px;
       text-align: center;
@@ -647,7 +647,7 @@
        CALENDAR CTA
     ============================================================ */
     .nl-cta {
-      background: var(--teal-light);
+      background: var(--lightblue1);
       border: 1px solid #9adcc8;
       border-radius: var(--radius-md);
       padding: 16px 22px;
@@ -660,13 +660,13 @@
 
     .nl-cta p {
       font-size: 16px;
-      color: var(--teal-dark);
+      color: var(--navy3);
       font-weight: 500;
       margin: 0;
     }
 
     .nl-cta a {
-      background: var(--navy);
+      background: var(--navy1);
       color: #fff;
       font-size: 16px;
       font-weight: 700;
@@ -677,7 +677,7 @@
       flex-shrink: 0;
     }
 
-    .nl-cta a:hover { background: var(--navy-mid); }
+    .nl-cta a:hover { background: var(--teamkynavy); }
 
     /* ============================================================
        RESPONSIVE — Mobile
@@ -815,10 +815,10 @@
             <div class="event-info">
               <strong>Open House — Language First</strong>
               <span>12-3pm &nbsp;·&nbsp; Louisville, KY</span>&nbsp;&nbsp;
-              <button class="flyer-btn" data-flyer="flyers/berrytown-deaf-social.jpg" data-title="Berrytown Deaf Socials — Louisville" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
+              <button class="flyer-btn" data-flyer="flyers/openhouseLF.jpg" data-title="Open House — Language First" aria-haspopup="dialog"><i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer</button>
             </div>
           </li>
-<!-- APRIL 28 GRIEF SUPPORT -->
+          <!-- APRIL 28 GRIEF SUPPORT -->
           <li class="event-item">
             <div class="event-date" aria-label="April 28">
               <span class="month">APR</span>
