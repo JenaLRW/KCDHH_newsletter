@@ -28,13 +28,9 @@
   </script>
   <!-- Google Translate Element -->
   <script type="text/javascript">
-
     function googleTranslateElementInit() {
-
       new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-
     }
-
   </script>
 
   <script type="text/javascript"
@@ -52,6 +48,7 @@
       --navy1: #172b3b;
       --navy2: #00233d;
       --navy3: #003357;
+      --lightgray: #dbdbdb;
       --lightblue1: #81baea;
       --amber: #e08c14;
       --amber-light: #fef4e0;
@@ -109,7 +106,7 @@
       font-family: 'Lora', Georgia, serif;
       line-height: 1.2;
     }
-    img {
+    img.base {
       max-width: 100%;
       height: auto;
       display: block;
@@ -253,7 +250,7 @@
        UTILITY BAR
     ============================================================ */
     .nl-utility-bar {
-      background: #ffffff;
+      background: var(--lightgray);
       border-bottom: 1px solid var(--border);
       padding: 9px 36px;
       display: flex;
@@ -270,12 +267,6 @@
 
     #google_translate_element {
       display: inline-flex;
-    }
-
-    #google_translate_element img {
-      display: inline;
-      max-width: none;
-      height: auto;
     }
 
     #google_translate_element .goog-te-gadget {
@@ -299,36 +290,6 @@
 
     }
 
-    .google-logo span:nth-child(1) {
-      color: #4285F4;
-      font-weight: 700;
-    }
-
-    .google-logo span:nth-child(2) {
-      color: #EA4335;
-      font-weight: 700;
-    }
-
-    .google-logo span:nth-child(3) {
-      color: #FBBC05;
-      font-weight: 700;
-    }
-
-    .google-logo span:nth-child(4) {
-      color: #4285F4;
-      font-weight: 700;
-    }
-
-    .google-logo span:nth-child(5) {
-      color: #34A853;
-      font-weight: 700;
-    }
-
-    .google-logo span:nth-child(6) {
-      color: #EA4335;
-      font-weight: 700;
-    }
-
     .nl-utility-label {
       font-size: 16px;
       color: var(--text-muted);
@@ -344,8 +305,7 @@
     }
 
     .nl-social-links a {
-      background: var(--navy);
-      color: #fff;
+      color: var(--elcblue);
       font-size: 16px;
       width: 30px;
       height: 30px;
@@ -939,7 +899,7 @@
          HEADER
     ============================================================ -->
     <header class="nl-header" role="banner">
-      <img class="nl-header-logo" src="flyers/KCDHH-Inverted-white-hands-transparent-bg-cropped.png" alt="KCDHH logo" />
+      <img class="nl-header-logo base" src="flyers/KCDHH-Inverted-white-hands-transparent-bg-cropped.png" alt="KCDHH logo" />
       <h1 class="nl-agency-line">KENTUCKY COMMISSION ON THE DEAF AND HARD OF HEARING</h1>
       <div class="nl-masthead">
         <img src="flyers/Communicator-spaced-shadow-allcaps.png" alt="KCDHH Communicator" />
@@ -956,12 +916,7 @@
          UTILITY BAR
     ============================================================ -->
     <nav class="nl-utility-bar" aria-label="Social links">
-      <div style="height:50px;">
-        <a aria-hidden="true" id="content" class="hidden"></a>
-        <div id="myGT" aria-hidden="true">
-          <div id="google_translate_element"></div>
-        </div>
-
+        <div id="google_translate_element"></div>
         <div class="nl-social-links">
           <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener"
             aria-label="Find us on Facebook (opens in new tab)"><i class="fa-brands fa-facebook-f"
