@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="pragma" content="no-cache" />
-  <title>KCDHH Communicator — March 2026</title>
+  <title>KCDHH Communicator — April 2026</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- UserWay Accessibility Widget -->
+  <!-- UserWay Accessibility Widget, let Jim fool with this, this is his work -->
   <script>
     (function(d){
       var s = d.createElement("script");
@@ -77,6 +77,8 @@
     /* ============================================================
        SKIP TO CONTENT (Accessibility)
     ============================================================ */
+    
+   /* the skip link is placed -100px above the page to hide it from plain view. Screen readers will pick up on this.*/
     .skip-link {
       position: absolute;
       top: -100px;
@@ -116,6 +118,11 @@
       overflow: hidden;
     }
 
+    .nl-header-logo {
+      width: 450px;
+      margin: 0 auto 12px;
+    }
+
     /* decorative circles */
     .nl-header::before {
       content: '';
@@ -146,17 +153,14 @@
     }
 
     .nl-masthead {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 38px;
-      font-weight: 700;
-      color: #fff;
       position: relative;
       margin-bottom: 2px;
-      text-align: center;
     }
 
-    .nl-masthead-accent {
-      color: var(--teamkylightblue);
+    .nl-masthead img {
+      width: 765px;
+      margin: 0 auto 12px;
+      position: relative;
     }
 
     .nl-tagline {
@@ -728,10 +732,10 @@
          HEADER
     ============================================================ -->
     <header class="nl-header" role="banner">
-      <img src="flyers/KCDHH-Inverted-white-hands-transparent-bg-cropped.png" alt="KCDHH logo" style="width: 450px; margin: 0 auto 12px; position: relative;" />
-      <h1 style="font-size: 22px; font-family: 'Source Sans 3', sans-serif; text-align: center;">KENTUCKY COMMISSION ON THE DEAF AND HARD OF HEARING</h1>
+      <img class="nl-header-logo" src="flyers/KCDHH-Inverted-white-hands-transparent-bg-cropped.png" alt="KCDHH logo" />
+      <h1 class="nl-agency-line">KENTUCKY COMMISSION ON THE DEAF AND HARD OF HEARING</h1>
       <div class="nl-masthead">
-        <img src="flyers/Communicator-spaced-shadow-allcaps.png" alt="KCDHH Communicator" style="width: 765px; margin: 0 auto 12px; position: relative;" />
+        <img src="flyers/Communicator-spaced-shadow-allcaps.png" alt="KCDHH Communicator" />
       </div>
       <div class="nl-tagline">~ CONNECTING YOU TO CURRENT NEWS ~</div>
       <div class="nl-header-meta">
