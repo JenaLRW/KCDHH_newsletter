@@ -212,7 +212,7 @@
        UTILITY BAR
     ============================================================ */
     .nl-utility-bar {
-      background: var(--navy1);
+      background: #ffffff;
       border-bottom: 1px solid var(--border);
       padding: 9px 36px;
       display: flex;
@@ -227,9 +227,19 @@
       gap: 10px;
     }
 
+    #google_translate_element {
+      display: inline-flex;
+    }
+
+    #google_translate_element .goog-te-gadget {
+      font-size: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+
     #google_translate_element select {
       font-family: inherit;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--navy1);
       background: #fff;
       border: none;
@@ -238,9 +248,18 @@
       cursor: pointer;
     }
 
-    #google_translate_element .goog-te-gadget {
-      font-size: 0;
+    .translate-powered {
+      font-size: 13px;
+      color: #fff;
+      white-space: nowrap;
     }
+
+    .google-logo span:nth-child(1) { color: #4285F4; font-weight: 700; }
+    .google-logo span:nth-child(2) { color: #EA4335; font-weight: 700; }
+    .google-logo span:nth-child(3) { color: #FBBC05; font-weight: 700; }
+    .google-logo span:nth-child(4) { color: #4285F4; font-weight: 700; }
+    .google-logo span:nth-child(5) { color: #34A853; font-weight: 700; }
+    .google-logo span:nth-child(6) { color: #EA4335; font-weight: 700; }
 
     .nl-utility-label {
       font-size: 16px;
@@ -789,6 +808,7 @@
         <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow us on Instagram (opens in new tab)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
       </div>
     </nav>
+
 
     <!-- ============================================================
          MAIN CONTENT
