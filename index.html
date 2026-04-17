@@ -23,20 +23,17 @@
       (d.body || d.head).appendChild(s);
     })(document)
   </script>
+  <!-- Google Translate Element -->
   <script type="text/javascript">
-
-function googleTranslateElementInit() {
-
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-
-}
-
-</script>
-
- 
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+      setTimeout(function () {
+        var sel = document.querySelector('#google_translate_element select');
+        if (sel && sel.options[0]) sel.options[0].text = 'Select Language';
+      }, 800);
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <style>
     /* ============================================================
        CSS VARIABLES — Edit brand colors here
@@ -222,6 +219,27 @@ function googleTranslateElementInit() {
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
+    }
+
+    .translate-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #google_translate_element select {
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--navy1);
+      background: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    #google_translate_element .goog-te-gadget {
+      font-size: 0;
     }
 
     .nl-utility-label {
@@ -761,13 +779,11 @@ function googleTranslateElementInit() {
     <!-- ============================================================
          UTILITY BAR
     ============================================================ -->
-    <div aria-hidden="true" style="width:200px;">
-
-      <div style="width:200px;margin-left:10px;width:180px;float:left;" id="google_translate_element"></div>
-
-    </div>
     <nav class="nl-utility-bar" aria-label="Social links">
-      
+      <div class="translate-bar">
+        <div id="google_translate_element"></div>
+      </div>
+
       <div class="nl-social-links">
         <a href="http://www.facebook.com/kcdhh" target="_blank" rel="noopener" aria-label="Find us on Facebook (opens in new tab)"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
         <a href="https://www.instagram.com/kycommdeafhoh/" target="_blank" rel="noopener" aria-label="Follow us on Instagram (opens in new tab)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
