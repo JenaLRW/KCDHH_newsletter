@@ -161,6 +161,7 @@
 
     .nl-header-logo {
       width: 450px;
+      max-width: 100%;
       margin: 0 auto 12px;
     }
 
@@ -1317,6 +1318,36 @@
   <noscript>
     <p>Please enable JavaScript for accessibility features via <a href="https://userway.org">UserWay</a>.</p>
   </noscript>
+
+  <script>
+    function fitAgencyLineToLogo() {
+      var img  = document.querySelector('.nl-header-logo');
+      var text = document.querySelector('.nl-agency-line');
+      if (!img || !text) return;
+      var targetWidth = img.offsetWidth;
+
+      // Temporarily make inline so offsetWidth = text width, not container width
+      text.style.display    = 'inline-block';
+      text.style.whiteSpace = 'nowrap';
+
+      var fontSize = 8;
+      text.style.fontSize = fontSize + 'px';
+      while (text.offsetWidth < targetWidth && fontSize < 300) {
+        fontSize += 0.5;
+        text.style.fontSize = fontSize + 'px';
+      }
+      while (text.offsetWidth > targetWidth && fontSize > 1) {
+        fontSize -= 0.1;
+        text.style.fontSize = fontSize + 'px';
+      }
+
+      // Restore block layout
+      text.style.display    = 'block';
+      text.style.whiteSpace = '';
+    }
+    window.addEventListener('load', fitAgencyLineToLogo);
+    window.addEventListener('resize', fitAgencyLineToLogo);
+  </script>
 
 </body>
 
