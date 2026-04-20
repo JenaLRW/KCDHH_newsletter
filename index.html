@@ -422,6 +422,28 @@
       margin-bottom: 12px;
     }
 
+    .nl-card--has-image {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .nl-card--has-image .nl-card-content {
+      flex: 2;
+      padding: 18px 22px;
+    }
+
+    .nl-card--has-image .nl-card-image {
+      flex: 0 0 40%;
+      width: 40%;
+      object-fit: contain;
+      display: block;
+      background: var(--lightgray);
+      padding: 12px;
+    }
+
     .nl-card h2 {
       font-size: 20px;
       font-family: 'Source Sans 3', sans-serif;
@@ -1203,13 +1225,16 @@
       <!-- ✏️ EDIT: Swap card content as relevant stories change -->
       <div class="card-grid">
 
-        <article class="nl-card" aria-labelledby="msn-heading">
-          <span class="card-tag tag-resource">Program</span>
-          <h2 id="msn-heading">Moore Safe Nights — Still Accepting Applications</h2>
-          <p>Free weather radios for deaf and hard of hearing Kentuckians. Partnership with Kentucky Emergency
-            Management.</p>
-          <a class="card-link" href="https://www.kcdhh.ky.gov/msn/" target="_blank" rel="noopener"
-            aria-label="Apply for a free Moore Safe Nights weather radio">Apply now</a>
+        <article class="nl-card nl-card--has-image" aria-labelledby="msn-heading">
+          <div class="nl-card-content">
+            <span class="card-tag tag-resource">Program</span>
+            <h2 id="msn-heading">Moore Safe Nights — Still Accepting Applications</h2>
+            <p>Free weather radios for deaf and hard of hearing Kentuckians. Partnership with Kentucky Emergency
+              Management.</p>
+            <a class="card-link" href="https://www.kcdhh.ky.gov/msn/" target="_blank" rel="noopener"
+              aria-label="Apply for a free Moore Safe Nights weather radio">Apply now</a>
+          </div>
+          <img class="nl-card-image" src="flyers/Radio.png" alt="Moore Safe Nights weather radio" />
         </article>
 
         <article class="nl-card" aria-labelledby="hlaa-heading">
