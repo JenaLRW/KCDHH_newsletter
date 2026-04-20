@@ -822,9 +822,10 @@
       padding: 16px 22px;
       margin-bottom: 12px;
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
     .nl-cta p {
@@ -848,6 +849,88 @@
 
     .nl-cta a:hover {
       background: var(--teamkynavy);
+    }
+
+    /* ============================================================
+       POLICY MODAL
+    ============================================================ */
+    .policy-modal-trigger {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      color: var(--link);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .policy-modal-trigger:hover {
+      color: var(--teamkynavy);
+    }
+
+    .policy-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .policy-modal-overlay[hidden] {
+      display: none;
+    }
+
+    .policy-modal-box {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      max-width: 560px;
+      width: 100%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .policy-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-modal-header h2 {
+      font-size: 20px;
+      color: var(--navy1);
+    }
+
+    .policy-modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--text-light);
+      padding: 0 4px;
+    }
+
+    .policy-modal-close:hover {
+      color: var(--navy1);
+    }
+
+    .policy-modal-body {
+      padding: 20px 24px 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
     }
 
     /* ============================================================
@@ -931,7 +1014,7 @@
          HEADER
     ============================================================ -->
     <header class="nl-header" role="banner">
-      <img class="nl-header-logo base" src="flyers/KCDHH-Inverted-white-hands-transparent-bg-cropped.png" alt="KCDHH logo" />
+      <img class="nl-header-logo base" src="flyers/KCDHH-strokes-2.png" alt="KCDHH logo" />
       <h1 class="nl-agency-line">KENTUCKY COMMISSION ON THE DEAF AND HARD OF HEARING</h1>
       <div class="nl-masthead">
         <img src="flyers/Communicator-spaced-shadow-allcaps.png" alt="KCDHH Communicator" />
@@ -991,11 +1074,11 @@
       </div>
 
       <!-- ══════════════════════════════════════════
-           NEWS & POLICY
+           NEWS
       ══════════════════════════════════════════ -->
       <div class="section-label" aria-label="Section: News and Policy">
         <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
-        News &amp; Policy
+        News
       </div>
 
       <!-- ✏️ EDIT: Replace or add news cards as needed -->
@@ -1219,7 +1302,9 @@
 
       <!-- Calendar event submission CTA -->
       <div class="nl-cta" role="complementary" aria-label="Submit a calendar event">
-        <p>Have an event for the Deaf and Hard of Hearing community? Submit it to our calendar.</p>
+        <p>Have an event for the Deaf and Hard of Hearing community?</p>
+        <p>Submit it to our calendar.</p>
+        <p><button class="policy-modal-trigger" aria-haspopup="dialog">See our document submission policy</button></p>
         <a href="mailto:kcdhh@ky.gov?subject=Calendar%20Event"
           aria-label="Email KCDHH to submit a calendar event">Submit an event</a>
       </div>
@@ -1254,6 +1339,26 @@
     </footer>
 
   </div><!-- /#page -->
+
+  <!-- Document Submission Policy Modal -->
+  <div id="policy-modal" class="policy-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="policy-modal-title" hidden>
+    <div class="policy-modal-box">
+      <div class="policy-modal-header">
+        <h2 id="policy-modal-title">Document Submission Policy</h2>
+        <button class="policy-modal-close" aria-label="Close policy modal">&times;</button>
+      </div>
+      <div class="policy-modal-body">
+        <p><strong>Submission Guidelines</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Submissions must be received at least two weeks prior to the newsletter publication date.</p>
+        <p><strong>Eligible Content</strong></p>
+        <p>Events, announcements, and resources relevant to the Deaf and Hard of Hearing community in Kentucky are eligible for submission. KCDHH reserves the right to edit or decline submissions that do not meet content guidelines.</p>
+        <p><strong>Format Requirements</strong></p>
+        <p>Placeholder text: all submissions should include event name, date, time, location, contact information, and a brief description (100 words or fewer). Flyers may be submitted in PDF or PNG format.</p>
+        <p><strong>Contact</strong></p>
+        <p>Questions about submissions? Email <a href="mailto:kcdhh@ky.gov">kcdhh@ky.gov</a>.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Prevent simultaneous video playback -->
   <script>
@@ -1404,6 +1509,30 @@
     }
     window.addEventListener('load', fitHeader);
     window.addEventListener('resize', fitHeader);
+
+    // Policy modal
+    var policyModal   = document.getElementById('policy-modal');
+    var policyTrigger = document.querySelector('.policy-modal-trigger');
+    var policyClose   = document.querySelector('.policy-modal-close');
+
+    function openPolicyModal() {
+      policyModal.removeAttribute('hidden');
+      policyClose.focus();
+    }
+
+    function closePolicyModal() {
+      policyModal.setAttribute('hidden', '');
+      policyTrigger.focus();
+    }
+
+    policyTrigger.addEventListener('click', openPolicyModal);
+    policyClose.addEventListener('click', closePolicyModal);
+    policyModal.addEventListener('click', function(e) {
+      if (e.target === policyModal) closePolicyModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !policyModal.hasAttribute('hidden')) closePolicyModal();
+    });
   </script>
 
 </body>
