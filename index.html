@@ -216,9 +216,11 @@
       font-size: 22px;
       color: #ffffffec;
       position: relative;
-      margin-top: -8px;
-      margin-bottom: 18px;
+      width: 450px;
+      max-width: 100%;
+      margin: -8px auto 18px;
       text-align: center;
+      white-space: nowrap;
     }
 
     .nl-header-meta {
@@ -869,6 +871,10 @@
         display: none;
       }
 
+      .nl-tagline {
+        width: 60%;
+      }
+
       .nl-masthead {
         margin-left: -20px;
         margin-right: -20px;
@@ -1365,8 +1371,39 @@
       text.style.display    = 'block';
       text.style.whiteSpace = '';
     }
-    window.addEventListener('load', fitAgencyLineToLogo);
-    window.addEventListener('resize', fitAgencyLineToLogo);
+
+    function fitTaglineToLogo() {
+      var img     = document.querySelector('.nl-header-logo');
+      var tagline = document.querySelector('.nl-tagline');
+      if (!img || !tagline) return;
+      var targetWidth = img.offsetWidth;
+
+      tagline.style.display    = 'inline-block';
+      tagline.style.whiteSpace = 'nowrap';
+      tagline.style.width      = 'auto';
+
+      var fontSize = 8;
+      tagline.style.fontSize = fontSize + 'px';
+      while (tagline.offsetWidth < targetWidth && fontSize < 300) {
+        fontSize += 0.5;
+        tagline.style.fontSize = fontSize + 'px';
+      }
+      while (tagline.offsetWidth > targetWidth && fontSize > 1) {
+        fontSize -= 0.1;
+        tagline.style.fontSize = fontSize + 'px';
+      }
+
+      tagline.style.display    = 'block';
+      tagline.style.whiteSpace = 'nowrap';
+      tagline.style.width      = '';
+    }
+
+    function fitHeader() {
+      fitAgencyLineToLogo();
+      fitTaglineToLogo();
+    }
+    window.addEventListener('load', fitHeader);
+    window.addEventListener('resize', fitHeader);
   </script>
 
 </body>
