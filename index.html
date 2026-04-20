@@ -45,7 +45,6 @@
     :root {
       --elcblue: #004e8a;
       --teamkynavy: #003764;
-      --teamkylightblue: #5eb3e4;
       --navy1: #172b3b;
       --navy2: #00233d;
       --navy3: #003357;
@@ -53,8 +52,6 @@
       --lightblue1: #81baea;
       --alert: #85caff;
       --alert-light: #b3daf7;
-      --lightblue2: #52b4ff;
-      --lightblue3: #85caff;
       --bg: #f5f3ef;
       --surface: #ffffff;
       --border: #e2ddd5;
@@ -241,18 +238,6 @@
       font-weight: 600;
     }
 
-    .heading1 {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
     /* ============================================================
        UTILITY BAR
     ============================================================ */
@@ -264,12 +249,6 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-    }
-
-    .translate-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     #google_translate_element {
@@ -293,14 +272,6 @@
 
     }
 
-    .nl-utility-label {
-      font-size: 16px;
-      color: var(--text-muted);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-
     .nl-social-links {
       margin-left: auto;
       display: flex;
@@ -320,7 +291,7 @@
     }
 
     .nl-social-links a:hover {
-      background: var(--navy-mid);
+      background: var(--navy1);
     }
 
     /* ============================================================
@@ -661,7 +632,7 @@
     /* Dialog box */
     #flyer-modal-dialog {
       background: #fff;
-      border-radius: var(--radius);
+      border-radius: var(--radius-md);
       max-width: 900px;
       width: 100%;
       max-height: 90vh;
@@ -674,7 +645,7 @@
     #flyer-modal-title {
       font-size: 16px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--navy1);
       margin: 0 40px 12px 0;
     }
 
@@ -704,7 +675,7 @@
     }
 
     #flyer-modal-close:focus-visible {
-      outline: 2px solid var(--teal-dark);
+      outline: 2px solid var(--navy1);
       outline-offset: 2px;
     }
 
@@ -800,28 +771,6 @@
 
     .nl-footer .nl-social-links a {
       color: #fff;
-    }
-
-    .nl-footer-social {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 16px;
-    }
-
-    .nl-footer-social a {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      letter-spacing: 0.3px;
-    }
-
-    .nl-footer-social a:hover {
-      background: rgba(255, 255, 255, 0.18);
     }
 
     .nl-footer-divider {
@@ -1102,14 +1051,12 @@
       <!-- ✏️ EDIT: Replace or add news cards as needed -->
       <article class="nl-card" aria-labelledby="fcc-heading">
         <span class="card-tag tag-federal">Federal</span>
-        <h2 id="fcc-heading">New FCC video conferencing rules</h2>
+        <h2 id="fcc-heading">House Bill 164</h2>
         <p>
-          The FCC adopted new rules requiring all video conferencing platforms to support accurate captioning,
-          sign language interpreter display, and compatibility with assistive technology — ensuring virtual meetings
-          are accessible for everyone, including people who are deaf or hard of hearing.
+        Kentucky HB 164 is a law relating to hearing aid coverage.  It raises the insurance reimbursement cap for hearing aids from $1,400 to $2,500 and establishes network adequacy requirements for hearing aid services. It was signed by the Governor on April 3, 2026, and takes effect January 1, 2027. 
         </p>
-        <a class="card-link" href="https://homeof.deafingov.org/fccvideoconfrules/" target="_blank" rel="noopener"
-          aria-label="Read breakdown of new FCC rules on Deaf In Government's website">Read the full breakdown</a>
+        <a class="card-link" href="https://apps.legislature.ky.gov/record/26rs/hb164.html/" target="_blank" rel="noopener"
+          aria-label="Read the HB 164: Hearing Aid Coverage Law">Read the HB 164: Hearing Aid Coverage Law</a>
       </article>
 
 
@@ -1124,22 +1071,6 @@
       <!-- ✏️ EDIT: Update event list items each month -->
       <article class="nl-card" aria-label="Upcoming events list">
         <ul class="event-list" aria-label="Events by date">
-          <!-- Peer Support and Recovery Coaching -->
-          <li class="event-item">
-            <div class="event-date" aria-label="April 17">
-              <span class="month">APR</span>
-              <span class="day">17</span>
-            </div>
-            <div class="event-info">
-              <strong>Registration deadline — Peer Support &amp; Recovery Coaching</strong>
-              <span>Sessions: April 23–24 &nbsp;·&nbsp; Free &nbsp;·&nbsp; <a
-                  href="mailto:Michelle.Niehaus@ky.gov">Email to register</a></span>&nbsp;&nbsp;
-              <a class="flyer-btn" href="https://youtu.be/Isct9cFJ9-4?si=T-cooaRo7WQNfcPJ" target="_blank"
-                rel="noopener"
-                aria-label="Watch Peer Support &amp; Recovery Coaching video on YouTube (opens in new tab)"><i
-                  class="fa-brands fa-youtube" aria-hidden="true"></i> Watch Video</a>
-            </div>
-          </li>
           <!-- APRIL 26 OPEN HOUSE LANGUAGE FIRST -->
           <li class="event-item">
             <div class="event-date" aria-label="April 26">
@@ -1382,20 +1313,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Prevent simultaneous video playback -->
-  <script>
-    var videos = document.querySelectorAll('video');
-    for (var i = 0; i < videos.length; i++) {
-      videos[i].addEventListener('play', function () { pauseAll(this); }, true);
-    }
-    function pauseAll(elem) {
-      for (var i = 0; i < videos.length; i++) {
-        if (videos[i] === elem) continue;
-        if (videos[i].played.length > 0 && !videos[i].paused) videos[i].pause();
-      }
-    }
-  </script>
 
   <!-- ============================================================
        FLYER MODAL
