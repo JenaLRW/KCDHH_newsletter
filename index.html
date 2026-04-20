@@ -1340,6 +1340,10 @@
       var img  = document.querySelector('.nl-header-logo');
       var text = document.querySelector('.nl-agency-line');
       if (!img || !text) return;
+      if (window.innerWidth <= 580) {
+        text.style.display = '';
+        return;
+      }
       var targetWidth = img.offsetWidth;
 
       // Temporarily make inline so offsetWidth = text width, not container width
