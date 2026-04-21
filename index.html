@@ -415,6 +415,25 @@
       padding: 12px;
     }
 
+    .nl-card--image-bottom {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .nl-card--image-bottom .nl-card-content {
+      padding: 18px 22px;
+    }
+
+    .nl-card--image-bottom .nl-card-image {
+      width: 100%;
+      object-fit: contain;
+      display: block;
+      background: var(--lightgray);
+      padding: 12px;
+    }
+
     .nl-card h2 {
       font-size: 20px;
       font-family: 'Source Sans 3', sans-serif;
@@ -1053,7 +1072,7 @@
         <span class="card-tag tag-federal">Federal</span>
         <h2 id="fcc-heading">House Bill 164</h2>
         <p>
-        Kentucky HB 164 is a law relating to hearing aid coverage.  It raises the insurance reimbursement cap for hearing aids from $1,400 to $2,500 and establishes network adequacy requirements for hearing aid services. It was signed by the Governor on April 3, 2026, and takes effect January 1, 2027. 
+        Kentucky HB 164 is a law relating to pediatric hearing aid coverage.  It raises the insurance reimbursement cap for hearing aids from $1,400 to $2,500 and establishes network adequacy requirements for hearing aid services. It was signed by the Governor on April 3, 2026, and takes effect January 1, 2027. 
         </p>
         <a class="card-link" href="https://apps.legislature.ky.gov/record/26rs/hb164.html/" target="_blank" rel="noopener"
           aria-label="Read the HB 164: Hearing Aid Coverage Law">Read the HB 164: Hearing Aid Coverage Law</a>
@@ -1195,19 +1214,22 @@
         </p>
       </article>
 
-      <article class="nl-card" aria-labelledby="peersupport-heading">
-        <span class="card-tag tag-community">Community</span>
-        <h2 id="peersupport-heading">DeafLEAD</h2>
-        <p>
-          yada yada yada
-        </p>
-        <p style="margin-top:8px;font-size:16px;color:var(--text-muted);">
-          <a href="https://tinyurl.com/KY42826/">Join the meeting</a>
-          &nbsp;·&nbsp; Tuesday, April 28 at 6:00 PM to 8:30 PM EST.
-        </p>
-        <a class="card-link" href="https://placeholder" target="_blank" rel="noopener"
-          aria-label="Watch ASL and captioned video about peer support sessions on YouTube">Watch ASL/captioned
-          video</a>
+      <article class="nl-card nl-card--image-bottom" aria-labelledby="peersupport-heading">
+        <div class="nl-card-content">
+          <span class="card-tag tag-community">Community</span>
+          <h2 id="peersupport-heading">DeafLEAD - Support, Resources, and Grief After Loss</h2>
+          <p>
+            This free virtual workshop, "Support, Resources, and Grief After Loss," is hosted by the 988 Suicide & Crisis Lifeline and DeafLEAD Services on Tuesday, April 28, 2026 from 6:00–8:30 PM EST. Led by suicide prevention and crisis outreach specialists, the workshop covers understanding grief, its emotional and physical impacts, and healthy ways to cope and support others. The event is presented in ASL with voice interpreting, and you can join at tinyurl.com/KY42826.
+          </p>
+          <p style="margin-top:8px;font-size:16px;color:var(--text-muted);">
+            <a href="https://tinyurl.com/KY42826/">Join the meeting</a>
+            &nbsp;·&nbsp; Tuesday, April 28 at 6:00 PM to 8:30 PM EST.
+          </p>
+          <a class="card-link" href="https://canva.link/67lvpcpbv1lkucx" target="_blank" rel="noopener"
+            aria-label="Watch ASL and captioned video about peer support sessions on YouTube">Watch ASL/captioned
+            video</a>
+        </div>
+        <img class="nl-card-image" src="flyers/DeafLEAD-logo-transparent-vector.png" alt="DeafLEAD logo" />
       </article>
 
       <!-- ══════════════════════════════════════════
