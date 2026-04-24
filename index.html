@@ -638,6 +638,12 @@
       vertical-align: middle;
     }
 
+    a.flyer-btn:hover {
+      background: var(--navy1);
+      color: #fff;
+      text-decoration: none;
+    }
+
     .flyer-btn:focus-visible {
       outline: 2px solid var(--navy1);
       outline-offset: 2px;
@@ -1145,6 +1151,21 @@
                   class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Website</a>
             </div>
           </li>
+          <!-- Family Learning Vacation -->
+           <li class="event-item">
+            <div class="event-date" aria-label="June 6">
+              <span class="month">JUN</span>
+              <span class="day" style="font-size:20px;">6</span>
+            </div>
+            <div class="event-info">
+              <strong>2026 Family Learning Vacation</strong>
+              <span>Kentucky School for the Deaf &nbsp;·&nbsp; <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAnZRx15AVxzlZzdFqtMKB8y1nwxdLcvEfno2ABo83mayJKw/viewform" target="_blank"
+                  rel="noopener">Register</a></span>&nbsp;&nbsp;
+              <a class="flyer-btn" href="https://sites.google.com/ksd.kyschools.us/ksd-outreach/events/family-learning-vacation" target="_blank" rel="noopener"
+                aria-label="Visit SuperHEARo 5K website (opens in new tab)"><i
+                  class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Website</a>
+            </div>
+          </li>
           <!-- MDO -->
           <li class="event-item">
             <div class="event-date" aria-label="Recurring — Thursdays">
@@ -1410,10 +1431,10 @@
         }
       }
 
-      // Open on any flyer button click
+      // Open on flyer buttons (must have data-flyer attribute; plain links are excluded)
       document.addEventListener('click', function (e) {
         var btn = e.target.closest('.flyer-btn');
-        if (btn) openModal(btn);
+        if (btn && btn.getAttribute('data-flyer')) openModal(btn);
       });
 
       // Close on X button or backdrop click
