@@ -591,7 +591,15 @@
       min-width: 70px; 
       flex-shrink: 0;
     }
-
+    .event-date-weekly {
+      background: var(--lightblue1);
+      color: #000000;
+      border-radius: var(--radius-sm);
+      padding: 5px 8px;
+      text-align: center;
+      min-width: 70px; 
+      flex-shrink: 0;
+    }
     .event-date .month {
       display: block;
       font-size: 20px;
@@ -600,7 +608,14 @@
       color: #7ab8e8;
       font-weight: 700;
     }
-
+    .event-date-weekly .month {
+      display: block;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #004071;
+      font-weight: 700;
+    }
     .event-date .day {
       display: block;
       font-size: 24px;
@@ -1330,7 +1345,7 @@
           </li>
           <!-- Berrytown Deaf Social Every Thursday -->
           <li class="event-item">
-            <div class="event-date" aria-label="Recurring — Thursdays">
+            <div class="event-date-weekly" aria-label="Recurring — Thursdays">
               <span class="month">THU</span>
               <span class="day" style="font-size:20px;">Weekly</span>
             </div>
