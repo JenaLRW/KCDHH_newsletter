@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600;700;900&display=swap"
     rel="stylesheet" />
 
   <!-- UserWay Accessibility Widget, let Jim fool with this, this is his work -->
@@ -356,8 +356,9 @@
     .section-label::after {
       content: '';
       flex: 1;
-      height: 1px;
-      background: var(--border);
+      height: 3px;
+      background: var(--navy1);
+      border-radius: 2px;
     }
 
     .section-icon {
@@ -1130,6 +1131,22 @@
           </p>
         </div>
       </div>
+      <div class="nl-alert" role="alert" aria-live="polite" aria-label="Attention needed">
+        <div class="nl-alert-badge" aria-hidden="true">Attention</div>
+        <div class="nl-alert-content">
+          <img src="monthly-images/EHDI-qrcode.png" alt="Register QR Code" style="float:right;width:200px;margin:0 0 10px 16px;background:#fff;padding:8px;border-radius:var(--radius-md);border:1px solid var(--border);" />
+          <h2>2026 EHDI SUMMIT Is Also Coming to Louisville!</h2>
+            <p>Join us on Friday, June 5th from 9am to 4pm for an in-depth look at the latest guidelines, treatment strategies, and interventions in early hearing detection.
+            <br><br>
+            Featuring: Keynote Speaker Dr. Christine Yoshinaga-Itano and Plenary Speaker Dr. Pablo Sanchez.
+            <br><br>
+            Breakfast and lunch will be provided!</p>
+            <a href="https://cme.cecentral.com/content/2026-ky-early-hearing-detection-intervention-summit#group-tabs-node-course-default6" target="_blank" rel="noopener">Register Now</a>
+            &nbsp;·&nbsp;
+            <a href="monthly-images/KY-EHDI-Summit-2026.pdf" target="_blank" rel="noopener">Learn More</a>
+          </p>
+        </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            NEWS
@@ -1385,8 +1402,8 @@
           <!-- Berrytown Deaf Social Every Thursday -->
           <li class="event-item">
             <div class="event-date-weekly" aria-label="Recurring — Thursdays">
-              <span class="month">THU</span>
-              <span class="day" style="font-size:20px;">Weekly</span>
+              <span class="month" style="font-weight:900;">THU</span>
+              <span class="day" style="font-size:20px;"><strong>Weekly</strong></span>
             </div>
             <div class="event-info">
               <strong>Berrytown Deaf Socials — Louisville</strong>
