@@ -471,6 +471,21 @@
         background: var(--lightgray);
       }
 
+      .nl-card-image-bg {
+        width: 100%;
+        background: var(--lightgray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 0;
+      }
+
+      .nl-card-image-bg .nl-card-image {
+        width: 25%;
+        object-fit: contain;
+        background: transparent;
+      }
+
       .nl-card h2 {
         font-size: 22px;
         font-family: "Source Sans 3", sans-serif;
@@ -1279,7 +1294,9 @@
                 <a class="card-link" href="https://workforindiana.in.gov/job/Indianapolis-Early-Intervention-Specialist-IN-46205/1394276400/" target="_blank"
                 rel="noopener" aria-label="Job Opportunity in Indiana">Learn more</a>
               </div>
-              <img class="nl-card-image" src="2026June/Work-for-Indiana-Logo.png" alt="Work For Indiana logo" />
+              <div class="nl-card-image-bg">
+                <img class="nl-card-image" src="2026June/Work-for-Indiana-Logo.png" alt="Work For Indiana logo" />
+              </div>
             </article>  
            
           
