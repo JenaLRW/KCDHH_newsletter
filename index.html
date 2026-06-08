@@ -481,9 +481,24 @@
       }
 
       .nl-card-image-bg .nl-card-image {
-        width: 25%;
+        width: 100%;
         object-fit: contain;
         background: transparent;
+      }
+
+      .nl-card-link-image-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .nl-card-inline-image {
+        width: 50%;
+        border-radius: var(--radius-md);
+        object-fit: contain;
+        flex-shrink: 0;
       }
 
       .nl-card h2 {
@@ -1286,7 +1301,7 @@
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
           Community Spotlight
         </div>
-            <article class="nl-card nl-card--image-bottom" aria-labelledby="job-heading">
+            <article class="nl-card" aria-labelledby="job-heading">
               <div class="nl-card-content">
                <span class="card-tag tag-event">JOB OPPORTUNITY</span>
                 <h2 id="job-heading">Early Intervention Specialist</h2>
@@ -1294,14 +1309,11 @@
                 <a class="card-link" href="https://workforindiana.in.gov/job/Indianapolis-Early-Intervention-Specialist-IN-46205/1394276400/" target="_blank"
                 rel="noopener" aria-label="Job Opportunity in Indiana">Learn more</a>
               </div>
-              <div class="nl-card-image-bg">
-                <img class="nl-card-image" src="2026June/Work-for-Indiana-Logo.png" alt="Work For Indiana logo" />
-              </div>
             </article>  
            
           
         
-        <article class="nl-card nl-card--image-bottom" aria-labelledby="communityleader-heading">
+        <article class="nl-card" aria-labelledby="communityleader-heading">
           <div class="nl-card-content">
             <span class="card-tag tag-community">AWARD NOMINATION</span>
             <h2 id="communityleader-heading">Hamilton Relay Community Leader Award</h2>
@@ -1311,16 +1323,18 @@
               Additionally, an individual or organization that demonstrates leadership and volunteerism in the Deaf,
               DeafBlind, hard of hearing or speech difference community may be considered.
             </p>
-            <a
-              class="card-link"
-              href="https://hamiltonrelay.com/community-leadership-awards/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Hamilton Relay Community Leader Award"
-              >Nominate</a
-            >
+            <div class="nl-card-link-image-row">
+              <a
+                class="card-link"
+                href="https://hamiltonrelay.com/community-leadership-awards/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Hamilton Relay Community Leader Award"
+                >Nominate</a
+              >
+              <img class="nl-card-inline-image" src="2026June/Community-Leader-Award.png" alt="Hamilton Relay Community Leader Award" />
+            </div>
           </div>
-          <img class="nl-card-image" src="2026June/Community-Leader-Award.png" alt="Hamilton Relay Community Leader Award" />
         </article>
 
         <!-- ══════════════════════════════════════════
