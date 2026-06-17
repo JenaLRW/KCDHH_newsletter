@@ -623,10 +623,13 @@
         background: var(--lightblue1);
         color: #000000;
         border-radius: var(--radius-sm);
-        padding: 5px 8px;
-        text-align: center;
-        min-width: 70px;
+        width: 88px;
+        height: 70.4px;
         flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       .event-date .month {
         display: block;
@@ -640,9 +643,14 @@
         display: block;
         font-size: 20px;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
+        letter-spacing: 0.8px;
         color: #004071;
         font-weight: 700;
+        line-height: 1.4;
+      }
+      .event-date-weekly .month:first-child {
+        position: relative;
+        top: 3px;
       }
       .event-date .day {
         display: block;
@@ -1089,17 +1097,6 @@
           width: 100% !important;
           height: 100% !important;
         }
-
-        .innocap-header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .innocap-logo {
-          position: static !important;
-          transform: none !important;
-          display: block;
-          margin: 12px auto 0;
-        }
       }
     </style>
   </head>
@@ -1408,6 +1405,31 @@
                 </button>
               </div>
             </li>
+            <!-- Venture River Water Park June 27 ---------------------------->
+            <li class="event-item">
+              <div class="event-date" aria-label="June 27">
+                <span class="month">JUN</span>
+                <span class="day">27</span>
+              </div>
+              <div class="event-info">
+                <strong>Kentucky Hands and Voices: Venture River Water Park</strong>
+                <span> Eddyville, KY &nbsp;·&nbsp; Starts at 10 AM &nbsp;·&nbsp; D/HH children get FREE tickets!</span>&nbsp;·&nbsp;
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdeuDksB9bE3Kt8kNJ6BYiY9PoGYXp_OcHDdQ1okqUYT5IpVQ/viewform"
+                  target="_blank"
+                  rel="noopener"
+                  >Purchase Tickets</a
+                >&nbsp;&nbsp;
+                <button
+                  class="flyer-btn"
+                  data-flyer="2026June/ventureriver.jpg"
+                  data-title="Venture River Water Park"
+                  aria-haspopup="dialog"
+                >
+                  <i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer
+                </button>
+              </div>
+            </li>
             <!-- Hear on the River, Jazz Night JUNE 27 ---------------------------->
             <li class="event-item">
               <div class="event-date" aria-label="June 27">
@@ -1446,7 +1468,7 @@
                   href="https://www.nad.org/sf26/"
                   target="_blank"
                   rel="noopener"
-                  >Website</a
+                  >More Information</a
                 >
               </div>
             </li>
