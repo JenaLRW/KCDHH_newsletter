@@ -527,6 +527,14 @@
         flex-shrink: 0;
       }
 
+      .nl-card-image-full {
+        display: block;
+        width: 100%;
+        margin: 12px auto 0;
+        border-radius: var(--radius-md);
+        object-fit: contain;
+      }
+
       .nl-card h2 {
         font-size: 22px;
         font-family: "Source Sans 3", sans-serif;
@@ -1246,33 +1254,6 @@
         </div>
 
         <!-- ✏️ EDIT: Add article cards here. Include author byline in the card. -->
-         <!-- HLAA Conference recap -->
-        <article class="nl-card" aria-labelledby="fcc-heading">
-          <span class="card-tag tag-federal">HLAA conference recap</span>
-          <h2 id="fcc-heading">On The Road With KCDHH:</h2>
-            <p style="text-align: left">
-              <img
-                src="2026July/AaH-booth.jpg"
-                alt="Access @ Home booth at the HLAA convention"
-                style="
-                  float: right;
-                  width: 300px;
-                  margin: 0 0 10px 16px;
-                  background: #fff;
-                  padding: 8px;
-                  border-radius: var(--radius-md);
-                  border: 5px solid var(--border);
-                "
-              />
-              KCDHH hosted two booths at the Hearing Loss Association of America (HLAA) national convention in Louisville, June 10-12.  The first KCDHH booth shared information about our programs and services.  The second, called “Access @ Home,” was an interactive display showcasing a variety of assistive technologies designed to make homes safer and more accessible for deaf and hard of hearing individuals.  Attendees were able to experience a setup featuring an alarm clock with a bed shaker, as well as a weather radio connected to a pillow shaker and flashing alert system. A mock door demonstrated how doorbells and motion detectors can send visual notifications through a home alert system, helping individuals stay aware of activity around their home.
-              <br>
-              <br>
-              The booths were very busy on both days.  Many visitors were surprised at the wide range of assistive technologies available and shared that they had never seen some of these devices before.  Many wanted to know if their home state had a Commission or similar agency.
-              <br>
-              <br>
-              One of the highlights was a visit from the hotel safety team, who stopped by to learn more about accessible alerting systems. Their interest focused on improving their ADA kits and enhancing fire alarm notification systems for deaf and hard of hearing guests.
-            </p>
-        </article>
 
         <article class="nl-card" aria-labelledby="story1-heading">
           <span class="card-tag tag-community">Press Release</span>
@@ -1293,7 +1274,7 @@
         <!-- ══════════════════════════════════════════
         AWARENESS FEATURED CARD
         ══════════════════════════════════════════ -->
-        <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature">
+        <!-- <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature">
           <div class="nl-awareness-header">
             <h2>DeafBlind Awareness Week 2026:<br>June 25 – July 1</h2>
           </div>
@@ -1313,7 +1294,7 @@
               >More information on DeafBlind Awareness Week</a
             >
           </div>
-        </div>
+        </div> -->
 
         <!-- ══════════════════════════════════════════
         COMMUNITY SPOTLIGHT
@@ -1356,29 +1337,7 @@
             </div>
           </div>
         </article>
-        <article class="nl-card" aria-labelledby="communityleader-heading">
-          <div class="nl-card-content">
-            <span class="card-tag tag-community">AWARD NOMINATION</span>
-            <h2 id="communityleader-heading">Hamilton Relay Community Leader Award</h2>
-            <p>
-              This award is to recognize an individual in KY who is Deaf, DeafBlind, hard of hearing, late deafened or
-              who has difficulty speaking and demonstrates strong leadership and volunteerism within the community.
-              Additionally, an individual or organization that demonstrates leadership and volunteerism in the Deaf,
-              DeafBlind, hard of hearing or speech difference community may be considered. <strong>Due July 10, 2026.</strong>
-            </p>
-            <div class="nl-card-link-image-row">
-              <a
-                class="card-link"
-                href="https://hamiltonrelay.com/community-leadership-awards/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Hamilton Relay Community Leader Award"
-                >Nominate</a
-              >
-              <img class="nl-card-inline-image" src="2026July/Community-Leader-Award.png" alt="Hamilton Relay Community Leader Award" />
-            </div>
-          </div>
-        </article>
+        
 
         <!-- ══════════════════════════════════════════
         TECHNOLOGY
@@ -1388,15 +1347,15 @@
           Technology
         </div>
 
-        <article class="nl-card" aria-label="InnoCaption">
-          <div class="innocap-header" style="display: flex; align-items: center; position: relative; margin-bottom: 9px">
-            <span class="card-tag tag-resource" style="margin-bottom: 0">Mobile App</span>
+        <article class="nl-card" aria-label="SnapCap">
+          <div class="snapcap-header" style="display: flex; align-items: center; position: relative; margin-bottom: 9px">
+            <span class="card-tag tag-resource" style="margin-bottom: 0">Captioning</span>
             <img
-              class="innocap-logo"
-              src="2026July/innocap.png"
-              alt="InnoCaption logo"
+              class="snapcap-logo"
+              src="2026July/snapcap-logo.png"
+              alt="SnapCap logo"
               style="
-                height: 100px;
+                height: 50px;
                 border: none;
                 position: absolute;
                 left: 50%;
@@ -1404,7 +1363,23 @@
               "
             />
           </div>
-          <p><strong>InnoCaption</strong> is a free captioned telephone app that provides real-time captions for phone calls, helping individuals with hearing loss communicate more effectively. Features include live or automated captioning, captioned voicemail, call transcripts, text-to-speech options, and customizable display settings. Eligible users can keep their existing phone number and access the service at no cost.</p>
+          <p><strong>SnapCap</strong> is a marketplace that makes it fast, easy, and cost-effective to book professional live captioners for meetings and events. Instead of dealing with the hassle and high fees of an agency, you go to the site and book a captioner directly. They'll join your meeting remotely and deliver fast, accurate captions in real time.
+ 
+          This is accessibility made simple. We provide trustworthy captioners, transparent pricing, and instant confirmation, with a user-friendly platform that puts everything in one place — from payment and sharing prep material to messaging about details. There is no fee to sign up! </p>
+          <a
+                class="card-link"
+                href="www.snapcap.co"
+                target="_blank"
+                rel="noopener"
+                aria-label="Sign Up for SnapCap"
+                >Sign Up</a
+              >
+              <br>
+              <img
+              class="nl-card-image-full"
+              src="2026July/Client-SnapCap.png"
+              alt="SnapCap" />
+
         </article>
 
         <!-- ══════════════════════════════════════════
