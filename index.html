@@ -479,6 +479,11 @@
         padding: 12px;
       }
 
+      /* Mobile-only inline image; the desktop side panel is the sibling .nl-card-image */
+      .nl-card-image-inline {
+        display: none;
+      }
+
       .nl-card--image-bottom {
         display: flex;
         flex-direction: column;
@@ -1141,6 +1146,23 @@
           flex: 0 0 auto;
           width: 100%;
         }
+
+        /* Galaxy Buds card: mobile-only image, centered at the bottom */
+        .nl-card--float-mobile {
+          display: block;
+        }
+
+        .nl-card--float-mobile .nl-card-image {
+          display: none;
+        }
+
+        .nl-card--float-mobile .nl-card-image-inline {
+          display: block;
+          width: 100%;
+          max-width: 280px;
+          height: auto;
+          margin: 14px auto 0;
+        }
       }
     </style>
   </head>
@@ -1478,14 +1500,14 @@
           Technology
         </div>
 
-        <article class="nl-card nl-card--has-image" aria-label="Samsung hearing aid feature">
+        <article class="nl-card nl-card--has-image nl-card--float-mobile" aria-label="Samsung hearing aid feature">
           <div class="nl-card-content">
             <div class="snapcap-header" style="display: flex; align-items: center; position: relative; margin-bottom: 9px">
               <span class="card-tag tag-resource" style="margin-bottom: 0">Hearing Aid Feature</span>
               
             </div>
-            <p><strong>Samsung’s Hearing Aid Feature on Galaxy Buds Cleared by FDA</strong> 
-            <br>Company brings accessible, over-the-counter hearing aid directly to Galaxy Buds.
+            <h2>Samsung’s Hearing Aid Feature on Galaxy Buds Cleared by FDA</h2>
+            <p>Company brings accessible, over-the-counter hearing aid directly to Galaxy Buds.
             </p>
             <a
               class="card-link"
@@ -1495,6 +1517,11 @@
               aria-label="Samsung's Hearing Aid Feature on Galaxy Buds Cleared by FDA article"
               >Read the full article</a
             >
+            <img
+              class="nl-card-image-inline"
+              src="2026August/Galaxy-Buds-Pro-PR_main1.jpg"
+              alt="Samsung Galaxy Buds Pro"
+            />
           </div>
           <img class="nl-card-image" src="2026August/galaxybuds.png" alt="Samsung Galaxy Buds" />
         </article>
