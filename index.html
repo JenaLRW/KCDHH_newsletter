@@ -1131,6 +1131,16 @@
           width: 100% !important;
           height: 100% !important;
         }
+
+        /* News/Accessibility card: image drops below the text instead of sitting right */
+        .nl-card--stack-mobile {
+          flex-direction: column;
+        }
+
+        .nl-card--stack-mobile .nl-card-image {
+          flex: 0 0 auto;
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -1289,7 +1299,7 @@
           News
         </div>
        
-       <article class="nl-card nl-card--has-image" aria-labelledby="fcc-heading">
+       <article class="nl-card nl-card--has-image nl-card--stack-mobile" aria-labelledby="fcc-heading">
           <div class="nl-card-content">
             <span class="card-tag tag-federal">Accessibility</span>
             <h2 id="fcc-heading">Deaf Children Now Can Watch 73 Titles on Netflix With ASL</h2>
