@@ -1137,14 +1137,22 @@
           height: 100% !important;
         }
 
-        /* News/Accessibility card: image drops below the text instead of sitting right */
+        /* News/Accessibility card: image sits between the pill and the title */
         .nl-card--stack-mobile {
           flex-direction: column;
         }
 
         .nl-card--stack-mobile .nl-card-image {
-          flex: 0 0 auto;
-          width: 100%;
+          display: none;
+        }
+
+        .nl-card--stack-mobile .nl-card-image-inline {
+          display: block;
+          width: calc(100% + 44px);
+          margin: 0 -22px 14px;
+          padding: 12px;
+          background: var(--lightgray);
+          object-fit: contain;
         }
 
         /* Galaxy Buds card: mobile-only image, centered at the bottom */
@@ -1329,6 +1337,11 @@
        <article class="nl-card nl-card--has-image nl-card--stack-mobile" aria-labelledby="fcc-heading">
           <div class="nl-card-content">
             <span class="card-tag tag-federal">Accessibility</span>
+            <img
+              class="nl-card-image-inline"
+              src="2026August/Netflix_Logo_PMS.png"
+              alt="Netflix logo"
+            />
             <h2 id="fcc-heading">Deaf Children Now Can Watch 73 Titles on Netflix With ASL</h2>
             <p>
               Netflix has partnered with SignUp Media, an ASL translation company, to provide ASL access for 73 children’s and family titles. Popular selections include Spider-Man: Homecoming, KPop Demon Hunters, Pokémon Horizons, and The Magic School Bus Rides Again, giving Deaf children more opportunities to enjoy content in their primary language. Click the article link below to view the full list of available titles.
