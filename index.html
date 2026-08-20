@@ -1159,9 +1159,17 @@
           height: 320px;
         }
 
-        .nl-float-right {
-          max-width: 140px;
-          margin: 0 0 8px 12px;
+        /* Hands & Voices logo: back to bottom-right, unfloated, on mobile */
+        .nl-card--logo-bottom .nl-float-right {
+          display: none;
+        }
+
+        .nl-card--logo-bottom .nl-card-image-inline {
+          display: block;
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          margin: 12px 0 0 auto;
         }
 
         .nl-cta {
@@ -1532,7 +1540,7 @@
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-users-line"></i></span>
           Conference
         </div>
-        <article class="nl-card" aria-labelledby="handsvoices-heading">
+        <article class="nl-card nl-card--logo-bottom" aria-labelledby="handsvoices-heading">
           <div class="nl-card-content">
             <img
               class="nl-float-right"
@@ -1554,6 +1562,11 @@
                 >Register</a
               >
             </div>
+            <img
+              class="nl-card-image-inline"
+              src="2026August/hvlogo.png"
+              alt="Hands &amp; Voices logo"
+            />
           </div>
         </article>
         <article class="nl-card" aria-labelledby="scarlettpark-heading">
