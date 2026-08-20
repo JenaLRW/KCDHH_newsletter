@@ -552,6 +552,17 @@
         background: transparent;
       }
 
+      /* Logo floated into a card's top-right corner, text wraps around it */
+      .nl-float-right {
+        float: right;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 0 0 12px 16px;
+        border: none;
+        background: none;
+      }
+
       .nl-card-link-image-row {
         display: flex;
         align-items: flex-start;
@@ -1148,6 +1159,11 @@
           height: 320px;
         }
 
+        .nl-float-right {
+          max-width: 140px;
+          margin: 0 0 8px 12px;
+        }
+
         .nl-cta {
           flex-direction: column;
           align-items: flex-start;
@@ -1264,7 +1280,7 @@
       ============================================================ -->
       <main id="main-content" class="nl-body">
         <h1 class="nl-welcome">August is Back to School Month</h1>
-
+<p>August is Back to School Month!  With the new school year already underway, it’s a great time to highlight resources that support Deaf and Hard of Hearing (DHH) students, their families, and educators. We’ve gathered a few helpful resources to share as students settle into their routines and another school year gets into full swing!</p>
         <!-- ══════════════════════════════════════════
         FIRST DAY OF SCHOOL CAROUSEL
         ══════════════════════════════════════════ -->
@@ -1323,6 +1339,8 @@
             />
           </div>
         </section>
+        
+        <p>If you have questions or need assistance related to DHH education, please don’t hesitate to reach out to us. We’re happy to help connect you with the information, resources, and support you need!</p>
    
           <!-- ══════════════════════════════════════════
           ACTION ALERT — Edit or remove as needed
@@ -1359,7 +1377,7 @@
 
         <div class="card-grid">
           <article class="nl-card" aria-label="National Deaf Center student resources">
-            <span class="card-tag tag-resource">Student Resources</span>
+            
             <p><strong>National Deaf Center Student Resource</strong>
             <br>This includes all information about requesting accommodation, self-advocacy, tips and have both resources for high school students and college students.
             </p>
@@ -1378,7 +1396,7 @@
               alt="Kentucky School for the Deaf Outreach"
               style="float: right; width: 100px; height: auto; margin: 0 0 10px 14px; border-radius: var(--radius-sm);"
             />
-            <span class="card-tag tag-community">KSD Outreach</span>
+            
             <p><strong>The KSD Outreach</strong>
             <br>The KSD Outreach Educational Consultants are strategically placed across each region of Kentucky to ensure that all families and school districts have access to educational planning information for their students who are deaf or hard of hearing.
             </p>
@@ -1516,6 +1534,11 @@
         </div>
         <article class="nl-card" aria-labelledby="handsvoices-heading">
           <div class="nl-card-content">
+            <img
+              class="nl-float-right"
+              src="2026August/hvlogo.png"
+              alt="Hands &amp; Voices logo"
+            />
             <span class="card-tag tag-community">September 2026</span>
             <h2 id="handsvoices-heading">Hands &amp; Voices 2026 Leadership Conference in Colorado</h2>
             <p>
@@ -1530,13 +1553,6 @@
                 aria-label="Hands and Voices Leadership Conference"
                 >Register</a
               >
-            </div>
-            <div style="text-align: right;">
-              <img
-                src="2026August/hvlogo.png"
-                alt="Hands & Voices logo"
-                style="width: 100%; max-width: 500px; height: auto; border: none; background: none;"
-              />
             </div>
           </div>
         </article>
