@@ -369,6 +369,64 @@
         display: block;
       }
 
+      .nl-carousel-frame {
+        position: relative;
+      }
+
+      .nl-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 2px solid rgba(255, 255, 255, 0.85);
+        border-radius: 50%;
+        background: rgba(7, 53, 117, 0.72);
+        color: #fff;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.15s ease, opacity 0.15s ease;
+      }
+
+      .nl-carousel-btn:hover {
+        background: rgba(7, 53, 117, 0.95);
+      }
+
+      .nl-carousel-btn:focus-visible {
+        outline: 3px solid var(--elcblue);
+        outline-offset: 3px;
+      }
+
+      .nl-carousel-btn[disabled] {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .nl-carousel-btn--prev {
+        left: 10px;
+      }
+
+      .nl-carousel-btn--next {
+        right: 10px;
+      }
+
+      .nl-carousel-hint {
+        margin: 8px 0 0;
+        font-size: 17px;
+        color: #5a5a5a;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .nl-carousel {
+          scroll-behavior: auto;
+        }
+      }
+
       .nl-carousel:focus-visible {
         outline: 3px solid var(--elcblue);
         outline-offset: 3px;
@@ -1294,59 +1352,79 @@
         ══════════════════════════════════════════ -->
         <section class="nl-carousel-section" aria-label="Kentucky Hands and Voices kids' first day of school">
           
-          <div
-            class="nl-carousel"
-            tabindex="0"
-            role="group"
-            aria-label="Photo gallery, 10 images. Scroll or use arrow keys to browse."
-          >
-            <img
-              src="2026August/first-day-school/AdobeStock_1841383802.jpeg"
-              alt="First day of school, photo 1 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_2078676444.jpeg"
-              alt="First day of school, photo 2 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_2090066273.jpeg"
-              alt="First day of school, photo 3 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_216343612.jpeg"
-              alt="First day of school, photo 4 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_400012593.jpeg"
-              alt="First day of school, photo 5 of 10"
-              loading="lazy"
-            />
+          <div class="nl-carousel-frame">
+            <button
+              type="button"
+              class="nl-carousel-btn nl-carousel-btn--prev"
+              aria-label="Previous photos"
+              aria-controls="first-day-carousel"
+            >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <div
+              class="nl-carousel"
+              id="first-day-carousel"
+              tabindex="0"
+              role="group"
+              aria-label="Photo gallery, 10 images. Scroll or use arrow keys to browse."
+            >
+              <img
+                src="2026August/first-day-school/AdobeStock_1841383802.jpeg"
+                alt="First day of school, photo 1 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_2078676444.jpeg"
+                alt="First day of school, photo 2 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_2090066273.jpeg"
+                alt="First day of school, photo 3 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_216343612.jpeg"
+                alt="First day of school, photo 4 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_400012593.jpeg"
+                alt="First day of school, photo 5 of 10"
+                loading="lazy"
+              />
             
-            <img
-              src="2026August/first-day-school/AdobeStock_4226054.jpeg"
-              alt="First day of school, photo 7 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_529315112.jpeg"
-              alt="First day of school, photo 8 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_531577465.jpeg"
-              alt="First day of school, photo 9 of 10"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_751112901.jpeg"
-              alt="First day of school, photo 10 of 10"
-              loading="lazy"
-            />
+              <img
+                src="2026August/first-day-school/AdobeStock_4226054.jpeg"
+                alt="First day of school, photo 7 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_529315112.jpeg"
+                alt="First day of school, photo 8 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_531577465.jpeg"
+                alt="First day of school, photo 9 of 10"
+                loading="lazy"
+              />
+              <img
+                src="2026August/first-day-school/AdobeStock_751112901.jpeg"
+                alt="First day of school, photo 10 of 10"
+                loading="lazy"
+              />
+            </div>
+            <button
+              type="button"
+              class="nl-carousel-btn nl-carousel-btn--next"
+              aria-label="Next photos"
+              aria-controls="first-day-carousel"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
           </div>
+          <p class="nl-carousel-hint">Scroll, swipe, or use the arrows</p>
         </section>
         
         <p>If you have questions or need assistance related to DHH education, please don’t hesitate to reach out to us. We’re happy to help connect you with the information, resources, and support you need!</p>
@@ -2230,6 +2308,45 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !policyModal.hasAttribute("hidden")) closePolicyModal();
       });
+    </script>
+    <!-- Carousel arrows: scroll the track, hide themselves at each end -->
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        document.querySelectorAll(".nl-carousel-frame").forEach(function (frame) {
+          var track = frame.querySelector(".nl-carousel");
+          var prev = frame.querySelector(".nl-carousel-btn--prev");
+          var next = frame.querySelector(".nl-carousel-btn--next");
+          if (!track || !prev || !next) return;
+
+          function step() {
+            var first = track.querySelector("img");
+            var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            return first ? first.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+          }
+
+          function nudge(dir) {
+            track.scrollBy({ left: dir * step(), behavior: reduce ? "auto" : "smooth" });
+          }
+
+          function update() {
+            var max = track.scrollWidth - track.clientWidth;
+            prev.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= max - 2;
+          }
+
+          prev.addEventListener("click", function () { nudge(-1); });
+          next.addEventListener("click", function () { nudge(1); });
+          track.addEventListener("scroll", update, { passive: true });
+          window.addEventListener("resize", update);
+          window.addEventListener("load", update);
+          track.querySelectorAll("img").forEach(function (img) {
+            img.addEventListener("load", update);
+          });
+          update();
+        });
+      })();
     </script>
   </body>
 </html>
