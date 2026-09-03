@@ -17,7 +17,7 @@
     <meta http-equiv="pragma" content="no-cache" />
 
     <!--Change this every month and year-->
-    <title>KCDHH Communicator - August 2026</title>
+    <title>KCDHH Communicator - September 2026</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -362,6 +362,24 @@
         max-width: 100%;
         border-radius: var(--radius-md);
         background: var(--lightgray);
+      }
+
+      /* Two-column list of resource links inside a card */
+      .nl-link-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 24px;
+        margin: 12px 0 0;
+        padding-left: 22px;
+      }
+
+      .nl-link-grid li {
+        line-height: 1.4;
+      }
+
+      /* In a two-up grid the card is too narrow for two link columns */
+      .card-grid .nl-link-grid {
+        grid-template-columns: 1fr;
       }
 
       /* ============================================================
@@ -1150,6 +1168,10 @@
           align-items: center;
         }
 
+        .nl-link-grid {
+          grid-template-columns: 1fr;
+        }
+
         /* Hands & Voices logo: back to bottom-right, unfloated, on mobile */
         .nl-card--logo-bottom .nl-float-right {
           display: none;
@@ -1246,7 +1268,7 @@
         <div class="nl-tagline">~ CONNECTING YOU TO CURRENT NEWS ~</div>
         <div class="nl-header-meta">
           <!-- ✏️ EDIT: Update volume/issue and date each month -->
-          <span>Volume 44, No. 8 &nbsp;·&nbsp; August 2026</span>
+          <span>Volume 44, No. 9 &nbsp;·&nbsp; September 2026</span>
           <a href="https://www.kcdhh.ky.gov" target="_blank" rel="noopener">kcdhh.ky.gov</a>
         </div>
       </header>
@@ -1278,33 +1300,7 @@
       MAIN CONTENT
       ============================================================ -->
       <main id="main-content" class="nl-body">
-        <h1 class="nl-welcome">August is Back to School Month</h1>
-<p>August is Back to School Month!  With the new school year already underway, it’s a great time to highlight resources that support Deaf and Hard of Hearing (DHH) students, their families, and educators. We’ve gathered a few helpful resources to share as students settle into their routines and another school year gets into full swing!</p>
-        <!-- ══════════════════════════════════════════
-        FIRST DAY OF SCHOOL PHOTOS
-        ══════════════════════════════════════════ -->
-        <section class="nl-photo-row-section" aria-label="kids' first day of school photos">
-          
-          <div class="nl-photo-row">
-            <img
-              src="2026August/first-day-school/AdobeStock_2078676444.jpeg"
-              alt="First day of school, photo 1 of 3"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_400012593.jpeg"
-              alt="First day of school, photo 2 of 3"
-              loading="lazy"
-            />
-            <img
-              src="2026August/first-day-school/AdobeStock_531577465.jpeg"
-              alt="First day of school, photo 3 of 3"
-              loading="lazy"
-            />
-          </div>
-        </section>
-        
-        <p>If you have questions or need assistance related to DHH education, please don’t hesitate to reach out to us. We’re happy to help connect you with the information, resources, and support you need!</p>
+   
    
           <!-- ══════════════════════════════════════════
           ACTION ALERT — Edit or remove as needed
@@ -1332,152 +1328,9 @@
           </div>
           </div> -->
         <!-- ══════════════════════════════════════════
-        SCHOOL RESOURCES
-        ══════════════════════════════════════════ -->
-        <div class="section-label" aria-label="Section: School Resources">
-          <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
-          School Resources
-        </div>
-
-        <div class="card-grid">
-          <article class="nl-card" aria-label="National Deaf Center student resources">
-            
-            <p><strong>National Deaf Center Student Resource</strong>
-            <br>This includes all information about requesting accommodation, self-advocacy, tips and have both resources for high school students and college students.
-            </p>
-            <a
-              class="card-link"
-              href="https://nationaldeafcenter.org/students/"
-              target="_blank"
-              rel="noopener"
-              aria-label="National Deaf Center student resources (opens in new tab)"
-              >Click here for more information</a
-            >
-          </article>
-          <article class="nl-card" aria-label="KSD Outreach educational consultants">
-            <img
-              src="2026August/ksd.jpg"
-              alt="Kentucky School for the Deaf Outreach"
-              style="float: right; width: 100px; height: auto; margin: 0 0 10px 14px; border-radius: var(--radius-sm);"
-            />
-            
-            <p><strong>The KSD Outreach</strong>
-            <br>The KSD Outreach Educational Consultants are strategically placed across each region of Kentucky to ensure that all families and school districts have access to educational planning information for their students who are deaf or hard of hearing.
-            </p>
-            <a
-              class="card-link"
-              href="https://sites.google.com/ksd.kyschools.us/ksd-outreach/parents"
-              target="_blank"
-              rel="noopener"
-              aria-label="KSD Outreach information for parents (opens in new tab)"
-              >Click here for more information</a
-            >
-          </article>
-          <article class="nl-card" aria-label="Clerc Center resources">
-            
-            <p><strong>Clerc Center</strong>
-            <br>The Laurent Clerc National Deaf Education Center at Gallaudet University offers free resources, information, and training for families and professionals supporting deaf and hard of hearing children from birth through age 21.
-            </p>
-            <a
-              class="card-link"
-              href="https://clerccenter.gallaudet.edu/resources/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Clerc Center resources (opens in new tab)"
-              >Click here for more information</a
-            >
-          </article>
-          <article class="nl-card" aria-label="Supporting Success for Children with Hearing Loss">
-            
-            <p><strong>Supporting Success for Children with Hearing Loss</strong>
-            <br>Resources, tools, and professional development for educators, families, and specialists supporting children with hearing loss in school settings.
-            </p>
-            <a
-              class="card-link"
-              href="https://successforkidswithhearingloss.com"
-              target="_blank"
-              rel="noopener"
-              aria-label="Supporting Success for Children with Hearing Loss (opens in new tab)"
-              >Click here for more information</a
-            >
-          </article>
-          <article class="nl-card" aria-label="Center for Parent Information and Resources">
-            
-            <p><strong>Children (3 to 22) &mdash; Center for Parent Information and Resources</strong>
-            <br>A national hub gathering information for families of school-age children, covering special education, school services, and navigating the IEP process.
-            </p>
-            <a
-              class="card-link"
-              href="https://www.parentcenterhub.org/schoolpage/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Center for Parent Information and Resources school-age page (opens in new tab)"
-              >Click here for more information</a
-            >
-          </article>
-          <article class="nl-card" aria-label="ARC meetings and IEP guidance">
-            
-            <p><strong>ARC Meetings and IEPs</strong>
-            <br>Kentucky Protection &amp; Advocacy offers practical guidance for families preparing for Admissions and Release Committee (ARC) meetings and writing an effective Individualized Education Program.
-            </p>
-            <div>
-              <a
-                class="card-link"
-                href="https://kypa.net/how-to-negotiate-in-arc-meetings/"
-                target="_blank"
-                rel="noopener"
-                aria-label="How to negotiate in ARC meetings (opens in new tab)"
-                >How to Negotiate in ARC Meetings</a
-              >
-            </div>
-            <div>
-              <a
-                class="card-link"
-                href="https://kypa.net/tips-on-writing-an-individualized-education-program-ieptips/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Tips on writing an Individualized Education Program (opens in new tab)"
-                >Tips on Writing an IEP</a
-              >
-            </div>
-          </article>
-        </div>
-
-        <!-- ══════════════════════════════════════════
-        State Fair
-        ══════════════════════════════════════════ -->
-        <div class="section-label" aria-label="Section: Kentucky State Fair">
-          <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
-          Community Events
-        </div>
-        
-       <article class="nl-card" aria-labelledby="fcc-heading">
-          <span class="card-tag tag-federal">Come Visit Us</span>
-          
-          <img src="2026August/State-Fair-booth.png"
-          class="nl-card-image-full"
-          alt="State Fair Booth">
-        </article> 
-        <article class="nl-card" aria-labelledby="fcc-heading">
-          <span class="card-tag tag-federal">Deaf Awareness Day</span>
-          <div style="text-align:center;">
-            <a
-              class="card-link"
-              href="https://kyhandsandvoices.org/deaf-awareness-day-the-louisville-zoo/"
-              target="_blank"
-              rel="noopener"
-              >Click here for more information</a
-            >
-          </div>
-          
-          <img src="2026August/deaf-zoo-day.jpg"
-          class="nl-card-image-full"
-          alt="State Fair Booth">
-        </article> 
-        <!-- ══════════════════════════════════════════
         NEWS
         ══════════════════════════════════════════ -->
-        <div class="section-label" aria-label="Section: News">
+        <!-- <div class="section-label" aria-label="Section: News">
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
           News
         </div>
@@ -1487,23 +1340,23 @@
             <span class="card-tag tag-federal">Accessibility</span>
             <img
               class="nl-card-image-inline"
-              src="2026August/Netflix_Logo_PMS.png"
+              src="2026Sept/Netflix_Logo_PMS.png"
               alt="Netflix logo"
             />
-            <h2 id="fcc-heading">Deaf Children Now Can Watch 73 Titles on Netflix With ASL</h2>
+            <h2 id="fcc-heading">DL</h2>
             <p>
-              Netflix has partnered with SignUp Media, an ASL translation company, to provide ASL access for 73 children’s and family titles. Popular selections include Spider-Man: Homecoming, KPop Demon Hunters, Pokémon Horizons, and The Magic School Bus Rides Again, giving Deaf children more opportunities to enjoy content in their primary language. Click the article link below to view the full list of available titles.
+              Ne
             </p>
             <a
               class="card-link"
-              href="https://www.parents.com/netflix-adds-asl-interpretation-to-kids-favorites-12020840"
+              href="https://PH"
               target="_blank"
               rel="noopener"
               >Read full article</a
             >
           </div>
-          <img class="nl-card-image" src="2026August/Netflix_Logo_PMS.png" alt="Netflix logo" />
-        </article>
+         
+        </article> -->
         
 
          <!--══════════════════════════════════════════
@@ -1512,19 +1365,15 @@
         <!-- <div class="section-label" aria-label="Section: Stories">
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
           Stories
-        </div>
-
-       
-
         <article class="nl-card" aria-labelledby="story1-heading">
-          <span class="card-tag tag-community">Press Release</span>
-          <h2 id="story1-heading">Rylo Launches Next Chapter With $85 Million in New Funding to Expand AI Communication Tools for the Deaf and Hard-of-Hearing Community</h2>
+          <span class="card-tag tag-community">PH</span>
+          <h2 id="story1-heading">R</h2>
           <p style="font-size: 20px; color: var(--text-muted); margin-bottom: 12px">
-            Formerly Nagish, the company is evolving beyond phone call captioning to build a broader AI-powered communication platform
+            Fo
           </p>
           <a
             class="card-link"
-            href="https://www.businesswire.com/news/home/20260604498117/en/Rylo-Launches-Next-Chapter-With-%2485-Million-in-New-Funding-to-Expand-AI-Communication-Tools-for-the-Deaf-and-Hard-of-Hearing-Community"
+            href="https://ph"
             target="_blank"
             rel="noopener"
             aria-label="Read full article"
@@ -1541,13 +1390,13 @@
           </div>
           <div class="nl-alert-content" style="width:100%;">
             <img
-              src="2026August/DBawarenessweek.png"
+              src="ph"
               alt="Deafblind Awareness Week"
               style="width:100%; border-radius:var(--radius-sm);"
             />
             <a
               class="card-link"
-              href="https://www.helenkeller.org/DBAW2026/"
+              href="https://ph"
               target="_blank"
               rel="noopener"
               style="display:inline-block; margin-top:12px;"
@@ -1568,10 +1417,10 @@
           <div class="nl-card-content">
             <img
               class="nl-float-right"
-              src="2026August/hvlogo.png"
+              src="2026Sept/hvlogo.png"
               alt="Hands &amp; Voices logo"
             />
-            <span class="card-tag tag-community">September 2026</span>
+            <span class="card-tag tag-community">September 17-19</span>
             <h2 id="handsvoices-heading">Hands &amp; Voices 2026 Leadership Conference in Colorado</h2>
             <p>
             Hands and Voices is celebrating <strong>30 years</strong> as an organization with its 22nd Annual Leadership Conference, taking place September 17-19 in Westminster, CO, returning to the state where it all began. This national gathering brings together families, professionals, and leaders committed to to supporting children who are deaf and hard of hearing, with workshops, keynote speakers, and networking opportunities designed to strengthen support systems nationwide. 
@@ -1588,7 +1437,7 @@
             </div>
             <img
               class="nl-card-image-inline"
-              src="2026August/hvlogo.png"
+              src="2026Sept/hvlogo.png"
               alt="Hands &amp; Voices logo"
             />
           </div>
@@ -1613,53 +1462,12 @@
             
           </div>
         </article> 
-        <!-- ══════════════════════════════════════════
-        COMMUNITY SPOTLIGHT
-        ══════════════════════════════════════════ -->
-        <!--<div class="section-label" aria-label="Section: Community Spotlight">
-          <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
-          Community Spotlight
-        </div>
-        <article class="nl-card" aria-labelledby="ASLClass-heading">
-          <div class="nl-card-content">
-            <span class="card-tag tag-community">CLASSES</span>
-            <h2 id="ASLCLASS-heading">Community ASL Class</h2>
-            <p>
-            Central Kentucky Interpreter Referral (CKIR) will be offering an American Sign Language (ASL) class this fall for community members interested in learning ASL. <br><br>
-            Nine weekly classes will be held Tuesday evenings from August 11th to October 6th from 6 PM to 7:15 PM. The classes will be held in Danville, KY.   See the flyer for more details. <br><br>
-            
-            If you have any questions or would like additional information, please email <a href="mailto:ASLinthe502@gmail.com">ASLinthe502@gmail.com</a>.
-   
-            </p>
-            <div style="text-align:center;">
-              <button
-                class="flyer-btn"
-                data-flyer="2026August/ASLClass.jpg"
-                data-title="Community ASL Class"
-                aria-haspopup="dialog"
-                aria-label="View flyer for Community ASL Class"
-              >
-                <i class="fa-regular fa-image" aria-hidden="true"></i> View Flyer
-              </button>
-            </div>
-            <div class="nl-card-link-image-row" style="justify-content:center;">
-              <a
-                class="card-link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdK6EUUa11SiZUKHOKX1Dbkniu1UB00jHxw1iHy_pgl87k-Rw/viewform"
-                target="_blank"
-                rel="noopener"
-                aria-label="Community ASL Class"
-                >Register</a
-              >
-            </div>
-          </div>
-        </article> -->
         
 
         <!-- ══════════════════════════════════════════
         TECHNOLOGY
         ══════════════════════════════════════════ -->
-        <div class="section-label" aria-label="Section: Technology">
+        <!-- <div class="section-label" aria-label="Section: Technology">
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
           Technology
         </div>
@@ -1670,12 +1478,12 @@
               <span class="card-tag tag-resource" style="margin-bottom: 0">Hearing Aid Feature</span>
               
             </div>
-            <h2>Samsung’s Hearing Aid Feature on Galaxy Buds Cleared by FDA</h2>
-            <p>Company brings accessible, over-the-counter hearing aid directly to Galaxy Buds.
+            <h2>SA</h2>
+            <p>C
             </p>
             <a
               class="card-link"
-              href="https://news.samsung.com/global/samsungs-hearing-aid-feature-on-galaxy-buds-cleared-by-fda"
+              href="https://ph"
               target="_blank"
               rel="noopener"
               aria-label="Samsung's Hearing Aid Feature on Galaxy Buds Cleared by FDA article"
@@ -1683,12 +1491,12 @@
             >
             <img
               class="nl-card-image-inline"
-              src="2026August/Galaxy-Buds-Pro-PR_main1.jpg"
+              src="2026Sept/Galaxy-Buds-Pro-PR_main1.jpg"
               alt="Samsung Galaxy Buds Pro"
             />
           </div>
-          <img class="nl-card-image" src="2026August/galaxybuds.jpg" alt="Samsung Galaxy Buds" />
-        </article>
+          <img class="nl-card-image" src="2026Sept/galaxybuds.jpg" alt="Samsung Galaxy Buds" />
+        </article> -->
 
         <!-- ══════════════════════════════════════════
         UPCOMING EVENTS
@@ -1701,54 +1509,8 @@
         <!-- ✏️ EDIT: Update event list items each month -->
         <article class="nl-card" aria-label="Upcoming events list">
           <ul class="event-list" aria-label="Events by date">
-<!-- KY State fair ---------------------------->
-            <li class="event-item">
-              <div class="event-date" aria-label="August 20-30">
-                <span class="month">AUG</span>
-                <span class="day">20-30</span>
-              </div>
-              <div class="event-info">
-                <strong>Kentucky State Fair</strong>
-                <span> Louisville, KY &nbsp;·&nbsp; Tickets start at $8 &nbsp;·&nbsp; KCDHH @ Heuser Hearing Institute booth - South Wing B</span>&nbsp;&nbsp;
-                <a href="https://kystatefair.org/"
-                 target="_blank"
-                  rel="noopener"
-                  >More Information </a
-                >&nbsp;&nbsp;
-              </div>
-            </li>
-            <!-- Deaf awareness day lou zoo Aug 29 ---------------------------->
-            <li class="event-item">
-              <div class="event-date" aria-label="August 29">
-                <span class="month">AUG</span>
-                <span class="day">29</span>
-              </div>
-              <div class="event-info">
-                <strong>2026 Deaf Awareness Day at the Louisville Zoo</strong>
-                <span> KY deaf children get FREE tickets &nbsp;·&nbsp; Discounted tickets for family</span>&nbsp;&nbsp;
-                <a href="https://kyhandsandvoices.org/deaf-awareness-day-the-louisville-zoo/"
-                 target="_blank"
-                  rel="noopener"
-                  >More Information </a
-                >&nbsp;&nbsp;
-              </div>
-            </li>
-            <!-- Scarlett's Park Conference Sept 8---------------------------->
-            <li class="event-item">
-              <div class="event-date" aria-label="September 8">
-                <span class="month">SEP</span>
-                <span class="day">8</span>
-              </div>
-              <div class="event-info">
-                <strong>8th Annual Scarlett's Park Conference</strong>
-                <span> Virtual Presentations &nbsp;·&nbsp; 8 AM - 5 PM PST</span>&nbsp;&nbsp;
-                <a href="https://bit.ly/ScarlettsPark"
-                 target="_blank"
-                  rel="noopener"
-                  >More Information</a
-                >&nbsp;&nbsp;
-              </div>
-            </li>
+
+         
             <!-- HV leadership conference sept 17-19 ---------------------------->
             <li class="event-item">
               <div class="event-date" aria-label="September 17-19">
@@ -1759,6 +1521,22 @@
                 <strong>Hands & Voices 2026 Leadership Conference</strong>
                 <span> Westminster, CO </span>&nbsp;&nbsp;
                 <a href="https://hvleadership2026.zohobackstage.com/HandsVoices22ndAnnualLeadershipConference2026Celebrating30YearsasanOrganization#/tickets?lang=en"
+                 target="_blank"
+                  rel="noopener"
+                  >Register</a
+                >&nbsp;&nbsp;
+              </div>
+            </li>
+            <!-- SCARLETT'S park conference sept 26 ---------------------------->
+            <li class="event-item">
+              <div class="event-date" aria-label="September 26">
+                <span class="month">SEP</span>
+                <span class="day">26</span>
+              </div>
+              <div class="event-info">
+                <strong>8th Annual Scarlett's Park Conference - VIRTUAL</strong>
+                <span> 8 AM - 5 PM PST </span>&nbsp;&nbsp;
+                <a href="https://chhs.fresnostate.edu/thesilentgarden/scarletts_park/index.html"
                  target="_blank"
                   rel="noopener"
                   >Register</a
@@ -1834,7 +1612,7 @@
         <article class="nl-card" aria-labelledby="PA-heading">
           <span class="card-tag tag-camp">ADVOCACY</span>
           <img
-            src="2026August/PA-Logo-Blue.png"
+            src="2026Sept/PA-Logo-Blue.png"
             alt="PA logo"
             style="
               float: right;
@@ -1869,6 +1647,7 @@
           </p>
         </article>
 
+        <div class="card-grid">
           <!------------------------ PROGRAM ----------------------------------->
           <article class="nl-card nl-card--has-image" aria-labelledby="msn-heading">
             <div class="nl-card-content">
@@ -1891,6 +1670,40 @@
           </article>
           
         
+
+          <!------------------------ EDUCATION ----------------------------------->
+          <article class="nl-card" aria-labelledby="education-heading">
+            <span class="card-tag tag-community">Education</span>
+            <h2 id="education-heading">Education Resources</h2>
+            <p>
+              These organizations offer guidance on accommodations, self-advocacy, IEPs, and educational planning for
+              deaf and hard of hearing students from preschool through college.
+            </p>
+            <ul class="nl-link-grid">
+              <li>
+                <a href="https://nationaldeafcenter.org/students/" target="_blank" rel="noopener">National Deaf Center &mdash; Student Resources</a>
+              </li>
+              <li>
+                <a href="https://sites.google.com/ksd.kyschools.us/ksd-outreach/parents" target="_blank" rel="noopener">KSD Outreach &mdash; Educational Consultants</a>
+              </li>
+              <li>
+                <a href="https://clerccenter.gallaudet.edu/resources/" target="_blank" rel="noopener">Clerc Center Resources</a>
+              </li>
+              <li>
+                <a href="https://successforkidswithhearingloss.com" target="_blank" rel="noopener">Supporting Success for Children with Hearing Loss</a>
+              </li>
+              <li>
+                <a href="https://www.parentcenterhub.org/schoolpage/" target="_blank" rel="noopener">Center for Parent Information and Resources (ages 3&ndash;22)</a>
+              </li>
+              <li>
+                <a href="https://kypa.net/how-to-negotiate-in-arc-meetings/" target="_blank" rel="noopener">How to Negotiate in ARC Meetings</a>
+              </li>
+              <li>
+                <a href="https://kypa.net/tips-on-writing-an-individualized-education-program-ieptips/" target="_blank" rel="noopener">Tips on Writing an IEP</a>
+              </li>
+            </ul>
+          </article>
+        </div>
 
         <!-- ══════════════════════════════════════════
         KCDHH RESOURCES
