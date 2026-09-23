@@ -1110,6 +1110,38 @@
         color: var(--text-main);
       }
 
+      .fb-video-wrap {
+        position: relative;
+        padding-bottom: 100%;
+        height: 0;
+        overflow: hidden;
+      }
+      .fb-video-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .yt-video-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 12px auto;
+        max-width: 640px;
+        border-radius: 8px;
+      }
+      .yt-video-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
        /* ============================================================
        RESPONSIVE — Mobile
        ============================================================ */
@@ -1199,20 +1231,6 @@
           padding: 22px 20px;
         }
         
-        .fb-video-wrap {
-          position: relative;
-          padding-bottom: 100%;
-          height: 0;
-          overflow: hidden;
-        }
-        .fb-video-wrap iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100% !important;
-          height: 100% !important;
-        }
-
         /* News/Accessibility card: image sits between the pill and the title */
         .nl-card--stack-mobile {
           flex-direction: column;
@@ -1505,8 +1523,23 @@
 
             <h2 id="heumann-heading">Being Heumann. Coming November 13 to Apple TV</h2>
             <p>
+<p>Loved CODA film? Then you’ll want to know about Siân Heder’s next film, Being Heumann.</p><br>
 
-            </p>
+<p>The film tells the incredible true story of Judy Heumann, a lifelong disability rights activist who helped change the way America views disability, accessibility, and civil rights.</p><br>
+
+<p>In 1977, Judy Heumann and more than 150 disabled people and allies took over a federal building in San Francisco and stayed for 26 days. Their protest helped push the federal government to finally implement Section 504 of the Rehabilitation Act, a landmark civil rights protection for people with disabilities.</p><br>
+
+<p>Now, nearly 50 years later, Heder, the Academy Award-winning director of CODA, is bringing Heumann’s story to the big screen.</p><br>
+
+<p>Why should the Deaf and hard of hearing community care? Because disability rights history is our history, too. The fight for accessibility, communication access, education, employment, and equal participation didn’t happen overnight. People like Judy Heumann helped pave the way.</p><br>
+
+<p>Being Heumann stars Ruth Madeley as Judy Heumann and features a large cast of disabled actors including DHH actors such as Daniel Durant and Russell Harvard.</p><br>
+
+<p>Being Heumann will be released in select theaters on November 6, 2026, and will begin streaming on Apple TV on November 13, 2026.<br></p>
+
+            <div class="yt-video-wrap">
+              <iframe src="https://www.youtube.com/embed/9INUY8uKRyU?si=L7PE2IyCCMLUKRdO" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
 
           </div>
         </article>
