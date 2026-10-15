@@ -560,6 +560,16 @@
         background: transparent;
       }
 
+      /* Like .nl-card-image, but the photo fills the whole image area (no grey panel) */
+      .nl-card-image-fill {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        background: none;
+        padding: 0;
+      }
+
       /* Logo floated into a card's top-right corner, text wraps around it */
       .nl-float-right {
         float: right;
@@ -1126,8 +1136,7 @@
 
       .yt-video-wrap {
         position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
+        aspect-ratio: 16 / 9;
         overflow: hidden;
         margin: 12px auto;
         max-width: 640px;
@@ -1327,8 +1336,21 @@
             <h2>Protect Your Hearing Month 2026</h2>
           </div>
           <p>October is <strong>Protect Your Hearing Month</strong>. </p>
+          <p>October is Protect Your Hearing Month. The observance raises awareness about noise-induced hearing loss. This type of hearing loss can happen when loud sound damages the tiny hair cells in the inner ear. The body cannot grow new hair cells, so the damage can be permanent. <strong>This short video below from the Centers for Disease Control and Prevention (CDC) shows how listening through earphones that are too loud for too long can damage these cells. </strong>Hearing protection is an important part of hearing health for everyone, including people who are already deaf or hard of hearing.</p>
           
-        </div> 
+          <div style="margin-top:20px; align-self:stretch; text-align:center;">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/krqGja-pDcc"
+              title="NAD new CEO video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="max-width:100%; border-radius:6px;"
+            ></iframe>
+          </div>
+        </div>
         
         
         <!-- ══════════════════════════════════════════
@@ -1369,6 +1391,21 @@
             />
             
           </div>
+        </article>
+        <article class="nl-card nl-card--image-bottom" aria-label="Midterms Voting Nov 3">
+          <div class="nl-card-content">
+            
+            <div class="-header" style="display: flex; align-items: center; position: relative; margin-bottom: 9px">
+              <span class="card-tag tag-resource" style="margin-bottom: 0">Vote</span>
+
+            </div>
+            <p>Kentucky’s midterm election is <strong>Tuesday, November 3. </strong>Polls are open from 6 a.m. to 6 p.m. local time. Any registered voter may also vote early in person from Thursday, October 29, through Saturday, October 31. Early voting locations and hours vary by county. Visit <strong><a href="https://govote.ky.gov" target="_blank" rel="noopener">govote.ky.gov</a></strong> to find your polling location, view a sample ballot, and get other voting information.</p>
+
+            <p>Kentucky Protection and Advocacy will operate voter hotlines on Election Day. People with disabilities who experience barriers while exercising their right to vote can call <a href="tel:+18003722988">800-372-2988</a> or <a href="tel:+15025642967">502-564-2967</a>.</p>
+            
+            
+          </div>
+          <img class="nl-card-image-fill" src="2026Oct/vote.jpeg" alt="November 3: Midterm Elections 2026. A pile of red, whtie and blue VOTE! buttons on a blue background." />
         </article>
         <!-- ══════════════════════════════════════════
         TECHNOLOGY
