@@ -377,6 +377,17 @@
         line-height: 1.4;
       }
 
+      /* Single-column bulleted list of links inside a card */
+      .nl-link-list {
+        margin: 12px 0 0;
+        padding-left: 22px;
+      }
+
+      .nl-link-list li {
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+
       /* In a two-up grid the card is too narrow for two link columns */
       .card-grid .nl-link-grid {
         grid-template-columns: 1fr;
@@ -520,6 +531,18 @@
         display: block;
         background: var(--lightgray);
         padding: 12px;
+      }
+
+      /* Small decorative image floated into the bottom-right corner of a card */
+      .nl-card--float-corner {
+        display: flow-root;
+      }
+
+      .nl-card-float-corner {
+        float: right;
+        width: 90px;
+        height: auto;
+        margin: 0 0 0 16px;
       }
 
       /* Mobile-only inline image; the desktop side panel is the sibling .nl-card-image */
@@ -1338,16 +1361,17 @@
           <p><strong>October is Protect Your Hearing Month</strong>. The observance raises awareness about noise-induced hearing loss (NIHL). This type of hearing loss happens when loud sound damages the tiny hair cells in the inner ear. The body cannot grow new hair cells, so the damage can be permanent.</p>
           <p>Hearing protection is an important part of hearing health for everyone, including people who are already deaf or hard of hearing.  Visit the CDCs <a href="https://www.cdc.gov/nceh/hearing_loss/infographic/" target="_blank" rel="noopener">LISTEN UP! PROTECT YOUR HEARING</a> page to learn more.</p>
           <p>Additional CDC videos related to NIHL:</p>
-
-          <a href="https://youtu.be/ttIIJDJrVwU" target="_blank" rel="noopener">
-Listen Better: How to Protect Your Ears When Listening Through Headphones</a>
-<a href="https://youtu.be/hiX8FxkDmwc" target="_blank" rel="noopener">
-
-Too loud for too long: Loud noises damage hearing Vital Signs February 2017</a>
-
-<a href="https://youtu.be/DJtwVDu7IAM" target="_blank" rel="noopener">
-
-Who, What, When, Where and Why of Hearing Protection</a>
+          <ul class="nl-link-list">
+            <li>
+              <a href="https://youtu.be/ttIIJDJrVwU" target="_blank" rel="noopener">Listen Better: How to Protect Your Ears When Listening Through Headphones</a>
+            </li>
+            <li>
+              <a href="https://youtu.be/hiX8FxkDmwc" target="_blank" rel="noopener">Too loud for too long: Loud noises damage hearing Vital Signs February 2017</a>
+            </li>
+            <li>
+              <a href="https://youtu.be/DJtwVDu7IAM" target="_blank" rel="noopener">Who, What, When, Where and Why of Hearing Protection</a>
+            </li>
+          </ul>
           <div style="margin-top:20px; align-self:stretch; text-align:center;">
             <iframe
               width="560"
@@ -1371,16 +1395,25 @@ Who, What, When, Where and Why of Hearing Protection</a>
           Safety
         </div>
        
-       <article class="nl-card" aria-labelledby="fcc-heading">
+       <article class="nl-card nl-card--float-corner" aria-labelledby="fcc-heading">
           <div class="nl-card-content">
             <span class="card-tag tag-federal">Halloween</span>
             
             </div>
             <p>Halloween is creeping up on us.</p>
             <p>Check the links below to find tips on how to make sure our children are safe from super loud ghouls and non-dhh-friendly stinky monsters.</p>
-            <a href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener">Halloween Tips for Families With Hearing Challenges</a><br>
-            <a href="https://www.beltone.com/en-us/articles/halloween-safety-tips-for-hearing-impaired-children" target="_blank" rel="noopener">Halloween Safety Tips for Hearing Impaired Children</a><br>
-            <a href="https://www.sertoma.org/News-Stories/View/ArticleId/10478/Halloween-Children-and-Hearing-Loss" target="_blank" rel="noopener">Halloween, Children and Hearing Loss</a>
+            <img class="nl-card-float-corner" src="2026Oct/ghost.png" alt="" aria-hidden="true" />
+            <ul class="nl-link-list">
+              <li>
+                <a href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener">Halloween Tips for Families With Hearing Challenges</a>
+              </li>
+              <li>
+                <a href="https://www.beltone.com/en-us/articles/halloween-safety-tips-for-hearing-impaired-children" target="_blank" rel="noopener">Halloween Safety Tips for Hearing Impaired Children</a>
+              </li>
+              <li>
+                <a href="https://www.sertoma.org/News-Stories/View/ArticleId/10478/Halloween-Children-and-Hearing-Loss" target="_blank" rel="noopener">Halloween, Children and Hearing Loss</a>
+              </li>
+            </ul>
             </article>
          <!-- ══════════════════════════════════════════
         Community
