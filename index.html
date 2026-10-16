@@ -607,6 +607,20 @@
       .nl-card--halloween {
         background: #f57c00;
         border-color: #c96500;
+        position: relative;
+      }
+
+      /* Spiderweb flush against the card's top-right corner */
+      .nl-card-web {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border-top-right-radius: var(--radius-md);
+        pointer-events: none;
       }
 
       /* Darken body text and links so they stay readable on orange */
@@ -1250,6 +1264,7 @@
         </div>
        
        <article class="nl-card nl-card--float-corner nl-card--halloween" style="background-color:orange;border:3px solid #000;" aria-labelledby="halloween-heading">
+          <img class="nl-card-web" src="2026Oct/spiderweb.png" alt="" aria-hidden="true" />
           <div class="nl-card-content">
             <span class="card-tag" style="background-color: #000; color: #fff;">Halloween</span>
             <h2 id="halloween-heading">Halloween Safety Tips</h2>
@@ -1258,7 +1273,7 @@
             <img class="nl-card-float-corner" src="2026Oct/ghost.png" alt="ghost cartoon" aria-hidden="true" />
             <ul class="nl-link-list">
               <li>
-                <a class="hw bat-link" href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener" style="color:#000;"><span class="bats" aria-hidden="true"><span><img src="2026Oct/bat1.png" /></span><span><img src="2026Oct/bat2.png" /></span><span><img src="2026Oct/bat3.png" /></span><span><img src="2026Oct/bat4.png" /></span></span>Tips for Families</a>
+                <a class="hw bat-link" href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener" style="color:#000;"><span class="bats" aria-hidden="true"><span><img src="2026Oct/bat1.png" /></span><span><img src="2026Oct/bat2.png" /></span><span><img src="2026Oct/bat3.png" /></span><span><img src="2026Oct/bat4.png" /></span></span>Halloween Tips for Families</a>
               </li>
               <li>
                 <a class="hw bat-link" href="https://www.sertoma.org/News-Stories/View/ArticleId/10478/Halloween-Children-and-Hearing-Loss" target="_blank" rel="noopener" style="color:#000;"><span class="bats" aria-hidden="true"><span><img src="2026Oct/bat1.png" /></span><span><img src="2026Oct/bat2.png" /></span><span><img src="2026Oct/bat3.png" /></span><span><img src="2026Oct/bat4.png" /></span></span>Halloween, Children and Hearing Loss</a>
