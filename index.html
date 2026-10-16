@@ -1087,7 +1087,29 @@
         .nl-footer {
           padding: 22px 20px;
         }
-        
+
+        /* Stack the corner image below the card's links, centered */
+        .nl-card--float-corner .nl-card-content {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .nl-card--float-corner .card-tag {
+          align-self: flex-start;
+        }
+
+        /* Flex items don't collapse margins, so drop the top margin on paragraphs */
+        .nl-card--float-corner .nl-card-content p {
+          margin-top: 0;
+        }
+
+        .nl-card-float-corner {
+          float: none;
+          order: 1;
+          align-self: center;
+          margin: 12px 0 0;
+        }
+
       }
     </style>
   </head>
