@@ -121,6 +121,23 @@
         text-decoration: underline;
       }
 
+      a.hw {
+        color: #ff7a00;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+      }
+      
+      a.hw:hover {
+        color: #ffd166;
+        text-shadow:
+        0 0 4px #ff7a00,
+        0 0 10px #ff4d00,
+        0 0 18px #7a1f00;
+        transform: rotate(-1deg) scale(1.04);
+        animation: spooky-flicker 0.8s infinite alternate;
+      }
+
       a:focus {
         outline: 3px solid var(--elcblue);
         outline-offset: 2px;
@@ -990,7 +1007,7 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: var(--elcblue);
+        background: var(--navy1);
         flex-shrink: 0;
       }
 
@@ -1414,10 +1431,10 @@
             <img class="nl-card-float-corner" src="2026Oct/ghost.png" alt="" aria-hidden="true" />
             <ul class="nl-link-list">
               <li>
-                <a href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener">Halloween Tips for Families With Hearing Challenges</a>
+                <a class="hw" href="https://hearinghealthfoundation.org/blogs/halloween-tips-for-families-with-hearing-challenges" target="_blank" rel="noopener" style="color:#000;">Halloween Tips for Families With Hearing Challenges</a>
               </li>
               <li>
-                <a href="https://www.sertoma.org/News-Stories/View/ArticleId/10478/Halloween-Children-and-Hearing-Loss" target="_blank" rel="noopener">Halloween, Children and Hearing Loss</a>
+                <a class="hw" href="https://www.sertoma.org/News-Stories/View/ArticleId/10478/Halloween-Children-and-Hearing-Loss" target="_blank" rel="noopener" style="color:#000;">Halloween, Children and Hearing Loss</a>
               </li>
             </ul>
           </div>
@@ -1481,11 +1498,38 @@
               <span class="card-tag tag-resource" style="margin-bottom: 0">Scam Calls</span>
 
             </div>
-            <p><strong>InnoCaption</strong></p>
+            <p>Your phone rings, and the caller says they’re from your bank. They know your name, warn you about suspicious activity on your account, and tell you that you need to act immediately. It sounds urgent. It sounds official. And that’s exactly the point.</p>
+            <p><strong>InnoCaption</strong> wrote </p>
             <p></p>
             <p></p>
             <p></p>
-            <p></p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px">
+            <img
+              src="2026Oct/author.png"
+              alt="Catherine Roberts"
+              style="
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                object-fit: cover;
+                flex-shrink: 0;
+                border: 2px solid var(--border);
+              "
+            />
+            <div style="line-height: 1.4">
+              <span style="font-weight: 600; font-size: 16px">Written by Minah Han</span><br />
+              <span style="font-size: 15px; color: var(--text-muted)">Senior Health &amp; Food Reporter</span>
+            </div>
+          </div>
+
+          <a
+            class="card-link"
+            href="https://www.consumerreports.org/health/hearing-aids/one-of-best-hearing-aid-features-many-still-arent-using-a4102935824/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Read full article"
+            >Read full article</a
+          >
           </div>
         </article>
         <!-- ══════════════════════════════════════════
