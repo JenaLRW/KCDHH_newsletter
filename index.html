@@ -658,14 +658,17 @@
         color: var(--navy1);
       }
 
-      .tag-halloween {
-        background: #f57c00;
-        color: #2b1400;
-      }
+      
 
       .nl-card--halloween {
-        background: #e6dcf5;
-        border-color: #c9b6e8;
+        background: #f57c00;
+        border-color: #c96500;
+      }
+
+      /* Darken body text and links so they stay readable on orange */
+      .nl-card--halloween p,
+      .nl-card--halloween a {
+        color: #2b1400;
       }
 
       .tag-event {
@@ -1400,9 +1403,9 @@
           Safety
         </div>
        
-       <article class="nl-card nl-card--float-corner nl-card--halloween" aria-labelledby="halloween-heading">
+       <article class="nl-card nl-card--float-corner nl-card--halloween" style="background-color:orange;border:3px solid #000; "aria-labelledby="halloween-heading">
           <div class="nl-card-content">
-            <span class="card-tag tag-halloween">Halloween</span>
+            <span class="card-tag" style="background-color: #000; color: #fff;">Halloween</span>
             <h2 id="halloween-heading">Halloween Safety Tips</h2>
             <p>Halloween is creeping up on us.</p>
             <p>Check the links below to find tips on how to make sure our children are safe from super loud ghouls and non-dhh-friendly stinky monsters.</p>
@@ -1439,7 +1442,7 @@
             <p>Early in person voting from Thursday, October 29, through Saturday, October 31. Early voting locations and hours vary by county. </p>
             <p>Visit <strong><a href="https://govote.ky.gov" target="_blank" rel="noopener">govote.ky.gov</a></strong> to find your polling location, view a sample ballot, and get other voting information.</p>
 
-            <p>Kentucky Protection and Advocacy will operate voter hotlines on Election Day. People with disabilities who experience barriers while exercising their right to vote can call <a href="tel:+18003722988">800-372-2988</a> or <a href="tel:+15025642967">502-564-2967</a>.</p>
+            <p>Kentucky Protection & Advocacy will operate voter hotlines on Election Day. People with disabilities who experience barriers while voting can call <a href="tel:+18003722988">800-372-2988</a> or <a href="tel:+15025642967">502-564-2967</a>.</p>
             
             
           </div>
@@ -1452,16 +1455,14 @@
               <span class="card-tag tag-resource" style="margin-bottom: 0">Fun & Games</span>
 
             </div>
-            <p>Join us on November 21, 2026 at Owl Creek Lodge in Louisville. </p><p>We will have 10 rounds of trivia and all proceeds benefit Kentucky Hands & Voices. </p><p>We will also have a selection of awesome silent auction items. </p><p>Prizes will be given for the best overall costume AND best themed table costumes. Come as your favorite TV sitcom character. (Costumes are encouraged but not required.) </p><br>
-            <p style="text-align: center"><a href="https://kyhandsandvoices.org/trivia-night-silent-auction/" target="_blank" rel="noopener">Registration</a></p>
-            <br>
-            <br>
+            
+            
             <img
               src="2026Oct/trivia.png"
               alt="Kentucky Hands and Voices Trivia Night"
               style="display: block; width: 100%; height: auto; margin-bottom: 12px; border-radius: var(--radius-md)"
             />
-            
+            <p style="text-align: center"><a href="https://kyhandsandvoices.org/trivia-night-silent-auction/" target="_blank" rel="noopener">More Info & Registration</a></p>
           </div>
         </article>
         
