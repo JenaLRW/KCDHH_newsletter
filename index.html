@@ -186,6 +186,52 @@
         }
       }
 
+      /* Halloween Float: three witches fly across the screen once when the
+         Halloween card scrolls into view. Off for Reduce Motion. */
+      .hf-layer { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; display: none; }
+      .hf-layer.hf-on { display: block; }
+      .hf-witch { position: absolute; top: 0; left: 0; width: clamp(80px, 12vw, 170px); will-change: transform; }
+      .hf-witch img { display: block; width: 100%; height: auto; }
+      /* Soft light edge so the black witches still show up over dark backgrounds. */
+      .hf-witch img { filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.45)); }
+      .hf-w2 { top: 3vh; }
+      .hf-w3 { top: -2vh; }
+
+      /* Each witch follows the same swooping path. The delays space them out. */
+      .hf-on .hf-witch { animation: hf-across 3.4s linear both; }
+      .hf-on .hf-witch .hf-lift { animation: hf-lift 3.4s cubic-bezier(0.25, 0.6, 0.45, 1) both; }
+      .hf-on .hf-w2, .hf-on .hf-w2 .hf-lift { animation-delay: 0.5s; }
+      .hf-on .hf-w3, .hf-on .hf-w3 .hf-lift { animation-delay: 1s; }
+
+      @keyframes hf-across {
+        from { transform: translateX(-35vw); }
+        to   { transform: translateX(112vw); }
+      }
+      @keyframes hf-lift {
+        from { transform: translateY(48vh) rotate(20deg); }
+        to   { transform: translateY(14vh) rotate(20deg); }
+      }
+
+      /* Replay button under the Halloween card */
+      .hf-replay-wrap { margin: -4px 0 16px; text-align: right; }
+      .hf-replay {
+        background: #000;
+        color: #fff;
+        border: 2px solid #000;
+        border-radius: 999px;
+        padding: 6px 16px;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .hf-replay:hover { background: #f57c00; color: #000; }
+      .hf-replay:focus-visible { outline: 3px solid var(--elcblue); outline-offset: 2px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hf-layer,
+        .hf-replay-wrap { display: none !important; }
+      }
+
       a:focus {
         outline: 3px solid var(--elcblue);
         outline-offset: 2px;
@@ -1263,7 +1309,7 @@
           Safety
         </div>
        
-       <article class="nl-card nl-card--float-corner nl-card--halloween" style="background-color:orange;border:3px solid #000;" aria-labelledby="halloween-heading">
+       <article id="halloween" class="nl-card nl-card--float-corner nl-card--halloween" style="background-color:orange;border:3px solid #000;" aria-labelledby="halloween-heading">
           <img class="nl-card-web" src="2026October/spiderweb.png" alt="" aria-hidden="true" />
           <div class="nl-card-content">
             <span class="card-tag" style="background-color: #000; color: #fff;">Halloween</span>
@@ -1281,6 +1327,9 @@
             </ul>
           </div>
         </article>
+        <div class="hf-replay-wrap" hidden>
+          <button type="button" class="hf-replay">Watch the witches fly again</button>
+        </div>
          <!-- ══════════════════════════════════════════
         Community
         ══════════════════════════════════════════ -->
@@ -1382,43 +1431,6 @@
         <article class="nl-card" aria-label="Upcoming events list">
           <ul class="event-list" aria-label="Events by date">
            
-            <!-- PAH Club Pumpkin Day ---------------------------------------------->
-            <li class="event-item">
-              <div class="event-date" aria-label="October 17">
-                <span class="month">OCT</span>
-                <span class="day">17</span>
-              </div>
-              <div class="event-info">
-                <strong>PAH Club's 3rd Annual Deaf Day at Pumpkin Patch</strong>
-                <span> Shelbyville, KY &nbsp;·&nbsp; 1:30 PM - 3:30 PM </span>&nbsp;&nbsp;
-                <a href="https://www.zeffy.com/en-US/ticketing/3rd-annual-deaf-day-at-pumpkin-patch"
-                 target="_blank"
-                  rel="noopener"
-                  >More Information </a
-                >&nbsp;&nbsp;
-              </div>
-            </li>
-            <!-- KY Hands and Voices Pumpkin Jamboree at Eckert's orchard  Oct 18------------------------------>
-            <li class="event-item">
-              <div class="event-date" aria-label="October 18">
-                <span class="month">OCT</span>
-                <span class="day">18</span>
-              </div>
-              <div class="event-info">
-                <strong>Kentucky Hands & Voices - Pumpkin Jamboree at Eckert's Orchard</strong>
-                <span> Versailles, KY &nbsp;·&nbsp; 1 PM </span>&nbsp;&nbsp;
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScQguzA3sG5D3EgpB9n0EHO1_Vgakn0fk3tIASiY7SsFDWj4Q/viewform"
-                 target="_blank"
-                  rel="noopener"
-                  >Registration</a
-                >&nbsp;·&nbsp;
-                <a href="https://www.facebook.com/events/2061395437830392"
-                 target="_blank"
-                  rel="noopener"
-                  >More Information </a
-                >
-              </div>
-            </li>
             <!-- UL Deaf spotlight series ---------------------------------------------->
             <li class="event-item">
               <div class="event-date" aria-label="October 22">
@@ -1936,6 +1948,63 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !policyModal.hasAttribute("hidden")) closePolicyModal();
       });
+    </script>
+
+    <!-- Halloween Float: three witches (styles are in the head, next to the bats) -->
+    <div class="hf-layer" aria-hidden="true">
+      <div class="hf-witch hf-w1"><div class="hf-lift"><img src="2026October/witch1.png" alt="" /></div></div>
+      <div class="hf-witch hf-w2"><div class="hf-lift"><img src="2026October/witch2.png" alt="" /></div></div>
+      <div class="hf-witch hf-w3"><div class="hf-lift"><img src="2026October/witch3.png" alt="" /></div></div>
+    </div>
+
+    <script>
+      (function () {
+        var SECTION_ID = "halloween"; // must match the id on the Halloween card
+        var LENGTH_MS = 4600; // keep under 5000 so it meets WCAG 2.2.2
+
+        function init() {
+          var layer = document.querySelector(".hf-layer");
+          if (!layer) return;
+          document.body.appendChild(layer); // keeps it full screen even inside page builders
+
+          var reduce = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+          var timer;
+
+          function play() {
+            if (reduce && reduce.matches) return false;
+            clearTimeout(timer);
+            layer.classList.remove("hf-on");
+            void layer.offsetWidth; // restart the animation
+            layer.classList.add("hf-on");
+            timer = setTimeout(function () { layer.classList.remove("hf-on"); }, LENGTH_MS);
+            return true;
+          }
+          window.halloweenFloat = { play: play };
+
+          // Replay button: shown only when the witches can actually fly
+          var replayWrap = document.querySelector(".hf-replay-wrap");
+          if (replayWrap) {
+            replayWrap.removeAttribute("hidden");
+            replayWrap.querySelector(".hf-replay").addEventListener("click", play);
+          }
+
+          var section = document.getElementById(SECTION_ID);
+          if (!section || !("IntersectionObserver" in window)) return;
+          var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+              observer.disconnect(); // play only once per visit
+              play();
+            }
+          }, { rootMargin: "0px 0px -35% 0px" }); // fires when the card reaches about two thirds of the way up the screen
+          observer.observe(section);
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
     </script>
   </body>
 </html>
