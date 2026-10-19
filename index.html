@@ -186,7 +186,7 @@
       }
 
       /* Halloween Float: three witches fly across the screen once when the
-         Halloween card scrolls into view. Off for Reduce Motion. */
+         Halloween card scrolls into view. */
       .hf-layer { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; display: none; }
       .hf-layer.hf-on { display: block; }
       .hf-witch { position: absolute; top: 0; left: 0; width: clamp(80px, 12vw, 170px); will-change: transform; }
@@ -225,11 +225,6 @@
       }
       .hf-replay:hover { background: #f57c00; color: #000; }
       .hf-replay:focus-visible { outline: 3px solid var(--elcblue); outline-offset: 2px; }
-
-      @media (prefers-reduced-motion: reduce) {
-        .hf-layer,
-        .hf-replay-wrap { display: none !important; }
-      }
 
       a:focus {
         outline: 3px solid var(--elcblue);
@@ -1966,11 +1961,9 @@
           if (!layer) return;
           document.body.appendChild(layer); // keeps it full screen even inside page builders
 
-          var reduce = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
           var timer;
 
           function play() {
-            if (reduce && reduce.matches) return false;
             clearTimeout(timer);
             layer.classList.remove("hf-on");
             void layer.offsetWidth; // restart the animation
@@ -1980,7 +1973,7 @@
           }
           window.halloweenFloat = { play: play };
 
-          // Replay button: shown only when the witches can actually fly
+          // Replay button: hidden until this script runs
           var replayWrap = document.querySelector(".hf-replay-wrap");
           if (replayWrap) {
             replayWrap.removeAttribute("hidden");
