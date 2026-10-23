@@ -416,7 +416,7 @@
       }
 
       .nl-awareness-header {
-        background: var(--navy1);
+        background: #183a19;
         color: #fff;
         width: calc(100% + 40px);
         height: 100px;
@@ -437,8 +437,120 @@
         line-height: 1.35;
         margin: 0;
       }
+
+      /* Turkey walking across the awareness header */
+      .nl-awareness-header {
+        overflow: hidden;
+      }
+      .nl-awareness-header h2 {
+        position: relative;
+        width: 100%;
+      }
+      .walking-turkey {
+        position: absolute;
+        bottom: -2px;
+        left: calc(-24px - 1.3em);
+        font-size: 56px;
+        line-height: 1;
+        pointer-events: none;
+        animation:
+          turkey-walk 4s linear forwards,
+          turkey-waddle 0.25s ease-in-out 16 alternate,
+          turkey-walk-back 4s linear 5.8s forwards,
+          turkey-waddle-back 0.25s ease-in-out 5.8s 16 alternate;
+      }
+      @keyframes turkey-walk {
+        from { left: calc(-24px - 1.3em); }
+        to   { left: calc(100% + 24px); }
+      }
+      @keyframes turkey-waddle {
+        from { transform: scaleX(-1) rotate(-8deg) translateY(0); }
+        to   { transform: scaleX(-1) rotate(8deg) translateY(-4px); }
+      }
+      /* Return trip: right to left, turkey facing left and now chasing the farmer */
+      @keyframes turkey-walk-back {
+        from { left: calc(100% + 24px); }
+        to   { left: calc(-24px - 1.3em); }
+      }
+      @keyframes turkey-waddle-back {
+        from { transform: rotate(8deg) translateY(0); }
+        to   { transform: rotate(-8deg) translateY(-4px); }
+      }
+
+      /* Farmer with an axe chasing the turkey */
+      .chasing-farmer {
+        position: absolute;
+        bottom: -2px;
+        left: calc(-24px - 1.8em);
+        display: inline-flex;
+        align-items: flex-start;
+        white-space: nowrap;
+        font-size: 56px;
+        line-height: 1;
+        pointer-events: none;
+        animation:
+          farmer-run 4.2s linear 0.6s both,
+          farmer-bob 0.2s ease-in-out 0.6s 21 alternate,
+          farmer-run-back 4.2s linear 5.2s forwards,
+          farmer-bob-back 0.2s ease-in-out 5.2s 21 alternate;
+      }
+      .farmer-axe {
+        display: inline-block;
+        font-size: 0.6em;
+        margin-left: -0.35em;
+        transform-origin: bottom center;
+        animation:
+          axe-swing 0.3s ease-in-out 0.6s 14 alternate,
+          axe-drop 0s linear 5.2s forwards;
+      }
+      /* Turkey picks up the axe for the return trip */
+      .turkey-axe {
+        position: absolute;
+        top: 0;
+        right: calc(100% - 0.35em);
+        font-size: 0.6em;
+        transform-origin: bottom center;
+        visibility: hidden;
+        animation:
+          axe-pickup 0s linear 5.8s forwards,
+          turkey-axe-swing 0.3s ease-in-out 5.8s 14 alternate;
+      }
+      @keyframes farmer-run {
+        from { left: calc(-24px - 1.8em); }
+        to   { left: calc(100% + 24px); }
+      }
+      @keyframes farmer-bob {
+        from { transform: rotate(-6deg) translateY(0); }
+        to   { transform: rotate(4deg) translateY(-6px); }
+      }
+      /* Return trip: farmer mirrored to face left, fleeing without the axe */
+      @keyframes farmer-run-back {
+        from { left: calc(100% + 24px); }
+        to   { left: calc(-24px - 1.8em); }
+      }
+      @keyframes farmer-bob-back {
+        from { transform: scaleX(-1) rotate(-6deg) translateY(0); }
+        to   { transform: scaleX(-1) rotate(4deg) translateY(-6px); }
+      }
+      @keyframes axe-swing {
+        from { transform: scaleX(-1) rotate(-35deg); }
+        to   { transform: scaleX(-1) rotate(25deg); }
+      }
+      /* Unflipped so it matches the farmer's mirrored swing on the way back */
+      @keyframes turkey-axe-swing {
+        from { transform: rotate(-35deg); }
+        to   { transform: rotate(25deg); }
+      }
+      @keyframes axe-drop {
+        to { visibility: hidden; }
+      }
+      @keyframes axe-pickup {
+        to { visibility: visible; }
+      }
+
       .nl-alert.nl-featured {
-        border: 3px solid var(--navy1);
+        background: #efbb72;
+        border: 3px solid #352003;
       }
 
       .nl-alert.nl-featured a {
@@ -1146,9 +1258,54 @@
         ══════════════════════════════════════════ -->
         <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature">
           <div class="nl-awareness-header">
-            <h2>foo</h2>
+            <h2>Happy Thanksgiving<span class="walking-turkey" aria-hidden="true">🦃<span class="turkey-axe">🪓</span></span><span class="chasing-farmer" aria-hidden="true">🧑‍🌾<span class="farmer-axe">🪓</span></span></h2>
           </div>
-          <p>foo</p>
+          <p><strong>Holiday Gatherings and Dinner Table Syndrome</strong></p>
+
+<p>The holiday season brings families and friends together for meals and celebrations. For people who are deaf or hard of hearing, these gatherings can also present communication barriers.</p>
+
+<p>“Dinner table syndrome” is a term that describes being left out of conversation at family meals and other group gatherings. It can affect people with any degree of hearing loss, from mild to profound. Several people may talk at once. Background noise and dim lighting can make conversation hard to follow. A person may catch only part of what is said.</p>
+
+<p>A few changes can help everyone take part.</p>
+
+<p><strong>For Family Members and Friends</strong></p>
+
+<p>Ask your family member or friend who is deaf or hard of hearing what helps most.</p>
+
+<p>Offer a seat with a clear view of everyone at the table.</p>
+
+<p>Keep the room well lit so faces are easy to see.</p>
+
+<p>Turn off the television or music during the meal.</p>
+
+<p>Take turns speaking so only one person talks at a time.</p>
+
+<p>Get the person’s attention before you begin speaking.</p>
+
+<p>Let the person know when the topic of conversation changes.</p>
+
+<p>Repeat or rephrase information when asked. Avoid responding with “never mind” or “I’ll tell you later.”</p>
+
+<p><strong>For People Who Are Deaf or Hard of Hearing</strong></p>
+
+<p>Tell your host or family ahead of time what helps you follow conversation.</p>
+
+<p>Choose a seat with a clear view of faces.</p>
+
+<p>Sit away from sources of background noise when possible.</p>
+
+<p>Check that hearing aids, cochlear implants, or other hearing devices are charged before the gathering.</p>
+
+<p>Use a speech-to-text app on a phone or tablet to caption conversation at the table.</p>
+
+<p>Ask a family member or friend to fill you in when you miss part of a conversation.</p>
+
+<p>Spend time in smaller conversations, which can be easier to follow.</p>
+
+<p>Take breaks when you need them. Following group conversation can be tiring.</p>
+
+<p>Small changes can help everyone at the table share in the holiday conversation.</p>
+          <p><strong>Deaf Native Americans</strong></p>
         </div>
         
          <!-- ══════════════════════════════════════════
