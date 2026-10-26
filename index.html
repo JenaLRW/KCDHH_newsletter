@@ -598,6 +598,15 @@
         height: auto;
       }
 
+      /* Decorative divider line spanning an awareness card */
+      .nl-featured-divider {
+        align-self: stretch;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 6px 0;
+      }
+
       /* Groups a card's paragraphs into one block so a floated image can wrap across several
          of them (each direct child of the flex .nl-alert is laid out on its own) */
       .nl-featured-body {
@@ -1403,11 +1412,7 @@
 
           <p>A few changes can help everyone take part.</p>
 
-          <img
-            class="nl-featured-center-img"
-            src="2026November/thanksgiving.png"
-            alt="Happy Thanksgiving illustration of a cartoon turkey in a pilgrim hat beside a pumpkin and autumn leaves"
-          />
+          <img class="nl-featured-divider" src="2026November/fall-divider-trimmed.png" alt="" />
 
           <p><strong>For Family Members and Friends</strong></p>
 
@@ -1436,7 +1441,12 @@
           </ul>
 
           <p><strong>Small changes can help everyone at the table share in the holiday conversation.</strong></p>
-            
+
+          <img
+            class="nl-featured-center-img"
+            src="2026November/thanksgiving.png"
+            alt="Happy Thanksgiving illustration of a cartoon turkey in a pilgrim hat beside a pumpkin and autumn leaves"
+          />
         </div>
 
         <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature: Native American Heritage Month">
@@ -1547,11 +1557,11 @@
         <!-- ══════════════════════════════════════════
         Technology
         ══════════════════════════════════════════ -->
-        <div class="section-label" aria-label="Section: Technology">
+        <!-- <div class="section-label" aria-label="Section: Technology">
           <span class="section-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
           Technology
         </div>
-        <article class="nl-card" aria-label="foo"></article>
+        <article class="nl-card" aria-label="foo"></article> -->
         <!-- ══════════════════════════════════════════
         UPCOMING EVENTS
         ══════════════════════════════════════════ -->
@@ -1563,7 +1573,38 @@
         <!-- ✏️ EDIT: Update event list items each month -->
         <article class="nl-card" aria-label="Upcoming events list">
           <ul class="event-list" aria-label="Events by date">
-           
+           <!--  ASTra Webinar Nov 17 ---------------------------------------------->
+            <li class="event-item">
+              <div class="event-date" aria-label="November 17">
+                <span class="month">NOV</span>
+                <span class="day">17</span>
+              </div>
+              <div class="event-info">
+                <strong>ASTra webinar - From Parent Records to Student Voice: The Power of Documentation - Webinar</strong>
+                <span> 11:00AM - 12:00PM MOUNTAIN TIME &nbsp;·&nbsp; 1:00PM - 3:00PM ET </span>&nbsp;&nbsp;
+                <a href="https://handsandvoices.org/astra/webinars/"
+                 target="_blank"
+                  rel="noopener"
+                  >More Info & Registration</a
+                >
+              </div>
+            </li>
+            <!--  Cincinnati art museum looking twice Nov 19 ---------------------------------------------->
+            <li class="event-item">
+              <div class="event-date" aria-label="November 17">
+                <span class="month">NOV</span>
+                <span class="day">19</span>
+              </div>
+              <div class="event-info">
+                <strong>Cincinnati Art Museum: Looking Twice (ASL Interpreted)</strong>
+                <span> Cincinnati, OH &nbsp;·&nbsp; 6:00PM </span>&nbsp;&nbsp;
+                <a href="https://cincinnatiartmuseum.org/events/events-list/cam-presents-looking-twice-visual-representation-and-black-cincinnati/?date=November%2019,%202026%2006%3A00%20PM"
+                 target="_blank"
+                  rel="noopener"
+                  >More Info & Registration</a
+                >
+              </div>
+            </li>
             <!-- KY Hands and Voices TRIVIA NIGHT Nov 21 ---------------------------------------------->
             <li class="event-item">
               <div class="event-date" aria-label="November 21">
