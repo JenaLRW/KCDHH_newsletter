@@ -553,16 +553,117 @@
         border: 3px solid #352003;
       }
 
+      /* Decorative video layered edge to edge across the top of the window, played once then faded out */
+      .nl-page-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+      .nl-page-overlay.is-fading {
+        opacity: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .nl-page-overlay {
+          display: none;
+        }
+      }
+
       .nl-alert.nl-featured a {
         color: var(--navy2);
       }
 
-      .nl-featured-video {
+      /* Navy / light blue color variant of the awareness feature card */
+      .nl-alert.nl-featured.nl-featured--navy {
+        background: var(--alert-light);
+        border-color: var(--navy1);
+        color: var(--navy2);
+      }
+      .nl-featured--navy .nl-awareness-header {
+        background: var(--navy1);
+      }
+
+      /* Image centered on its own line inside an awareness card (.nl-alert left-aligns its children) */
+      .nl-featured-center-img {
+        align-self: center;
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+      }
+
+      /* Groups a card's paragraphs into one block so a floated image can wrap across several
+         of them (each direct child of the flex .nl-alert is laid out on its own) */
+      .nl-featured-body {
+        align-self: stretch;
+        display: flow-root;
+      }
+      .nl-featured-body > * + p {
+        margin-top: 10px;
+      }
+
+      /* Image floated right with text wrapped tight against its edges; clear keeps a second
+         one below the first instead of beside it */
+      .nl-featured-float-tight {
+        float: right;
+        clear: right;
+        width: 300px;
+        height: auto;
+        margin: 6px 0 6px 12px;
+        border-radius: var(--radius-sm);
+      }
+      .nl-featured-float-tight--left {
+        float: left;
+        clear: left;
+        margin: 6px 12px 6px 0;
+      }
+
+      .nl-alert.nl-featured ul {
+        padding-left: 22px;
+      }
+      .nl-alert.nl-featured li + li {
+        margin-top: 6px;
+      }
+
+      /* Image floated into the top-right of an awareness card; must sit inside a <p>
+         because .nl-alert is a flex container and its direct children can't float */
+      .nl-featured-float {
+        float: right;
+        width: 350px;
+        height: auto;
+        padding: 10px;
+      }
+
+      /* Clickable floated image that opens in the flyer modal */
+      button.nl-featured-float {
+        background: none;
+        border: none;
+        cursor: zoom-in;
+        font: inherit;
+      }
+      button.nl-featured-float img {
         display: block;
         width: 100%;
         height: auto;
-        border-radius: var(--radius-md);
-        margin-bottom: 12px;
+      }
+      .nl-featured-float-caption {
+        display: block;
+        margin-top: 4px;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.3;
+        text-align: center;
+        color: var(--navy1);
+      }
+      button.nl-featured-float:focus-visible {
+        outline: 2px solid var(--navy1);
+        outline-offset: -2px;
       }
 
       /* ============================================================
@@ -1207,6 +1308,20 @@
           margin: 12px 0 0;
         }
 
+        .nl-featured-float {
+          float: none;
+          display: block;
+          width: 100%;
+          padding: 0 0 12px;
+        }
+
+        .nl-featured-float-tight {
+          float: none;
+          display: block;
+          width: 100%;
+          margin: 0 0 12px;
+        }
+
       }
     </style>
   </head>
@@ -1214,6 +1329,18 @@
   <body>
     <!-- Skip to main content (screen readers & keyboard users) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Decorative falling leaves across the full window width; src is set by script only when
+         reduced motion is not requested -->
+    <video
+      class="nl-page-overlay"
+      data-src="2026November/leaves-white.mp4"
+      muted
+      playsinline
+      preload="none"
+      aria-hidden="true"
+      tabindex="-1"
+    ></video>
 
     <div id="page">
       <!-- ============================================================
@@ -1261,17 +1388,109 @@
       ============================================================ -->
       <main id="main-content" class="nl-body">
 
-        <video
-          class="nl-featured-video"
-          src="2026November/turkeyrun.mov"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-          aria-label="Happy Thanksgiving: a farmer chases a turkey"
-        ></video>
+ <!-- ══════════════════════════════════════════
+        AWARENESS FEATURED CARD
+        ══════════════════════════════════════════ -->
+        <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature">
+          <div class="nl-awareness-header">
+            <h2>Inclusivity at the Dinner Table</h2>
+          </div>
+          <p><strong>Holiday Gatherings and Dinner Table Syndrome</strong></p>
 
+          <p>The holiday season brings families and friends together for meals and celebrations. For people who are deaf or hard of hearing, these gatherings can also present communication barriers.</p>
+
+          <p>“Dinner table syndrome” is a term that describes being left out of conversation at family meals and other group gatherings. It can affect people with any degree of hearing loss, from mild to profound. Several people may talk at once. Background noise and dim lighting can make conversation hard to follow. A person may catch only part of what is said.</p>
+
+          <p>A few changes can help everyone take part.</p>
+
+          <img
+            class="nl-featured-center-img"
+            src="2026November/thanksgiving.png"
+            alt="Happy Thanksgiving illustration of a cartoon turkey in a pilgrim hat beside a pumpkin and autumn leaves"
+          />
+
+          <p><strong>For Family Members and Friends</strong></p>
+
+          <ul>
+            <li>Ask your family member or friend who is deaf or hard of hearing what helps most.</li>
+            <li>Offer a seat with a clear view of everyone at the table.</li>
+            <li>Keep the room well lit so faces are easy to see.</li>
+            <li>Turn off the television or music during the meal.</li>
+            <li>Take turns speaking so only one person talks at a time.</li>
+            <li>Get the person’s attention before you begin speaking.</li>
+            <li>Let the person know when the topic of conversation changes.</li>
+            <li>Repeat or rephrase information when asked. Avoid responding with “never mind” or “I’ll tell you later.”</li>
+          </ul>
+
+          <p><strong>For People Who Are Deaf or Hard of Hearing</strong></p>
+
+          <ul>
+            <li>Tell your host or family ahead of time what helps you follow conversation.</li>
+            <li>Choose a seat with a clear view of faces.</li>
+            <li>Sit away from sources of background noise when possible.</li>
+            <li>Check that hearing aids, cochlear implants, or other hearing devices are charged before the gathering.</li>
+            <li>Use a speech-to-text app on a phone or tablet to caption conversation at the table.</li>
+            <li>Ask a family member or friend to fill you in when you miss part of a conversation.</li>
+            <li>Spend time in smaller conversations, which can be easier to follow.</li>
+            <li>Take breaks when you need them. Following group conversation can be tiring.</li>
+          </ul>
+
+          <p><strong>Small changes can help everyone at the table share in the holiday conversation.</strong></p>
+            
+        </div>
+
+        <div class="nl-alert nl-featured" role="region" aria-label="Awareness feature: Native American Heritage Month">
+          <div class="nl-awareness-header">
+            <h2>Native American Heritage Month</h2>
+          </div>
+          <p>
+            <button
+              type="button"
+              class="nl-featured-float"
+              data-flyer="2026November/PISL.jpeg"
+              data-title="Illustrations of the Signs of the American Indian"
+              aria-haspopup="dialog"
+              aria-label="Enlarge image: Illustrations of the Signs of the American Indian"
+            >
+              <img
+                src="2026November/PISL.jpeg"
+                alt="Vintage newspaper illustration titled Illustrations of the Signs of the American Indian, showing hand signs for words such as peace, brave, horse, tepee, and danger"
+              />
+              <span class="nl-featured-float-caption">Click on image to enlarge</span>
+            </button>
+            November is Native American Heritage Month. This observance honors the history, cultures, and contributions of Native American and Indigenous peoples. This month is also a time to recognize deaf and hard of hearing Native Americans as part of that history. Deaf Services Unlimited shares the stories of deaf Native leaders and community members in an article for Native American Heritage Month. The article also explains the history of Plains Indian Sign Language (PISL). According to the article, members of multiple tribal nations used PISL to communicate across spoken language differences. Deaf Services Unlimited also describes current efforts to preserve PISL and other Indigenous sign languages. <a href="https://deafservicesunlimited.com/native-american-heritage-month-honoring-deaf-natives-and-the-legacy-of-pisl/" target="_blank" rel="noopener">Read the full article to learn more.</a></p>
+        </div>
+
+        <div class="nl-alert nl-featured nl-featured--navy" role="region" aria-label="Awareness feature: Diabetes Awareness Month">
+          <div class="nl-awareness-header">
+            <h2>Diabetes Awareness Month</h2>
+          </div>
+          <div class="nl-featured-body">
+            <p>November is Diabetes Awareness Month. It is a good time to learn how diabetes can affect hearing health.</p>
+
+            <p>According to the Centers for Disease Control and Prevention (CDC), diabetes can damage nerves in many parts of the body, including the ears. Over time, high blood sugar can damage small blood vessels and nerves in the inner ear. Low blood sugar over time can affect how nerve signals travel from the inner ear to the brain. The CDC reports that both types of damage can lead to hearing loss.</p>
+
+            <img
+              class="nl-featured-float-tight"
+              src="2026November/diabetes.jpeg"
+              alt="Gloved hands checking a person's blood sugar with a glucose meter reading 105 mg/dL"
+            />
+
+            <p>The CDC also reports that hearing loss is twice as common in people who have diabetes as in people of the same age who do not. People with prediabetes have a 30 percent higher rate of hearing loss than people with normal blood sugar levels.</p>
+
+            <p>Hearing loss can develop slowly. Some people may not notice the change right away. The CDC lists several signs of hearing loss, including often asking others to repeat themselves, having trouble following conversations with more than one person, and having trouble hearing in noisy places. Problems with the inner ear can also affect balance.</p>
+
+            <img
+              class="nl-featured-float-tight nl-featured-float-tight--left"
+              src="2026November/diabetes2.jpeg"
+              alt="A doctor looking into a man's ear with an otoscope during a hearing exam"
+            />
+
+            <p>The CDC recommends several steps to help protect hearing. Keep blood sugar as close to target levels as possible. Have hearing tested by an audiologist after a diabetes diagnosis and every year after that. Avoid other causes of hearing loss, such as loud noise. Ask a doctor whether any current medications can affect hearing.</p>
+
+            <p>Hearing health is an important part of diabetes care for everyone, including people who are already deaf or hard of hearing.</p>
+          </div>
+        </div>
          <!-- ══════════════════════════════════════════
         Community
         ══════════════════════════════════════════ -->
@@ -1301,22 +1520,29 @@
           Stories
         </div>
 
-        <article class="nl-card" aria-labelledby="deafblind-sons-heading">
-          <span class="card-tag tag-community">Parenting</span>
-          <h2 id="deafblind-sons-heading">&lsquo;I am their eyes, ears and voice&rsquo;: A Father&rsquo;s Journey with His DeafBlind Sons</h2>
-          <p>
-            Fawaz Al Hasban shares what it&rsquo;s like raising his two sons, Ahmad and Osama, who both have Usher
-            syndrome. He describes how the brothers use tactile sign language and assistive technology to communicate
-            and learn, and encourages other parents to see disability as part of human diversity.
-          </p>
-          <a
-            class="card-link"
-            href="https://www.khaleejtimes.com/uae/father-deafblind-sons-accessabilities-expo-dubai"
-            target="_blank"
-            rel="noopener"
-            aria-label="Read the Khaleej Times article about a father and his DeafBlind sons"
-            >Read the article</a
-          >
+        <article class="nl-card nl-card--image-bottom" aria-labelledby="deafblind-sons-heading">
+          <div class="nl-card-content">
+            <span class="card-tag tag-community">Parenting</span>
+            <h2 id="deafblind-sons-heading">&lsquo;I am their eyes, ears and voice&rsquo;: A Father&rsquo;s Journey with His DeafBlind Sons</h2>
+            <p>
+              Fawaz Al Hasban shares what it&rsquo;s like raising his two sons, Ahmad and Osama, who both have Usher
+              syndrome. He describes how the brothers use tactile sign language and assistive technology to communicate
+              and learn, and encourages other parents to see disability as part of human diversity.
+            </p>
+            <a
+              class="card-link"
+              href="https://www.khaleejtimes.com/uae/father-deafblind-sons-accessabilities-expo-dubai"
+              target="_blank"
+              rel="noopener"
+              aria-label="Read the Khaleej Times article about a father and his DeafBlind sons"
+              >Read the article</a
+            >
+          </div>
+          <img
+            class="nl-card-image nl-card-image-fill"
+            src="2026November/ushers.png"
+            alt="Fawaz Al Hasban smiling at an expo, standing among young men holding white canes"
+          />
         </article>
         <!-- ══════════════════════════════════════════
         Technology
@@ -1713,16 +1939,58 @@
           }
         }
 
-        // Open on flyer buttons (must have data-flyer attribute; plain links are excluded)
+        // Open on anything with a data-flyer attribute (flyer buttons, clickable images; plain links are excluded)
         document.addEventListener("click", function (e) {
-          var btn = e.target.closest(".flyer-btn");
-          if (btn && btn.getAttribute("data-flyer")) openModal(btn);
+          var btn = e.target.closest("[data-flyer]");
+          if (btn) openModal(btn);
         });
 
         // Close on X button or backdrop click
         closeBtn.addEventListener("click", closeModal);
         modal.addEventListener("click", function (e) {
           if (e.target === modal) closeModal();
+        });
+      })();
+    </script>
+
+    <script>
+      // Page-top leaf overlay: play once on page load, fade out over the last second, then remove.
+      // Skipped entirely (never loaded) when the visitor prefers reduced motion.
+      (function () {
+        var videos = document.querySelectorAll(".nl-page-overlay");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        Array.prototype.forEach.call(videos, function (video) {
+          if (reduceMotion) {
+            video.remove();
+            return;
+          }
+
+          function fadeOut() {
+            if (video.classList.contains("is-fading")) return;
+            video.classList.add("is-fading");
+            setTimeout(function () {
+              video.remove();
+            }, 1000);
+          }
+
+          video.muted = true;
+          video.addEventListener("timeupdate", function () {
+            if (video.duration && video.currentTime >= video.duration - 1) fadeOut();
+          });
+          video.addEventListener("ended", fadeOut);
+          video.addEventListener("error", function () {
+            video.remove();
+          });
+
+          video.src = video.getAttribute("data-src");
+          var playing = video.play();
+          // Autoplay blocked: drop the overlay rather than leave a frozen first frame
+          if (playing && playing.catch) {
+            playing.catch(function () {
+              video.remove();
+            });
+          }
         });
       })();
     </script>
