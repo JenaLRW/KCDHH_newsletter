@@ -699,6 +699,23 @@ button.nl-featured-float:focus-visible {
   line-height: 1.65;
 }
 
+/* Image floated in the top-right corner of a card */
+.nl-card-float-img {
+  float: right;
+  width: 200px;
+  margin: 10px 10px 20px 20px;
+  border-radius: var(--radius-md);
+}
+
+/* Bulleted list inside a card, matching paragraph text */
+.nl-card-list {
+  font-size: 20px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  padding-left: 24px;
+  margin: 6px 0 12px;
+}
+
 /* Tag pill */
 .card-tag {
   display: inline-block;
@@ -1233,6 +1250,12 @@ a.flyer-btn:hover {
 
   .nl-columns {
     grid-template-columns: 1fr;
+  }
+
+  .nl-card-float-img {
+    float: none;
+    display: block;
+    margin: 0 auto 16px;
   }
 
   .nl-column {
