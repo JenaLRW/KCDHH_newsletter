@@ -73,7 +73,7 @@
 
     <!-- Decorative turkey silhouette walking across the full window width; src is set by script
          only when reduced motion is not requested -->
-    <video
+      <video
       class="nl-page-overlay"
       data-src="2026November/turkey-walk.mp4"
       muted
@@ -82,6 +82,14 @@
       aria-hidden="true"
       tabindex="-1"
     ></video>
+    <!-- Same walk as an animated GIF with a transparent background -->
+    <!-- <img
+      class="nl-page-overlay nl-page-overlay--gif"
+      data-src="2026November/turkey-walk.gif"
+      data-duration="7.25"
+      alt=""
+      aria-hidden="true"
+    /> -->
 
     <div id="page">
       <!-- ============================================================
@@ -128,7 +136,13 @@
       MAIN CONTENT
       ============================================================ -->
       <main id="main-content" class="nl-body">
-
+<img
+      class="nl-page-overlay nl-page-overlay--gif"
+      data-src="2026November/turkey-walk.gif"
+      data-duration="7.25"
+      alt=""
+      aria-hidden="true"
+    />
         <!-- ══════════════════════════════════════════
         AWARENESS FEATURED CARD
         ══════════════════════════════════════════ -->
@@ -460,7 +474,8 @@
         </article>
 
         <div class="card-grid">
-          <!------------------------ PROGRAM ----------------------------------->
+          <!------------------------ 
+          PROGRAM ----------------------------------->
           <article class="nl-card nl-card--has-image" aria-labelledby="msn-heading">
             <div class="nl-card-content">
               <span class="card-tag tag-resource">Program</span>
@@ -483,7 +498,8 @@
           
         
 
-          <!------------------------ EDUCATION ----------------------------------->
+          <!------------------------ 
+          EDUCATION ----------------------------------->
           <article class="nl-card" aria-labelledby="education-heading">
             <span class="card-tag tag-community">Education</span>
             <h2 id="education-heading">Education Resources</h2>
@@ -516,6 +532,53 @@
             </ul>
           </article>
         </div>
+
+        <!------------------------
+        YOUTH PROGRAMS ----------------------------------->
+        <!-- ✏️ EDIT: Add youth program details and links -->
+        <article class="nl-card" aria-label="Youth Programs">
+          <span class="card-tag tag-camp">Youth</span>
+
+          <p>
+            Programs, camps, and activities for deaf and hard of hearing youth across Kentucky.
+          </p>
+          <div class="nl-columns">
+            <div class="nl-column">
+              <h2>Gallaudet: Youth Esports Series</h2>
+              <p>
+                Gallaudet University's Youth Esports Series brings deaf and hard of hearing students together online to
+                compete in team gaming tournaments, build friendships, and connect with peers from across the country.
+              </p>
+              <p>For grades 2nd - 12th.</p>
+              <p><strong>Spring Season Sign-up Dates: February 1 - 21</strong></p>
+              <a
+                class="flyer-btn"
+                href="https://gallaudet.edu/youth-programs/youth-esports-series/"
+                target="_blank"
+                rel="noopener"
+                aria-label="More information about the Gallaudet Youth Esports Series"
+                >More Information</a
+              >
+            </div>
+            <div class="nl-column">
+              <h2>Gallaudet: National Literary Competition</h2>
+              <p>
+                Gallaudet University's National Literary Competition invites deaf and hard of hearing students to
+                showcase their talents in creative writing and ASL storytelling and poetry.
+              </p>
+              <p>For grades 6th - 12th.</p>
+              <p><strong>Sign-up Dates: September 27, 2026 - January 8, 2027</strong></p>
+              <a
+                class="flyer-btn"
+                href="https://gallaudet.edu/youth-programs/national-literary-competition/"
+                target="_blank"
+                rel="noopener"
+                aria-label="More information about the Gallaudet National Literary Competition"
+                >More Information</a
+              >
+            </div>
+          </div>
+        </article>
 
         <!-- ══════════════════════════════════════════
         KCDHH RESOURCES
@@ -760,13 +823,13 @@
     </script>
 
     <script>
-      // Page-top leaf overlay: play once on page load, fade out over the last second, then remove.
-      // Skipped entirely (never loaded) when the visitor prefers reduced motion.
+      // Page-top overlays (video or animated GIF): play once on page load, fade out over the last
+      // second, then remove. Skipped entirely (never loaded) when the visitor prefers reduced motion.
       (function () {
-        var videos = document.querySelectorAll(".nl-page-overlay");
+        var overlays = document.querySelectorAll(".nl-page-overlay");
         var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        Array.prototype.forEach.call(videos, function (video) {
+        Array.prototype.forEach.call(overlays, function (video) {
           if (reduceMotion) {
             video.remove();
             return;
@@ -778,6 +841,19 @@
             setTimeout(function () {
               video.remove();
             }, 1000);
+          }
+
+          // GIFs have no playback events, so the fade is timed from data-duration (seconds)
+          if (video.tagName === "IMG") {
+            video.addEventListener("load", function () {
+              var duration = parseFloat(video.getAttribute("data-duration")) || 0;
+              setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
+            });
+            video.addEventListener("error", function () {
+              video.remove();
+            });
+            video.src = video.getAttribute("data-src");
+            return;
           }
 
           video.muted = true;

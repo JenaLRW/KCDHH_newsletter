@@ -499,6 +499,10 @@ img.base {
   opacity: 1;
   transition: opacity 1s ease;
 }
+/* GIF version has real transparency, so it needs no blend mode */
+.nl-page-overlay--gif {
+  mix-blend-mode: normal;
+}
 .nl-page-overlay.is-fading {
   opacity: 0;
 }
@@ -752,6 +756,23 @@ button.nl-featured-float:focus-visible {
 
 .card-grid .nl-card {
   margin-bottom: 0;
+}
+
+/* Two columns inside a single card, divided by a thin line */
+.nl-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 12px;
+}
+
+.nl-column {
+  padding-right: 20px;
+}
+
+.nl-column + .nl-column {
+  padding-right: 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
 }
 
 /* ============================================================
@@ -1208,6 +1229,22 @@ a.flyer-btn:hover {
 
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .nl-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .nl-column {
+    padding-right: 0;
+  }
+
+  .nl-column + .nl-column {
+    padding-left: 0;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-left: none;
+    border-top: 1px solid var(--border);
   }
 
   .nl-link-grid {
