@@ -694,6 +694,15 @@ button.nl-featured-float:focus-visible {
   line-height: 1.65;
 }
 
+/* Banner image spanning the full card width, past the card's side padding */
+.nl-card-banner {
+  display: block;
+  width: calc(100% + 44px);
+  max-width: none;
+  height: auto;
+  margin: 12px -22px;
+}
+
 /* Image floated in the top-right corner of a card */
 .nl-card-float-img {
   float: right;
