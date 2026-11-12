@@ -71,8 +71,7 @@
     <!-- Skip to main content (screen readers & keyboard users) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Decorative turkey silhouette walking across the full window width; src is set by script
-         only when reduced motion is not requested -->
+    <!-- Decorative turkey silhouette walking across the full window width; src is set by script -->
       <video
       class="nl-page-overlay"
       data-src="2026November/turkey-walk.mp4"
@@ -861,17 +860,11 @@
 
     <script>
       // Page-top overlays (video or animated GIF): play once on page load, fade out over the last
-      // second, then remove. Skipped entirely (never loaded) when the visitor prefers reduced motion.
+      // second, then remove.
       (function () {
         var overlays = document.querySelectorAll(".nl-page-overlay");
-        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         Array.prototype.forEach.call(overlays, function (video) {
-          if (reduceMotion) {
-            video.remove();
-            return;
-          }
-
           function fadeOut() {
             if (video.classList.contains("is-fading")) return;
             video.classList.add("is-fading");

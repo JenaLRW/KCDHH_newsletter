@@ -506,11 +506,6 @@ img.base {
 .nl-page-overlay.is-fading {
   opacity: 0;
 }
-@media (prefers-reduced-motion: reduce) {
-  .nl-page-overlay {
-    display: none;
-  }
-}
 
 .nl-alert.nl-featured a {
   color: var(--navy2);
