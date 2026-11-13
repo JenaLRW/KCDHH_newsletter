@@ -694,6 +694,17 @@ button.nl-featured-float:focus-visible {
   line-height: 1.65;
 }
 
+/* Responsive 16:9 video embed (e.g. YouTube) */
+.nl-video {
+  display: block;
+  width: 75%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 12px auto;
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
 /* Banner image spanning the full card width, past the card's side padding */
 .nl-card-banner {
   display: block;
@@ -1254,6 +1265,10 @@ a.flyer-btn:hover {
 
   .nl-columns {
     grid-template-columns: 1fr;
+  }
+
+  .nl-video {
+    width: 100%;
   }
 
   .nl-card-float-img {
