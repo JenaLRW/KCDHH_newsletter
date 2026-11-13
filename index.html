@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600;700;900&family=Ubuntu:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -128,11 +128,17 @@
           alt=""
           aria-hidden="true"
         />
+        <p class="nl-holiday-message">
+          The KCDHH Staff wish you all a wonderful and safe Thanksgiving!<br />
+          We want to remind you to be inclusive of your family and friends during this holiday season.
+        </p>
         <img
           class="nl-closed-img"
           src="2026November/closed.jpg"
           alt="KCDHH will be closed November 26 to 27 for the holiday. Happy Thanksgiving!"
         />
+        <!-- Replays the decorative turkey; hidden from screen readers and skipped by Tab like the turkey itself -->
+        <button type="button" class="nl-replay-btn" aria-hidden="true" tabindex="-1">Replay the turkey</button>
         <!-- ══════════════════════════════════════════
         AWARENESS FEATURED CARD
         ══════════════════════════════════════════ -->
@@ -898,46 +904,88 @@
         var overlays = document.querySelectorAll(".nl-page-overlay");
 
         Array.prototype.forEach.call(overlays, function (video) {
+          // Videos are removed once faded; the GIF overrides this to hide itself so it can be replayed
+          var afterFade = function () {
+            video.remove();
+          };
+          var fadeTimer;
+
           function fadeOut() {
             if (video.classList.contains("is-fading")) return;
             video.classList.add("is-fading");
-            setTimeout(function () {
-              video.remove();
-            }, 1000);
+            fadeTimer = setTimeout(afterFade, 1000);
           }
 
           // GIFs have no playback events, so the fade is timed from data-duration (seconds)
           // The GIF plays once and ends with the turkey off the right edge; it fades out over the last second.
           // It is fully downloaded in the background first, so it always starts from its first frame
-          // and the fade timer lines up with the walk.
+          // and the fade timer lines up with the walk. Each play gets a fresh blob URL so the GIF
+          // restarts from the first frame on replay without downloading it again.
           if (video.tagName === "IMG") {
             var src = video.getAttribute("data-src");
             var triggerSelector = video.getAttribute("data-trigger");
             var trigger = triggerSelector && document.querySelector(triggerSelector);
+            var replayBtn = document.querySelector(".nl-replay-btn");
             var loaded = false;
             var triggered = !trigger;
+            var gifBlob = null;
+            var playUrl = null;
+            var playTimer;
+
+            afterFade = function () {
+              video.style.display = "none";
+              video.removeAttribute("src");
+            };
 
             function play() {
               if (!loaded || !triggered) return;
+              clearTimeout(playTimer);
+              clearTimeout(fadeTimer);
+              video.classList.remove("is-fading");
+              video.style.display = "";
               if (trigger) {
                 // Center vertically on the trigger (width/height attributes give the height before load)
                 var rect = trigger.getBoundingClientRect();
                 video.style.top = rect.top + window.scrollY + rect.height / 2 - video.offsetHeight / 2 + "px";
               }
-              video.src = src;
+              if (playUrl && playUrl !== src) URL.revokeObjectURL(playUrl);
+              playUrl = gifBlob ? URL.createObjectURL(gifBlob) : src;
+              video.src = playUrl;
               var duration = parseFloat(video.getAttribute("data-duration")) || 0;
-              setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
+              playTimer = setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
             }
 
-            var preload = new Image();
-            preload.onload = function () {
+            function onLoaded() {
               loaded = true;
               play();
-            };
-            preload.onerror = function () {
-              video.remove();
-            };
-            preload.src = src;
+            }
+
+            // fetch() is unavailable when the page is opened as a local file; fall back to a plain preload
+            fetch(src)
+              .then(function (response) {
+                if (!response.ok) throw new Error(response.status);
+                return response.blob();
+              })
+              .then(function (blob) {
+                gifBlob = blob;
+                onLoaded();
+              })
+              .catch(function () {
+                var preload = new Image();
+                preload.onload = onLoaded;
+                preload.onerror = function () {
+                  video.remove();
+                  if (replayBtn) replayBtn.remove();
+                };
+                preload.src = src;
+              });
+
+            if (replayBtn) {
+              replayBtn.addEventListener("click", function () {
+                triggered = true;
+                play();
+              });
+            }
 
             // Start once the bottom edge of the trigger has scrolled into view
             function checkTrigger() {
