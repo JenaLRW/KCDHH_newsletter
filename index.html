@@ -116,13 +116,22 @@
       MAIN CONTENT
       ============================================================ -->
       <main id="main-content" class="nl-body">
-        <!-- Decorative turkey walking across the full window width (transparent GIF); src is set by script -->
+        <!-- Decorative turkey walking across the full window width (transparent GIF); src is set by script
+             once half of the data-trigger element is in view, and it is centered on that element -->
         <img
           class="nl-page-overlay nl-page-overlay--gif"
           data-src="2026November/turkey-walk-color.gif"
           data-duration="9.2"
+          data-trigger=".nl-closed-img"
+          width="960"
+          height="255"
           alt=""
           aria-hidden="true"
+        />
+        <img
+          class="nl-closed-img"
+          src="2026November/closed.jpg"
+          alt="KCDHH will be closed November 26 to 27 for the holiday. Happy Thanksgiving!"
         />
         <!-- ══════════════════════════════════════════
         AWARENESS FEATURED CARD
@@ -146,6 +155,8 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+
+          <img class="nl-featured-divider" src="2026November/fall-divider-trimmed.png" alt="" />
 
           <div class="nl-featured-columns">
             
@@ -880,8 +891,8 @@
     </script>
 
     <script>
-      // Page-top overlays (video or animated GIF): play once on page load, fade out over the last
-      // second, then remove.
+      // Page overlays (video or animated GIF): play once, fade out over the last second, then remove.
+      // A GIF with data-trigger waits until half of that element is in view, then plays centered on it.
       (function () {
         var overlays = document.querySelectorAll(".nl-page-overlay");
 
@@ -896,14 +907,39 @@
 
           // GIFs have no playback events, so the fade is timed from data-duration (seconds)
           if (video.tagName === "IMG") {
-            video.addEventListener("load", function () {
-              var duration = parseFloat(video.getAttribute("data-duration")) || 0;
-              setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
-            });
-            video.addEventListener("error", function () {
-              video.remove();
-            });
-            video.src = video.getAttribute("data-src");
+            var triggerSelector = video.getAttribute("data-trigger");
+            var trigger = triggerSelector && document.querySelector(triggerSelector);
+
+            function start() {
+              if (trigger) {
+                // Center vertically on the trigger (width/height attributes give the height before load)
+                var rect = trigger.getBoundingClientRect();
+                video.style.top = rect.top + window.scrollY + rect.height / 2 - video.offsetHeight / 2 + "px";
+              }
+              video.addEventListener("load", function () {
+                var duration = parseFloat(video.getAttribute("data-duration")) || 0;
+                setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
+              });
+              video.addEventListener("error", function () {
+                video.remove();
+              });
+              video.src = video.getAttribute("data-src");
+            }
+
+            if (trigger && "IntersectionObserver" in window) {
+              var observer = new IntersectionObserver(
+                function (entries) {
+                  if (entries[0].isIntersecting) {
+                    observer.disconnect();
+                    start();
+                  }
+                },
+                { threshold: 0.5 }
+              );
+              observer.observe(trigger);
+            } else {
+              start();
+            }
             return;
           }
 
