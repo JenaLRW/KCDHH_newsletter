@@ -892,7 +892,7 @@
     </script>
 
     <script>
-      // Page overlays (video or animated GIF): play once, then remove (videos fade out over the last second).
+      // Page overlays (video or animated GIF): play once, fade out over the last second, then remove.
       // A GIF with data-trigger waits until the bottom of that element is in view, then plays centered on it.
       (function () {
         var overlays = document.querySelectorAll(".nl-page-overlay");
@@ -907,8 +907,9 @@
           }
 
           // GIFs have no playback events, so the fade is timed from data-duration (seconds)
-          // The GIF plays once and ends with the turkey off the right edge, so it is only removed afterwards.
-          // It is fully downloaded in the background first, so it always starts from its first frame.
+          // The GIF plays once and ends with the turkey off the right edge; it fades out over the last second.
+          // It is fully downloaded in the background first, so it always starts from its first frame
+          // and the fade timer lines up with the walk.
           if (video.tagName === "IMG") {
             var src = video.getAttribute("data-src");
             var triggerSelector = video.getAttribute("data-trigger");
@@ -925,9 +926,7 @@
               }
               video.src = src;
               var duration = parseFloat(video.getAttribute("data-duration")) || 0;
-              setTimeout(function () {
-                video.remove();
-              }, (duration + 0.5) * 1000);
+              setTimeout(fadeOut, Math.max(0, duration - 1) * 1000);
             }
 
             var preload = new Image();
