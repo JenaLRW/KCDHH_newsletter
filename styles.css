@@ -521,6 +521,11 @@ img.base {
   background: var(--navy1);
 }
 
+/* Dark beige rule under the header; 3:1 contrast against both the cream card and the green header */
+.nl-awareness-header--orange-border {
+  border-bottom: 6px solid #e18001;
+}
+
 /* Image centered on its own line inside an awareness card (.nl-alert left-aligns its children) */
 .nl-featured-center-img {
   align-self: center;
