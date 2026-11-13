@@ -117,7 +117,7 @@
       ============================================================ -->
       <main id="main-content" class="nl-body">
         <!-- Decorative turkey walking across the full window width (transparent GIF); src is set by script
-             once half of the data-trigger element is in view, and it is centered on that element -->
+             once the bottom of the data-trigger element is in view, and it is centered on that element -->
         <img
           class="nl-page-overlay nl-page-overlay--gif"
           data-src="2026November/turkey-walk-color.gif"
@@ -893,7 +893,7 @@
 
     <script>
       // Page overlays (video or animated GIF): play once, then remove (videos fade out over the last second).
-      // A GIF with data-trigger waits until half of that element is in view, then plays centered on it.
+      // A GIF with data-trigger waits until the bottom of that element is in view, then plays centered on it.
       (function () {
         var overlays = document.querySelectorAll(".nl-page-overlay");
 
@@ -914,7 +914,7 @@
             var triggerSelector = video.getAttribute("data-trigger");
             var trigger = triggerSelector && document.querySelector(triggerSelector);
             var loaded = false;
-            var triggered = !trigger || !("IntersectionObserver" in window);
+            var triggered = !trigger;
 
             function play() {
               if (!loaded || !triggered) return;
@@ -940,18 +940,19 @@
             };
             preload.src = src;
 
+            // Start once the bottom edge of the trigger has scrolled into view
+            function checkTrigger() {
+              if (triggered || trigger.getBoundingClientRect().bottom > window.innerHeight) return;
+              triggered = true;
+              window.removeEventListener("scroll", checkTrigger);
+              window.removeEventListener("resize", checkTrigger);
+              play();
+            }
             if (!triggered) {
-              var observer = new IntersectionObserver(
-                function (entries) {
-                  if (entries[0].isIntersecting) {
-                    observer.disconnect();
-                    triggered = true;
-                    play();
-                  }
-                },
-                { threshold: 0.5 }
-              );
-              observer.observe(trigger);
+              window.addEventListener("scroll", checkTrigger, { passive: true });
+              window.addEventListener("resize", checkTrigger);
+              window.addEventListener("load", checkTrigger);
+              checkTrigger();
             }
             return;
           }
