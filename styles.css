@@ -423,6 +423,12 @@ img.base {
 .nl-page-overlay.is-fading {
   opacity: 0;
 }
+/* Before the script sets src (and after it removes it), some browsers draw an outline around
+   the empty image across the header. Keep it invisible; visibility (not display) keeps its
+   height so the script can still center it on the trigger. */
+.nl-page-overlay:not([src]) {
+  visibility: hidden;
+}
 
 .nl-alert.nl-featured a {
   color: var(--navy2);
