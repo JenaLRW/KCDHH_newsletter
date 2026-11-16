@@ -51,15 +51,6 @@ a:hover {
   text-decoration: underline;
 }
 
-@keyframes hf-across {
-  from { transform: translateX(-35vw); }
-  to   { transform: translateX(112vw); }
-}
-@keyframes hf-lift {
-  from { transform: translateY(48vh) rotate(20deg); }
-  to   { transform: translateY(14vh) rotate(20deg); }
-}
-
 a:focus {
   outline: 3px solid var(--elcblue);
   outline-offset: 2px;
@@ -318,17 +309,6 @@ img.base {
   line-height: 1.4;
 }
 
-/* Single-column bulleted list of links inside a card */
-.nl-link-list {
-  margin: 12px 0 0;
-  padding-left: 22px;
-}
-
-.nl-link-list li {
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
 /* In a two-up grid the card is too narrow for two link columns */
 .card-grid .nl-link-grid {
   grid-template-columns: 1fr;
@@ -407,114 +387,13 @@ img.base {
   margin: 0;
 }
 
-/* Turkey walking across the awareness header */
+/* Originally added for the old header turkey animation; kept so the headers render the same */
 .nl-awareness-header {
   overflow: hidden;
 }
 .nl-awareness-header h2 {
   position: relative;
   width: 100%;
-}
-.walking-turkey {
-  position: absolute;
-  bottom: -2px;
-  left: calc(-24px - 1.3em);
-  font-size: 56px;
-  line-height: 1;
-  pointer-events: none;
-  animation:
-    turkey-walk 4s linear forwards,
-    turkey-waddle 0.25s ease-in-out 16 alternate,
-    turkey-walk-back 4s linear 5.8s forwards,
-    turkey-waddle-back 0.25s ease-in-out 5.8s 16 alternate;
-}
-@keyframes turkey-walk {
-  from { left: calc(-24px - 1.3em); }
-  to   { left: calc(100% + 24px); }
-}
-@keyframes turkey-waddle {
-  from { transform: scaleX(-1) rotate(-8deg) translateY(0); }
-  to   { transform: scaleX(-1) rotate(8deg) translateY(-4px); }
-}
-/* Return trip: right to left, turkey facing left and now chasing the farmer */
-@keyframes turkey-walk-back {
-  from { left: calc(100% + 24px); }
-  to   { left: calc(-24px - 1.3em); }
-}
-@keyframes turkey-waddle-back {
-  from { transform: rotate(8deg) translateY(0); }
-  to   { transform: rotate(-8deg) translateY(-4px); }
-}
-
-/* Farmer with an axe chasing the turkey */
-.chasing-farmer {
-  position: absolute;
-  bottom: -2px;
-  left: calc(-24px - 1.8em);
-  display: inline-flex;
-  align-items: flex-start;
-  white-space: nowrap;
-  font-size: 56px;
-  line-height: 1;
-  pointer-events: none;
-  animation:
-    farmer-run 4.2s linear 0.6s both,
-    farmer-bob 0.2s ease-in-out 0.6s 21 alternate,
-    farmer-run-back 4.2s linear 5.2s forwards,
-    farmer-bob-back 0.2s ease-in-out 5.2s 21 alternate;
-}
-.farmer-axe {
-  display: inline-block;
-  font-size: 0.6em;
-  margin-left: -0.35em;
-  transform-origin: bottom center;
-  animation:
-    axe-swing 0.3s ease-in-out 0.6s 14 alternate,
-    axe-drop 0s linear 5.2s forwards;
-}
-/* Turkey picks up the axe for the return trip */
-.turkey-axe {
-  position: absolute;
-  top: 0;
-  right: calc(100% - 0.35em);
-  font-size: 0.6em;
-  transform-origin: bottom center;
-  visibility: hidden;
-  animation:
-    axe-pickup 0s linear 5.8s forwards,
-    turkey-axe-swing 0.3s ease-in-out 5.8s 14 alternate;
-}
-@keyframes farmer-run {
-  from { left: calc(-24px - 1.8em); }
-  to   { left: calc(100% + 24px); }
-}
-@keyframes farmer-bob {
-  from { transform: rotate(-6deg) translateY(0); }
-  to   { transform: rotate(4deg) translateY(-6px); }
-}
-/* Return trip: farmer mirrored to face left, fleeing without the axe */
-@keyframes farmer-run-back {
-  from { left: calc(100% + 24px); }
-  to   { left: calc(-24px - 1.8em); }
-}
-@keyframes farmer-bob-back {
-  from { transform: scaleX(-1) rotate(-6deg) translateY(0); }
-  to   { transform: scaleX(-1) rotate(4deg) translateY(-6px); }
-}
-@keyframes axe-swing {
-  from { transform: scaleX(-1) rotate(-35deg); }
-  to   { transform: scaleX(-1) rotate(25deg); }
-}
-/* Unflipped so it matches the farmer's mirrored swing on the way back */
-@keyframes turkey-axe-swing {
-  from { transform: rotate(-35deg); }
-  to   { transform: rotate(25deg); }
-}
-@keyframes axe-drop {
-  to { visibility: hidden; }
-}
-@keyframes axe-pickup {
-  to { visibility: visible; }
 }
 
 .nl-alert.nl-featured {
@@ -717,18 +596,6 @@ button.nl-flyer-thumb:focus-visible {
   display: block;
   background: var(--lightgray);
   padding: 12px;
-}
-
-/* Small decorative image floated into the bottom-right corner of a card */
-.nl-card--float-corner {
-  display: flow-root;
-}
-
-.nl-card-float-corner {
-  float: right;
-  width: 90px;
-  height: auto;
-  margin: 0 0 0 16px;
 }
 
 .nl-card--image-bottom {
@@ -1393,28 +1260,6 @@ a.flyer-btn:hover {
 
   .nl-footer {
     padding: 22px 20px;
-  }
-
-  /* Stack the corner image below the card's links, centered */
-  .nl-card--float-corner .nl-card-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nl-card--float-corner .card-tag {
-    align-self: flex-start;
-  }
-
-  /* Flex items don't collapse margins, so drop the top margin on paragraphs */
-  .nl-card--float-corner .nl-card-content p {
-    margin-top: 0;
-  }
-
-  .nl-card-float-corner {
-    float: none;
-    order: 1;
-    align-self: center;
-    margin: 12px 0 0;
   }
 
   .nl-featured-float {
