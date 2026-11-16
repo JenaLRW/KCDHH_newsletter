@@ -626,12 +626,19 @@ button.nl-flyer-thumb:focus-visible {
   padding: 0;
 }
 
-.nl-card h2 {
-  font-size: 22px;
+/* Card title (h3, under a section label) and sub-heading inside a card (h4) share one font */
+.nl-card h3,
+.nl-card h4 {
   font-family: "Source Sans 3", sans-serif;
   font-weight: 700;
   color: var(--navy1);
   margin-bottom: 6px;
+}
+.nl-card h3 {
+  font-size: 22px;
+}
+.nl-card h4 {
+  font-size: 20px;
 }
 
 .nl-card p {
@@ -949,7 +956,7 @@ a.flyer-btn:hover {
   margin-bottom: 12px;
 }
 
-.nl-resources h2 {
+.nl-resources h3 {
   font-size: 20px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 700;
