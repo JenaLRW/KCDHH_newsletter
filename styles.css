@@ -654,13 +654,16 @@ button.nl-featured-float:focus-visible {
 /* Two columns inside an awareness card: text on the left, clickable flyer on the right */
 .nl-featured-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* minmax(0, …) keeps a long unbreakable word from widening the column past the card */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 20px;
   align-items: start;
   margin: 12px 0;
 }
 .nl-featured-columns p {
   margin: 0;
+  /* Let long web and email addresses wrap on narrow screens */
+  overflow-wrap: anywhere;
 }
 
 /* Clickable flyer thumbnail that opens in the flyer modal */
@@ -1349,7 +1352,7 @@ a.flyer-btn:hover {
   }
 
   .nl-featured-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .nl-card-float-img {
