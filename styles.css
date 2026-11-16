@@ -68,10 +68,7 @@ a:focus {
 
 h1,
 h2,
-h3 {
-  font-family: "Lora", Georgia, serif;
-  line-height: 1.2;
-}
+
 img.base {
   max-width: 100%;
   height: auto;
@@ -802,6 +799,11 @@ button.nl-flyer-thumb:focus-visible {
   width: 200px;
   margin: 10px 10px 20px 20px;
   border-radius: var(--radius-md);
+}
+/* Same, floated into the top-left corner instead (stacks centered on mobile like the right version) */
+.nl-card-float-img--left {
+  float: left;
+  margin: 0 20px 10px 0;
 }
 
 /* Bulleted list inside a card, matching paragraph text */
