@@ -293,7 +293,9 @@ img.base {
   line-height: 1.4;
   color: #183a19;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
+  /* Evens out line lengths so no line ends up with a single word */
+  text-wrap: balance;
 }
 
 /* Office-closed notice at the top of the content; shown at its natural 800px, shrinking to full width on smaller screens */
