@@ -1,6 +1,6 @@
 /* ============================================================
  CSS VARIABLES — Edit brand colors here
-============================================================ */
+    ============================================================ */
 :root {
   --elcblue: #004e8a;
   --teamkynavy: #003764;
@@ -25,7 +25,7 @@
 
 /* ============================================================
  RESET & BASE
-============================================================ */
+    ============================================================ */
 *,
 *::before,
 *::after {
@@ -68,7 +68,7 @@ img.base {
 
 /* ============================================================
  SKIP TO CONTENT (Accessibility)
-============================================================ */
+    ============================================================ */
 
 /* the skip link is placed -100px above the page to hide it from plain view. Screen readers will pick up on this.*/
 .skip-link {
@@ -91,7 +91,7 @@ img.base {
 
 /* ============================================================
  PAGE WRAPPER
-============================================================ */
+    ============================================================ */
 #page {
   max-width: 900px;
   margin: 24px auto;
@@ -103,7 +103,7 @@ img.base {
 
 /* ============================================================
  HEADER
-============================================================ */
+    ============================================================ */
 
 .nl-header {
   background: var(--elcblue);
@@ -196,7 +196,7 @@ img.base {
 
 /* ============================================================
  UTILITY BAR
-============================================================ */
+    ============================================================ */
 .nl-utility-bar {
   background: #eee;
   border-bottom: 1px solid var(--border);
@@ -250,61 +250,25 @@ img.base {
 
 /* ============================================================
  BODY / CONTENT AREA
-============================================================ */
+    ============================================================ */
 .nl-body {
   padding: 20px 28px 36px;
   background: var(--bg);
 }
 
-/* Small button under the office-closed notice that replays the decorative turkey */
-.nl-replay-btn {
-  display: block;
-  margin: -8px auto 20px;
-  padding: 6px 14px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background: #183a19;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-.nl-replay-btn:hover {
-  background: #0f2610;
-}
-
-/* Office-closed notice at the top of the content; shown at its natural 800px, shrinking to full width on smaller screens */
-.nl-closed-img {
-  display: block;
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  margin: 0 auto 20px;
-  border-radius: 24px;
-}
-
-/* Two-column list of resource links inside a card */
-.nl-link-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 24px;
-  margin: 12px 0 0;
-  padding-left: 22px;
-}
-
-.nl-link-grid li {
-  line-height: 1.4;
-}
-
-/* In a two-up grid the card is too narrow for two link columns */
-.card-grid .nl-link-grid {
-  grid-template-columns: 1fr;
+.nl-welcome {
+  font-family: "Source Sans 3", Georgia, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(7, 53, 117);
+  /* text-align: center; */
+  margin-block: 12px;
+  line-height: 1.3;
 }
 
 /* ============================================================
  SECTION LABELS
-============================================================ */
+    ============================================================ */
 .section-label {
   display: flex;
   align-items: center;
@@ -338,7 +302,7 @@ img.base {
 
 /* ============================================================
  ALERT CARD
-============================================================ */
+    ============================================================ */
 .nl-alert {
   background: var(--alert-light);
   border: 1px solid var(--elcblue);
@@ -352,8 +316,39 @@ img.base {
   align-items: flex-start;
 }
 
+.nl-alert-badge {
+  background: var(--navy1);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.nl-alert-content h2 {
+  font-size: 22px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+  color: #003965;
+  margin-bottom: 4px;
+}
+
+.nl-alert-content p {
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.nl-alert-content a {
+  color: var(--navy2);
+  font-weight: 600;
+}
+
 .nl-awareness-header {
-  background: #183a19;
+  background: var(--navy1);
   color: #fff;
   width: calc(100% + 40px);
   height: 100px;
@@ -374,194 +369,13 @@ img.base {
   line-height: 1.35;
   margin: 0;
 }
-
-/* Originally added for the old header turkey animation; kept so the headers render the same */
-.nl-awareness-header {
-  overflow: hidden;
-}
-.nl-awareness-header h2 {
-  position: relative;
-  width: 100%;
-}
-
 .nl-alert.nl-featured {
-  background: #fadcb2;
-  border: 3px solid #352003;
-}
-
-/* Decorative video/GIF layered edge to edge across the window, played once then faded out
-   (top defaults to the top of the page; script moves it when the overlay has a data-trigger) */
-.nl-page-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10;
-  /* The video is black on white: multiply makes the white see-through */
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-/* GIF version has real transparency, so it needs no blend mode */
-.nl-page-overlay--gif {
-  mix-blend-mode: normal;
-}
-.nl-page-overlay.is-fading {
-  opacity: 0;
-}
-/* Before the script sets src (and after it removes it), some browsers draw an outline around
-   the empty image across the header. Keep it invisible; visibility (not display) keeps its
-   height so the script can still center it on the trigger. */
-.nl-page-overlay:not([src]) {
-  visibility: hidden;
-}
-
-.nl-alert.nl-featured a {
-  color: var(--navy2);
-}
-
-/* Navy / light blue color variant of the awareness feature card */
-.nl-alert.nl-featured.nl-featured--navy {
-  background: var(--alert-light);
-  border-color: var(--navy1);
-  color: var(--navy2);
-}
-.nl-featured--navy .nl-awareness-header {
-  background: var(--navy1);
-}
-
-/* Dark beige rule under the header; 3:1 contrast against both the cream card and the green header */
-.nl-awareness-header--orange-border {
-  border-bottom: 6px solid #e18001;
-}
-
-/* Image centered on its own line inside an awareness card (.nl-alert left-aligns its children) */
-.nl-featured-center-img {
-  align-self: center;
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
-/* Decorative divider line spanning an awareness card */
-.nl-featured-divider {
-  align-self: stretch;
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 6px 0;
-}
-
-/* Groups a card's paragraphs into one block so a floated image can wrap across several
-   of them (each direct child of the flex .nl-alert is laid out on its own) */
-.nl-featured-body {
-  align-self: stretch;
-  display: flow-root;
-}
-.nl-featured-body > * + p {
-  margin-top: 10px;
-}
-
-/* Image floated right with text wrapped tight against its edges; clear keeps a second
-   one below the first instead of beside it */
-.nl-featured-float-tight {
-  float: right;
-  clear: right;
-  width: 300px;
-  height: auto;
-  margin: 6px 0 6px 12px;
-  border-radius: var(--radius-sm);
-}
-.nl-featured-float-tight--left {
-  float: left;
-  clear: left;
-  margin: 6px 12px 6px 0;
-}
-
-.nl-alert.nl-featured ul {
-  padding-left: 22px;
-}
-.nl-alert.nl-featured li + li {
-  margin-top: 6px;
-}
-
-/* Image floated into the top-right of an awareness card; must sit inside a <p>
-   because .nl-alert is a flex container and its direct children can't float */
-.nl-featured-float {
-  float: right;
-  width: 350px;
-  height: auto;
-  padding: 10px;
-}
-
-/* Clickable floated image that opens in the flyer modal */
-button.nl-featured-float {
-  background: none;
-  border: none;
-  cursor: zoom-in;
-  font: inherit;
-}
-button.nl-featured-float img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.nl-featured-float-caption {
-  display: block;
-  margin-top: 4px;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.3;
-  text-align: center;
-  color: var(--navy1);
-}
-button.nl-featured-float:focus-visible {
-  outline: 2px solid var(--navy1);
-  outline-offset: -2px;
-}
-
-/* Two columns inside an awareness card: text on the left, clickable flyer on the right */
-.nl-featured-columns {
-  display: grid;
-  /* minmax(0, …) keeps a long unbreakable word from widening the column past the card */
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
-  margin: 12px 0;
-}
-.nl-featured-columns p {
-  margin: 0;
-  /* Let long web and email addresses wrap on narrow screens */
-  overflow-wrap: anywhere;
-}
-
-/* Clickable flyer thumbnail that opens in the flyer modal */
-button.nl-flyer-thumb {
-  display: block;
-  width: 100%;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: zoom-in;
-  font: inherit;
-}
-button.nl-flyer-thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
-}
-button.nl-flyer-thumb:focus-visible {
-  outline: 2px solid var(--navy1);
-  outline-offset: 2px;
+  border: 3px solid var(--navy1);
 }
 
 /* ============================================================
  CARDS
-============================================================ */
+    ============================================================ */
 .nl-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -610,46 +424,48 @@ button.nl-flyer-thumb:focus-visible {
   background: var(--lightgray);
 }
 
-/* Like .nl-card-image, but the photo fills the whole image area (no grey panel) */
-.nl-card-image-fill {
-  display: block;
+.nl-card-image-bg {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  background: none;
-  padding: 0;
+  background: var(--lightgray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
 }
 
-/* Card title (h3, under a section label) and sub-heading inside a card (h4) share one font */
-.nl-card h3,
-.nl-card h4 {
+.nl-card-image-bg .nl-card-image {
+  width: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+
+.nl-card-link-image-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.nl-card-inline-image {
+  width: 50%;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nl-card h2 {
+  font-size: 22px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 700;
   color: var(--navy1);
   margin-bottom: 6px;
-}
-.nl-card h3 {
-  font-size: 22px;
-}
-.nl-card h4 {
-  font-size: 20px;
 }
 
 .nl-card p {
   font-size: 20px;
   color: var(--text-muted);
   line-height: 1.65;
-}
-
-/* Responsive 16:9 video embed (e.g. YouTube) */
-.nl-video {
-  display: block;
-  width: 75%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin: 12px auto;
-  border: 0;
-  border-radius: var(--radius-md);
 }
 
 /* Banner image spanning the full card width, past the card's side padding */
@@ -659,28 +475,6 @@ button.nl-flyer-thumb:focus-visible {
   max-width: none;
   height: auto;
   margin: 12px -22px;
-}
-
-/* Image floated in the top-right corner of a card */
-.nl-card-float-img {
-  float: right;
-  width: 200px;
-  margin: 10px 10px 20px 20px;
-  border-radius: var(--radius-md);
-}
-/* Same, floated into the top-left corner instead (stacks centered on mobile like the right version) */
-.nl-card-float-img--left {
-  float: left;
-  margin: 0 20px 10px 0;
-}
-
-/* Bulleted list inside a card, matching paragraph text */
-.nl-card-list {
-  font-size: 20px;
-  color: var(--text-muted);
-  line-height: 1.65;
-  padding-left: 24px;
-  margin: 6px 0 12px;
 }
 
 /* Tag pill */
@@ -695,20 +489,11 @@ button.nl-flyer-thumb:focus-visible {
   margin-bottom: 9px;
 }
 
-.tag-resource {
+.tag-pill {
   background: var(--lightblue1);
   color: var(--navy1);
 }
 
-.tag-community {
-  background: var(--lightblue1);
-  color: var(--navy1);
-}
-
-.tag-camp {
-  background: var(--lightblue1);
-  color: var(--navy1);
-}
 
 /* Read more link */
 .card-link {
@@ -761,7 +546,7 @@ button.nl-flyer-thumb:focus-visible {
 
 /* ============================================================
  EVENT LIST CARD
-============================================================ */
+    ============================================================ */
 .event-list {
   list-style: none;
   padding: 0;
@@ -794,6 +579,18 @@ button.nl-flyer-thumb:focus-visible {
   min-width: 70px;
   flex-shrink: 0;
 }
+.event-date-weekly {
+  background: var(--lightblue1);
+  color: #000000;
+  border-radius: var(--radius-sm);
+  width: 88px;
+  height: 70.4px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .event-date .month {
   display: block;
   font-size: 20px;
@@ -802,6 +599,19 @@ button.nl-flyer-thumb:focus-visible {
   color: #7ab8e8;
   font-weight: 700;
 }
+.event-date-weekly .month {
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #004071;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.event-date-weekly .month:first-child {
+  position: relative;
+  top: 3px;
+}
 .event-date .day {
   display: block;
   font-size: 24px;
@@ -809,7 +619,7 @@ button.nl-flyer-thumb:focus-visible {
   line-height: 1.1;
 }
 
-.event-info > strong {
+.event-info strong {
   display: block;
   font-size: 20px;
   font-weight: 600;
@@ -830,7 +640,7 @@ button.nl-flyer-thumb:focus-visible {
 
 /* ============================================================
  FLYER BUTTON & MODAL
-============================================================ */
+    ============================================================ */
 .flyer-btn {
   display: inline-flex;
   align-items: center;
@@ -942,7 +752,7 @@ a.flyer-btn:hover {
 
 /* ============================================================
  RESOURCES BAR
-============================================================ */
+    ============================================================ */
 .nl-resources {
   background: var(--navy1);
   border-radius: var(--radius-md);
@@ -950,7 +760,7 @@ a.flyer-btn:hover {
   margin-bottom: 12px;
 }
 
-.nl-resources h3 {
+.nl-resources h2 {
   font-size: 20px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 700;
@@ -968,7 +778,7 @@ a.flyer-btn:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-sm);
   padding: 9px 14px;
   text-decoration: none;
@@ -979,7 +789,7 @@ a.flyer-btn:hover {
 }
 
 .resource-link-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.13);
   text-decoration: none;
 }
 
@@ -992,13 +802,13 @@ a.flyer-btn:hover {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--navy1);
+  background: var(--elcblue);
   flex-shrink: 0;
 }
 
 /* ============================================================
  FOOTER
-============================================================ */
+    ============================================================ */
 .nl-footer {
   background: var(--navy1);
   color: rgba(255, 255, 255, 0.65);
@@ -1042,7 +852,7 @@ a.flyer-btn:hover {
 
 /* ============================================================
  CALENDAR CTA
-============================================================ */
+    ============================================================ */
 .nl-cta {
   background: var(--lightblue1);
   border: 1px solid #9adcc8;
@@ -1082,7 +892,7 @@ a.flyer-btn:hover {
 
 /* ============================================================
  POLICY MODAL
-============================================================ */
+    ============================================================ */
 .policy-modal-trigger {
   background: none;
   border: none;
@@ -1215,40 +1025,6 @@ a.flyer-btn:hover {
     grid-template-columns: 1fr;
   }
 
-  .nl-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .nl-video {
-    width: 100%;
-  }
-
-  .nl-featured-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nl-card-float-img {
-    float: none;
-    display: block;
-    margin: 0 auto 16px;
-  }
-
-  .nl-column {
-    padding-right: 0;
-  }
-
-  .nl-column + .nl-column {
-    padding-left: 0;
-    padding-top: 16px;
-    margin-top: 16px;
-    border-left: none;
-    border-top: 1px solid var(--border);
-  }
-
-  .nl-link-grid {
-    grid-template-columns: 1fr;
-  }
-
   .nl-cta {
     flex-direction: column;
     align-items: flex-start;
@@ -1262,19 +1038,18 @@ a.flyer-btn:hover {
   .nl-footer {
     padding: 22px 20px;
   }
-
-  .nl-featured-float {
-    float: none;
-    display: block;
-    width: 100%;
-    padding: 0 0 12px;
+  
+  .fb-video-wrap {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
   }
-
-  .nl-featured-float-tight {
-    float: none;
-    display: block;
-    width: 100%;
-    margin: 0 0 12px;
+  .fb-video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
   }
-
 }
